@@ -27,11 +27,11 @@ Partial Class frmPrincipal
         Me.SobreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManutençãoDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AssessoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ControleDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TarefasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastroDeTarefasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaDeTarefasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AssessoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ControleDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatóriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TestesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,8 +39,8 @@ Partial Class frmPrincipal
         Me.ClientesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TesteMemorandoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -72,58 +72,71 @@ Partial Class frmPrincipal
         '
         Me.ClientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManutençãoDeClientesToolStripMenuItem})
         Me.ClientesToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.ClientesToolStripMenuItem.Image = CType(resources.GetObject("ClientesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
         '
         'ManutençãoDeClientesToolStripMenuItem
         '
+        Me.ManutençãoDeClientesToolStripMenuItem.Image = CType(resources.GetObject("ManutençãoDeClientesToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ManutençãoDeClientesToolStripMenuItem.Name = "ManutençãoDeClientesToolStripMenuItem"
         Me.ManutençãoDeClientesToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
         Me.ManutençãoDeClientesToolStripMenuItem.Text = "Manutenção de Clientes"
         '
+        'AssessoriaToolStripMenuItem
+        '
+        Me.AssessoriaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ControleDeClientesToolStripMenuItem})
+        Me.AssessoriaToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.AssessoriaToolStripMenuItem.Image = CType(resources.GetObject("AssessoriaToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.AssessoriaToolStripMenuItem.Name = "AssessoriaToolStripMenuItem"
+        Me.AssessoriaToolStripMenuItem.Size = New System.Drawing.Size(87, 20)
+        Me.AssessoriaToolStripMenuItem.Text = "Assessoria"
+        '
+        'ControleDeClientesToolStripMenuItem
+        '
+        Me.ControleDeClientesToolStripMenuItem.Image = CType(resources.GetObject("ControleDeClientesToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ControleDeClientesToolStripMenuItem.Name = "ControleDeClientesToolStripMenuItem"
+        Me.ControleDeClientesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.ControleDeClientesToolStripMenuItem.Text = "Controle de Clientes"
+        '
         'TarefasToolStripMenuItem
         '
         Me.TarefasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastroDeTarefasToolStripMenuItem, Me.ConsultaDeTarefasToolStripMenuItem})
+        Me.TarefasToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.TarefasToolStripMenuItem.Image = CType(resources.GetObject("TarefasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TarefasToolStripMenuItem.Name = "TarefasToolStripMenuItem"
-        Me.TarefasToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
+        Me.TarefasToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
         Me.TarefasToolStripMenuItem.Text = "Tarefas"
         '
         'CadastroDeTarefasToolStripMenuItem
         '
+        Me.CadastroDeTarefasToolStripMenuItem.Image = CType(resources.GetObject("CadastroDeTarefasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CadastroDeTarefasToolStripMenuItem.Name = "CadastroDeTarefasToolStripMenuItem"
         Me.CadastroDeTarefasToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.CadastroDeTarefasToolStripMenuItem.Text = "Cadastro de Tarefas"
         '
         'ConsultaDeTarefasToolStripMenuItem
         '
+        Me.ConsultaDeTarefasToolStripMenuItem.Image = CType(resources.GetObject("ConsultaDeTarefasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConsultaDeTarefasToolStripMenuItem.Name = "ConsultaDeTarefasToolStripMenuItem"
         Me.ConsultaDeTarefasToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.ConsultaDeTarefasToolStripMenuItem.Text = "Consulta de Tarefas"
         '
-        'AssessoriaToolStripMenuItem
-        '
-        Me.AssessoriaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ControleDeClientesToolStripMenuItem})
-        Me.AssessoriaToolStripMenuItem.Name = "AssessoriaToolStripMenuItem"
-        Me.AssessoriaToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
-        Me.AssessoriaToolStripMenuItem.Text = "Assessoria"
-        '
-        'ControleDeClientesToolStripMenuItem
-        '
-        Me.ControleDeClientesToolStripMenuItem.Name = "ControleDeClientesToolStripMenuItem"
-        Me.ControleDeClientesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.ControleDeClientesToolStripMenuItem.Text = "Controle de Clientes"
-        '
         'RelatóriosToolStripMenuItem
         '
+        Me.RelatóriosToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.RelatóriosToolStripMenuItem.Image = CType(resources.GetObject("RelatóriosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RelatóriosToolStripMenuItem.Name = "RelatóriosToolStripMenuItem"
-        Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(83, 20)
         Me.RelatóriosToolStripMenuItem.Text = "Relatórios"
         '
         'SairToolStripMenuItem
         '
+        Me.SairToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.SairToolStripMenuItem.Image = CType(resources.GetObject("SairToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
         Me.SairToolStripMenuItem.Text = "Sair"
         '
         'TestesToolStripMenuItem
@@ -162,6 +175,16 @@ Partial Class frmPrincipal
         Me.Panel1.Size = New System.Drawing.Size(941, 79)
         Me.Panel1.TabIndex = 1
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(184, 79)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -172,16 +195,6 @@ Partial Class frmPrincipal
         Me.Label1.Size = New System.Drawing.Size(334, 33)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Manutenção de Clientes"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(184, 79)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
         '
         'Panel2
         '
@@ -201,6 +214,7 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

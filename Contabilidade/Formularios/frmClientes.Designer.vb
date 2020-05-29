@@ -25,6 +25,47 @@ Partial Class frmClientes
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmClientes))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabCliente = New System.Windows.Forms.TabPage()
+        Me.txtNumBeneficio = New System.Windows.Forms.MaskedTextBox()
+        Me.txtESocial = New System.Windows.Forms.MaskedTextBox()
+        Me.txtCPFRedesim = New System.Windows.Forms.MaskedTextBox()
+        Me.txtFuncPublico = New System.Windows.Forms.ComboBox()
+        Me.txtCodRFB = New System.Windows.Forms.TextBox()
+        Me.chbCodRFB = New System.Windows.Forms.CheckBox()
+        Me.txtInativo = New System.Windows.Forms.TextBox()
+        Me.chbInativo = New System.Windows.Forms.CheckBox()
+        Me.txtFalecido = New System.Windows.Forms.MaskedTextBox()
+        Me.lblSenhaRedesim = New System.Windows.Forms.Label()
+        Me.txtSenhaRedesim = New System.Windows.Forms.TextBox()
+        Me.chbRedesim = New System.Windows.Forms.CheckBox()
+        Me.lblEsocialSenha = New System.Windows.Forms.Label()
+        Me.txtEsocialSenha = New System.Windows.Forms.TextBox()
+        Me.txtValidadeRFB = New System.Windows.Forms.MaskedTextBox()
+        Me.lblValidoRFB = New System.Windows.Forms.Label()
+        Me.txtSenhaWeb = New System.Windows.Forms.TextBox()
+        Me.chbSenhaWeb = New System.Windows.Forms.CheckBox()
+        Me.chbESocial = New System.Windows.Forms.CheckBox()
+        Me.txtMensalista = New System.Windows.Forms.TextBox()
+        Me.chbMensalista = New System.Windows.Forms.CheckBox()
+        Me.txtIRPF = New System.Windows.Forms.TextBox()
+        Me.txtDecore = New System.Windows.Forms.TextBox()
+        Me.txtITR = New System.Windows.Forms.TextBox()
+        Me.txtVIP = New System.Windows.Forms.TextBox()
+        Me.txtParcelamentos = New System.Windows.Forms.TextBox()
+        Me.chbVIP = New System.Windows.Forms.CheckBox()
+        Me.chbFuncPublico = New System.Windows.Forms.CheckBox()
+        Me.chbAposentado = New System.Windows.Forms.CheckBox()
+        Me.chbDecore = New System.Windows.Forms.CheckBox()
+        Me.chbIRPF = New System.Windows.Forms.CheckBox()
+        Me.chbParcelamentos = New System.Windows.Forms.CheckBox()
+        Me.chbFalecido = New System.Windows.Forms.CheckBox()
+        Me.chbITR = New System.Windows.Forms.CheckBox()
+        Me.btSalvar = New System.Windows.Forms.Button()
+        Me.btAlterarDados = New System.Windows.Forms.Button()
+        Me.btPesquisarCliente = New System.Windows.Forms.Button()
+        Me.chbCurriculo = New System.Windows.Forms.CheckBox()
+        Me.chbPJ = New System.Windows.Forms.CheckBox()
+        Me.chbMEI = New System.Windows.Forms.CheckBox()
+        Me.chbAutonomo = New System.Windows.Forms.CheckBox()
         Me.txtObs = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -75,55 +116,16 @@ Partial Class frmClientes
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TabEmpresa = New System.Windows.Forms.TabPage()
-        Me.chbAutonomo = New System.Windows.Forms.CheckBox()
-        Me.chbCurriculo = New System.Windows.Forms.CheckBox()
-        Me.chbPJ = New System.Windows.Forms.CheckBox()
-        Me.chbMEI = New System.Windows.Forms.CheckBox()
-        Me.btPesquisarCliente = New System.Windows.Forms.Button()
-        Me.btAlterarDados = New System.Windows.Forms.Button()
-        Me.btSalvar = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
         Me.btPesquisaEmpresa = New System.Windows.Forms.Button()
         Me.btLimpar = New System.Windows.Forms.Button()
-        Me.txtNumBeneficio = New System.Windows.Forms.MaskedTextBox()
-        Me.txtESocial = New System.Windows.Forms.MaskedTextBox()
-        Me.txtCPFRedesim = New System.Windows.Forms.MaskedTextBox()
-        Me.txtFuncPublico = New System.Windows.Forms.ComboBox()
-        Me.txtCodRFB = New System.Windows.Forms.TextBox()
-        Me.chbCodRFB = New System.Windows.Forms.CheckBox()
-        Me.txtInativo = New System.Windows.Forms.TextBox()
-        Me.chbInativo = New System.Windows.Forms.CheckBox()
-        Me.txtFalecido = New System.Windows.Forms.MaskedTextBox()
-        Me.lblSenhaRedesim = New System.Windows.Forms.Label()
-        Me.txtSenhaRedesim = New System.Windows.Forms.TextBox()
-        Me.chbRedesim = New System.Windows.Forms.CheckBox()
-        Me.lblEsocialSenha = New System.Windows.Forms.Label()
-        Me.txtEsocialSenha = New System.Windows.Forms.TextBox()
-        Me.txtValidadeRFB = New System.Windows.Forms.MaskedTextBox()
-        Me.lblValidoRFB = New System.Windows.Forms.Label()
-        Me.txtSenhaWeb = New System.Windows.Forms.TextBox()
-        Me.chbSenhaWeb = New System.Windows.Forms.CheckBox()
-        Me.chbESocial = New System.Windows.Forms.CheckBox()
-        Me.txtMensalista = New System.Windows.Forms.TextBox()
-        Me.chbMensalista = New System.Windows.Forms.CheckBox()
-        Me.txtIRPF = New System.Windows.Forms.TextBox()
-        Me.txtDecore = New System.Windows.Forms.TextBox()
-        Me.txtITR = New System.Windows.Forms.TextBox()
-        Me.txtVIP = New System.Windows.Forms.TextBox()
-        Me.txtParcelamentos = New System.Windows.Forms.TextBox()
-        Me.chbVIP = New System.Windows.Forms.CheckBox()
-        Me.chbFuncPublico = New System.Windows.Forms.CheckBox()
-        Me.chbAposentado = New System.Windows.Forms.CheckBox()
-        Me.chbDecore = New System.Windows.Forms.CheckBox()
-        Me.chbIRPF = New System.Windows.Forms.CheckBox()
-        Me.chbParcelamentos = New System.Windows.Forms.CheckBox()
-        Me.chbFalecido = New System.Windows.Forms.CheckBox()
-        Me.chbITR = New System.Windows.Forms.CheckBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.TabEmpresa.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -191,6 +193,443 @@ Partial Class frmClientes
         Me.TabCliente.Size = New System.Drawing.Size(580, 634)
         Me.TabCliente.TabIndex = 0
         Me.TabCliente.Text = "Cliente"
+        '
+        'txtNumBeneficio
+        '
+        Me.txtNumBeneficio.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.txtNumBeneficio.Location = New System.Drawing.Point(395, 89)
+        Me.txtNumBeneficio.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtNumBeneficio.Name = "txtNumBeneficio"
+        Me.txtNumBeneficio.Size = New System.Drawing.Size(100, 20)
+        Me.txtNumBeneficio.TabIndex = 200022
+        Me.txtNumBeneficio.Visible = False
+        '
+        'txtESocial
+        '
+        Me.txtESocial.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.txtESocial.Location = New System.Drawing.Point(363, 203)
+        Me.txtESocial.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtESocial.Mask = "0000000000"
+        Me.txtESocial.Name = "txtESocial"
+        Me.txtESocial.Size = New System.Drawing.Size(66, 20)
+        Me.txtESocial.TabIndex = 200030
+        Me.txtESocial.Visible = False
+        '
+        'txtCPFRedesim
+        '
+        Me.txtCPFRedesim.Location = New System.Drawing.Point(355, 429)
+        Me.txtCPFRedesim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtCPFRedesim.Mask = "000.000.000-00"
+        Me.txtCPFRedesim.Name = "txtCPFRedesim"
+        Me.txtCPFRedesim.ReadOnly = True
+        Me.txtCPFRedesim.Size = New System.Drawing.Size(102, 20)
+        Me.txtCPFRedesim.TabIndex = 200053
+        Me.txtCPFRedesim.Visible = False
+        '
+        'txtFuncPublico
+        '
+        Me.txtFuncPublico.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.txtFuncPublico.FormattingEnabled = True
+        Me.txtFuncPublico.Items.AddRange(New Object() {"Municipal", "Estadual", "Federal"})
+        Me.txtFuncPublico.Location = New System.Drawing.Point(396, 117)
+        Me.txtFuncPublico.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtFuncPublico.Name = "txtFuncPublico"
+        Me.txtFuncPublico.Size = New System.Drawing.Size(109, 22)
+        Me.txtFuncPublico.TabIndex = 200024
+        Me.txtFuncPublico.Visible = False
+        '
+        'txtCodRFB
+        '
+        Me.txtCodRFB.Location = New System.Drawing.Point(347, 485)
+        Me.txtCodRFB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtCodRFB.Name = "txtCodRFB"
+        Me.txtCodRFB.Size = New System.Drawing.Size(123, 20)
+        Me.txtCodRFB.TabIndex = 200046
+        Me.txtCodRFB.Visible = False
+        '
+        'chbCodRFB
+        '
+        Me.chbCodRFB.AutoSize = True
+        Me.chbCodRFB.Location = New System.Drawing.Point(280, 487)
+        Me.chbCodRFB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbCodRFB.Name = "chbCodRFB"
+        Me.chbCodRFB.Size = New System.Drawing.Size(69, 17)
+        Me.chbCodRFB.TabIndex = 200052
+        Me.chbCodRFB.Text = "CódRFB:"
+        Me.chbCodRFB.UseVisualStyleBackColor = True
+        '
+        'txtInativo
+        '
+        Me.txtInativo.Location = New System.Drawing.Point(338, 172)
+        Me.txtInativo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtInativo.Multiline = True
+        Me.txtInativo.Name = "txtInativo"
+        Me.txtInativo.Size = New System.Drawing.Size(119, 23)
+        Me.txtInativo.TabIndex = 200028
+        Me.txtInativo.Visible = False
+        '
+        'chbInativo
+        '
+        Me.chbInativo.AutoSize = True
+        Me.chbInativo.Location = New System.Drawing.Point(280, 177)
+        Me.chbInativo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbInativo.Name = "chbInativo"
+        Me.chbInativo.Size = New System.Drawing.Size(61, 17)
+        Me.chbInativo.TabIndex = 200027
+        Me.chbInativo.Text = "Inativo:"
+        Me.chbInativo.UseVisualStyleBackColor = True
+        '
+        'txtFalecido
+        '
+        Me.txtFalecido.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.txtFalecido.Location = New System.Drawing.Point(399, 148)
+        Me.txtFalecido.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtFalecido.Mask = "00/00/0000"
+        Me.txtFalecido.Name = "txtFalecido"
+        Me.txtFalecido.Size = New System.Drawing.Size(89, 20)
+        Me.txtFalecido.TabIndex = 200026
+        Me.txtFalecido.ValidatingType = GetType(Date)
+        Me.txtFalecido.Visible = False
+        '
+        'lblSenhaRedesim
+        '
+        Me.lblSenhaRedesim.AutoSize = True
+        Me.lblSenhaRedesim.Location = New System.Drawing.Point(284, 462)
+        Me.lblSenhaRedesim.Name = "lblSenhaRedesim"
+        Me.lblSenhaRedesim.Size = New System.Drawing.Size(41, 13)
+        Me.lblSenhaRedesim.TabIndex = 200051
+        Me.lblSenhaRedesim.Text = "Senha:"
+        Me.lblSenhaRedesim.Visible = False
+        '
+        'txtSenhaRedesim
+        '
+        Me.txtSenhaRedesim.Location = New System.Drawing.Point(329, 459)
+        Me.txtSenhaRedesim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSenhaRedesim.Name = "txtSenhaRedesim"
+        Me.txtSenhaRedesim.Size = New System.Drawing.Size(160, 20)
+        Me.txtSenhaRedesim.TabIndex = 200045
+        Me.txtSenhaRedesim.Visible = False
+        '
+        'chbRedesim
+        '
+        Me.chbRedesim.AutoSize = True
+        Me.chbRedesim.Location = New System.Drawing.Point(280, 431)
+        Me.chbRedesim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbRedesim.Name = "chbRedesim"
+        Me.chbRedesim.Size = New System.Drawing.Size(70, 17)
+        Me.chbRedesim.TabIndex = 200044
+        Me.chbRedesim.Text = "Redesim:"
+        Me.chbRedesim.UseVisualStyleBackColor = True
+        '
+        'lblEsocialSenha
+        '
+        Me.lblEsocialSenha.AutoSize = True
+        Me.lblEsocialSenha.Location = New System.Drawing.Point(435, 208)
+        Me.lblEsocialSenha.Name = "lblEsocialSenha"
+        Me.lblEsocialSenha.Size = New System.Drawing.Size(41, 13)
+        Me.lblEsocialSenha.TabIndex = 200031
+        Me.lblEsocialSenha.Text = "Senha:"
+        Me.lblEsocialSenha.Visible = False
+        '
+        'txtEsocialSenha
+        '
+        Me.txtEsocialSenha.Location = New System.Drawing.Point(479, 205)
+        Me.txtEsocialSenha.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtEsocialSenha.Name = "txtEsocialSenha"
+        Me.txtEsocialSenha.Size = New System.Drawing.Size(88, 20)
+        Me.txtEsocialSenha.TabIndex = 200032
+        Me.txtEsocialSenha.Visible = False
+        '
+        'txtValidadeRFB
+        '
+        Me.txtValidadeRFB.Location = New System.Drawing.Point(511, 487)
+        Me.txtValidadeRFB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtValidadeRFB.Mask = "00/00/0000"
+        Me.txtValidadeRFB.Name = "txtValidadeRFB"
+        Me.txtValidadeRFB.Size = New System.Drawing.Size(60, 20)
+        Me.txtValidadeRFB.TabIndex = 200047
+        Me.txtValidadeRFB.ValidatingType = GetType(Date)
+        Me.txtValidadeRFB.Visible = False
+        '
+        'lblValidoRFB
+        '
+        Me.lblValidoRFB.AutoSize = True
+        Me.lblValidoRFB.Location = New System.Drawing.Point(471, 490)
+        Me.lblValidoRFB.Name = "lblValidoRFB"
+        Me.lblValidoRFB.Size = New System.Drawing.Size(33, 13)
+        Me.lblValidoRFB.TabIndex = 200054
+        Me.lblValidoRFB.Text = "Valid:"
+        Me.lblValidoRFB.Visible = False
+        '
+        'txtSenhaWeb
+        '
+        Me.txtSenhaWeb.Location = New System.Drawing.Point(426, 404)
+        Me.txtSenhaWeb.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSenhaWeb.Name = "txtSenhaWeb"
+        Me.txtSenhaWeb.Size = New System.Drawing.Size(86, 20)
+        Me.txtSenhaWeb.TabIndex = 200043
+        Me.txtSenhaWeb.Visible = False
+        '
+        'chbSenhaWeb
+        '
+        Me.chbSenhaWeb.AutoSize = True
+        Me.chbSenhaWeb.Location = New System.Drawing.Point(280, 404)
+        Me.chbSenhaWeb.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbSenhaWeb.Name = "chbSenhaWeb"
+        Me.chbSenhaWeb.Size = New System.Drawing.Size(147, 17)
+        Me.chbSenhaWeb.TabIndex = 200042
+        Me.chbSenhaWeb.Text = "Senha Web PrefeituraPF:"
+        Me.chbSenhaWeb.UseVisualStyleBackColor = True
+        '
+        'chbESocial
+        '
+        Me.chbESocial.AutoSize = True
+        Me.chbESocial.Location = New System.Drawing.Point(280, 205)
+        Me.chbESocial.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbESocial.Name = "chbESocial"
+        Me.chbESocial.Size = New System.Drawing.Size(84, 17)
+        Me.chbESocial.TabIndex = 200029
+        Me.chbESocial.Text = "Empr. Dom.:"
+        Me.chbESocial.UseVisualStyleBackColor = True
+        '
+        'txtMensalista
+        '
+        Me.txtMensalista.Location = New System.Drawing.Point(379, 320)
+        Me.txtMensalista.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtMensalista.Name = "txtMensalista"
+        Me.txtMensalista.Size = New System.Drawing.Size(126, 20)
+        Me.txtMensalista.TabIndex = 200050
+        Me.txtMensalista.Visible = False
+        '
+        'chbMensalista
+        '
+        Me.chbMensalista.AutoSize = True
+        Me.chbMensalista.Location = New System.Drawing.Point(280, 322)
+        Me.chbMensalista.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbMensalista.Name = "chbMensalista"
+        Me.chbMensalista.Size = New System.Drawing.Size(102, 17)
+        Me.chbMensalista.TabIndex = 200049
+        Me.chbMensalista.Text = "Cliente Contábil:"
+        Me.chbMensalista.UseVisualStyleBackColor = True
+        '
+        'txtIRPF
+        '
+        Me.txtIRPF.Location = New System.Drawing.Point(335, 376)
+        Me.txtIRPF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtIRPF.Name = "txtIRPF"
+        Me.txtIRPF.Size = New System.Drawing.Size(160, 20)
+        Me.txtIRPF.TabIndex = 200040
+        Me.txtIRPF.Visible = False
+        '
+        'txtDecore
+        '
+        Me.txtDecore.Location = New System.Drawing.Point(352, 348)
+        Me.txtDecore.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtDecore.Name = "txtDecore"
+        Me.txtDecore.Size = New System.Drawing.Size(160, 20)
+        Me.txtDecore.TabIndex = 200038
+        Me.txtDecore.Visible = False
+        '
+        'txtITR
+        '
+        Me.txtITR.Location = New System.Drawing.Point(320, 290)
+        Me.txtITR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtITR.Name = "txtITR"
+        Me.txtITR.Size = New System.Drawing.Size(160, 20)
+        Me.txtITR.TabIndex = 200048
+        Me.txtITR.Visible = False
+        '
+        'txtVIP
+        '
+        Me.txtVIP.Location = New System.Drawing.Point(329, 259)
+        Me.txtVIP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtVIP.Name = "txtVIP"
+        Me.txtVIP.Size = New System.Drawing.Size(142, 20)
+        Me.txtVIP.TabIndex = 200036
+        Me.txtVIP.Visible = False
+        '
+        'txtParcelamentos
+        '
+        Me.txtParcelamentos.Location = New System.Drawing.Point(377, 234)
+        Me.txtParcelamentos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtParcelamentos.Name = "txtParcelamentos"
+        Me.txtParcelamentos.Size = New System.Drawing.Size(190, 20)
+        Me.txtParcelamentos.TabIndex = 200034
+        Me.txtParcelamentos.Visible = False
+        '
+        'chbVIP
+        '
+        Me.chbVIP.AutoSize = True
+        Me.chbVIP.Location = New System.Drawing.Point(280, 262)
+        Me.chbVIP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbVIP.Name = "chbVIP"
+        Me.chbVIP.Size = New System.Drawing.Size(46, 17)
+        Me.chbVIP.TabIndex = 200035
+        Me.chbVIP.Text = "VIP:"
+        Me.chbVIP.UseVisualStyleBackColor = True
+        '
+        'chbFuncPublico
+        '
+        Me.chbFuncPublico.AutoSize = True
+        Me.chbFuncPublico.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.chbFuncPublico.Location = New System.Drawing.Point(280, 119)
+        Me.chbFuncPublico.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbFuncPublico.Name = "chbFuncPublico"
+        Me.chbFuncPublico.Size = New System.Drawing.Size(100, 19)
+        Me.chbFuncPublico.TabIndex = 200023
+        Me.chbFuncPublico.Text = "Func. Público"
+        Me.chbFuncPublico.UseVisualStyleBackColor = True
+        '
+        'chbAposentado
+        '
+        Me.chbAposentado.AutoSize = True
+        Me.chbAposentado.Location = New System.Drawing.Point(280, 91)
+        Me.chbAposentado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbAposentado.Name = "chbAposentado"
+        Me.chbAposentado.Size = New System.Drawing.Size(105, 17)
+        Me.chbAposentado.TabIndex = 200021
+        Me.chbAposentado.Text = "Nº de Benefício "
+        Me.chbAposentado.UseVisualStyleBackColor = True
+        '
+        'chbDecore
+        '
+        Me.chbDecore.AutoSize = True
+        Me.chbDecore.Location = New System.Drawing.Point(280, 349)
+        Me.chbDecore.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbDecore.Name = "chbDecore"
+        Me.chbDecore.Size = New System.Drawing.Size(74, 17)
+        Me.chbDecore.TabIndex = 200037
+        Me.chbDecore.Text = "DECORE:"
+        Me.chbDecore.UseVisualStyleBackColor = True
+        '
+        'chbIRPF
+        '
+        Me.chbIRPF.AutoSize = True
+        Me.chbIRPF.Location = New System.Drawing.Point(280, 378)
+        Me.chbIRPF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbIRPF.Name = "chbIRPF"
+        Me.chbIRPF.Size = New System.Drawing.Size(53, 17)
+        Me.chbIRPF.TabIndex = 200039
+        Me.chbIRPF.Text = "IRPF:"
+        Me.chbIRPF.UseVisualStyleBackColor = True
+        '
+        'chbParcelamentos
+        '
+        Me.chbParcelamentos.AutoSize = True
+        Me.chbParcelamentos.Location = New System.Drawing.Point(280, 237)
+        Me.chbParcelamentos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbParcelamentos.Name = "chbParcelamentos"
+        Me.chbParcelamentos.Size = New System.Drawing.Size(99, 17)
+        Me.chbParcelamentos.TabIndex = 200033
+        Me.chbParcelamentos.Text = "Parcelamentos:"
+        Me.chbParcelamentos.UseVisualStyleBackColor = True
+        '
+        'chbFalecido
+        '
+        Me.chbFalecido.AutoSize = True
+        Me.chbFalecido.Location = New System.Drawing.Point(280, 151)
+        Me.chbFalecido.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbFalecido.Name = "chbFalecido"
+        Me.chbFalecido.Size = New System.Drawing.Size(110, 17)
+        Me.chbFalecido.TabIndex = 200025
+        Me.chbFalecido.Text = "Falecido na Data:"
+        Me.chbFalecido.UseVisualStyleBackColor = True
+        '
+        'chbITR
+        '
+        Me.chbITR.AutoSize = True
+        Me.chbITR.Location = New System.Drawing.Point(280, 292)
+        Me.chbITR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbITR.Name = "chbITR"
+        Me.chbITR.Size = New System.Drawing.Size(47, 17)
+        Me.chbITR.TabIndex = 200041
+        Me.chbITR.Text = "ITR:"
+        Me.chbITR.UseVisualStyleBackColor = True
+        '
+        'btSalvar
+        '
+        Me.btSalvar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btSalvar.FlatAppearance.BorderSize = 0
+        Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
+        Me.btSalvar.Location = New System.Drawing.Point(471, 9)
+        Me.btSalvar.Name = "btSalvar"
+        Me.btSalvar.Size = New System.Drawing.Size(79, 46)
+        Me.btSalvar.TabIndex = 200020
+        Me.btSalvar.Text = "Salvar"
+        Me.btSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btSalvar.UseVisualStyleBackColor = True
+        '
+        'btAlterarDados
+        '
+        Me.btAlterarDados.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btAlterarDados.FlatAppearance.BorderSize = 0
+        Me.btAlterarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAlterarDados.Image = CType(resources.GetObject("btAlterarDados.Image"), System.Drawing.Image)
+        Me.btAlterarDados.Location = New System.Drawing.Point(387, 7)
+        Me.btAlterarDados.Name = "btAlterarDados"
+        Me.btAlterarDados.Size = New System.Drawing.Size(78, 48)
+        Me.btAlterarDados.TabIndex = 200019
+        Me.btAlterarDados.Text = "Alterar Dados"
+        Me.btAlterarDados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btAlterarDados.UseVisualStyleBackColor = True
+        '
+        'btPesquisarCliente
+        '
+        Me.btPesquisarCliente.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btPesquisarCliente.FlatAppearance.BorderSize = 0
+        Me.btPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btPesquisarCliente.Image = CType(resources.GetObject("btPesquisarCliente.Image"), System.Drawing.Image)
+        Me.btPesquisarCliente.Location = New System.Drawing.Point(287, 6)
+        Me.btPesquisarCliente.Name = "btPesquisarCliente"
+        Me.btPesquisarCliente.Size = New System.Drawing.Size(94, 49)
+        Me.btPesquisarCliente.TabIndex = 200018
+        Me.btPesquisarCliente.Text = "Pesquisar Cliente"
+        Me.btPesquisarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btPesquisarCliente.UseVisualStyleBackColor = True
+        '
+        'chbCurriculo
+        '
+        Me.chbCurriculo.AutoSize = True
+        Me.chbCurriculo.Location = New System.Drawing.Point(473, 67)
+        Me.chbCurriculo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbCurriculo.Name = "chbCurriculo"
+        Me.chbCurriculo.Size = New System.Drawing.Size(67, 17)
+        Me.chbCurriculo.TabIndex = 200017
+        Me.chbCurriculo.Text = "Curriculo"
+        Me.chbCurriculo.UseVisualStyleBackColor = True
+        '
+        'chbPJ
+        '
+        Me.chbPJ.AutoSize = True
+        Me.chbPJ.Location = New System.Drawing.Point(368, 67)
+        Me.chbPJ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbPJ.Name = "chbPJ"
+        Me.chbPJ.Size = New System.Drawing.Size(41, 17)
+        Me.chbPJ.TabIndex = 200015
+        Me.chbPJ.Text = "PJ:"
+        Me.chbPJ.UseVisualStyleBackColor = True
+        '
+        'chbMEI
+        '
+        Me.chbMEI.AutoSize = True
+        Me.chbMEI.Location = New System.Drawing.Point(422, 67)
+        Me.chbMEI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbMEI.Name = "chbMEI"
+        Me.chbMEI.Size = New System.Drawing.Size(48, 17)
+        Me.chbMEI.TabIndex = 200016
+        Me.chbMEI.Text = "MEI:"
+        Me.chbMEI.UseVisualStyleBackColor = True
+        '
+        'chbAutonomo
+        '
+        Me.chbAutonomo.AutoSize = True
+        Me.chbAutonomo.Location = New System.Drawing.Point(280, 67)
+        Me.chbAutonomo.Name = "chbAutonomo"
+        Me.chbAutonomo.Size = New System.Drawing.Size(74, 17)
+        Me.chbAutonomo.TabIndex = 200014
+        Me.chbAutonomo.Text = "Autonomo"
+        Me.chbAutonomo.UseVisualStyleBackColor = True
         '
         'txtObs
         '
@@ -665,97 +1104,13 @@ Partial Class frmClientes
         'TabEmpresa
         '
         Me.TabEmpresa.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.TabEmpresa.Controls.Add(Me.GroupBox4)
         Me.TabEmpresa.Location = New System.Drawing.Point(4, 22)
         Me.TabEmpresa.Name = "TabEmpresa"
         Me.TabEmpresa.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabEmpresa.Size = New System.Drawing.Size(572, 639)
+        Me.TabEmpresa.Size = New System.Drawing.Size(580, 634)
         Me.TabEmpresa.TabIndex = 1
         Me.TabEmpresa.Text = "Empresa"
-        '
-        'chbAutonomo
-        '
-        Me.chbAutonomo.AutoSize = True
-        Me.chbAutonomo.Location = New System.Drawing.Point(280, 67)
-        Me.chbAutonomo.Name = "chbAutonomo"
-        Me.chbAutonomo.Size = New System.Drawing.Size(74, 17)
-        Me.chbAutonomo.TabIndex = 200014
-        Me.chbAutonomo.Text = "Autonomo"
-        Me.chbAutonomo.UseVisualStyleBackColor = True
-        '
-        'chbCurriculo
-        '
-        Me.chbCurriculo.AutoSize = True
-        Me.chbCurriculo.Location = New System.Drawing.Point(473, 67)
-        Me.chbCurriculo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbCurriculo.Name = "chbCurriculo"
-        Me.chbCurriculo.Size = New System.Drawing.Size(67, 17)
-        Me.chbCurriculo.TabIndex = 200017
-        Me.chbCurriculo.Text = "Curriculo"
-        Me.chbCurriculo.UseVisualStyleBackColor = True
-        '
-        'chbPJ
-        '
-        Me.chbPJ.AutoSize = True
-        Me.chbPJ.Location = New System.Drawing.Point(368, 67)
-        Me.chbPJ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbPJ.Name = "chbPJ"
-        Me.chbPJ.Size = New System.Drawing.Size(41, 17)
-        Me.chbPJ.TabIndex = 200015
-        Me.chbPJ.Text = "PJ:"
-        Me.chbPJ.UseVisualStyleBackColor = True
-        '
-        'chbMEI
-        '
-        Me.chbMEI.AutoSize = True
-        Me.chbMEI.Location = New System.Drawing.Point(422, 67)
-        Me.chbMEI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbMEI.Name = "chbMEI"
-        Me.chbMEI.Size = New System.Drawing.Size(48, 17)
-        Me.chbMEI.TabIndex = 200016
-        Me.chbMEI.Text = "MEI:"
-        Me.chbMEI.UseVisualStyleBackColor = True
-        '
-        'btPesquisarCliente
-        '
-        Me.btPesquisarCliente.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btPesquisarCliente.FlatAppearance.BorderSize = 0
-        Me.btPesquisarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btPesquisarCliente.Image = CType(resources.GetObject("btPesquisarCliente.Image"), System.Drawing.Image)
-        Me.btPesquisarCliente.Location = New System.Drawing.Point(287, 6)
-        Me.btPesquisarCliente.Name = "btPesquisarCliente"
-        Me.btPesquisarCliente.Size = New System.Drawing.Size(94, 49)
-        Me.btPesquisarCliente.TabIndex = 200018
-        Me.btPesquisarCliente.Text = "Pesquisar Cliente"
-        Me.btPesquisarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btPesquisarCliente.UseVisualStyleBackColor = True
-        '
-        'btAlterarDados
-        '
-        Me.btAlterarDados.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btAlterarDados.FlatAppearance.BorderSize = 0
-        Me.btAlterarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAlterarDados.Image = CType(resources.GetObject("btAlterarDados.Image"), System.Drawing.Image)
-        Me.btAlterarDados.Location = New System.Drawing.Point(387, 7)
-        Me.btAlterarDados.Name = "btAlterarDados"
-        Me.btAlterarDados.Size = New System.Drawing.Size(78, 48)
-        Me.btAlterarDados.TabIndex = 200019
-        Me.btAlterarDados.Text = "Alterar Dados"
-        Me.btAlterarDados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btAlterarDados.UseVisualStyleBackColor = True
-        '
-        'btSalvar
-        '
-        Me.btSalvar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btSalvar.FlatAppearance.BorderSize = 0
-        Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
-        Me.btSalvar.Location = New System.Drawing.Point(471, 9)
-        Me.btSalvar.Name = "btSalvar"
-        Me.btSalvar.Size = New System.Drawing.Size(79, 46)
-        Me.btSalvar.TabIndex = 200020
-        Me.btSalvar.Text = "Salvar"
-        Me.btSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btSalvar.UseVisualStyleBackColor = True
         '
         'btSair
         '
@@ -799,357 +1154,15 @@ Partial Class frmClientes
         Me.btLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btLimpar.UseVisualStyleBackColor = True
         '
-        'txtNumBeneficio
-        '
-        Me.txtNumBeneficio.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.txtNumBeneficio.Location = New System.Drawing.Point(395, 89)
-        Me.txtNumBeneficio.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtNumBeneficio.Name = "txtNumBeneficio"
-        Me.txtNumBeneficio.Size = New System.Drawing.Size(100, 20)
-        Me.txtNumBeneficio.TabIndex = 200022
-        Me.txtNumBeneficio.Visible = False
-        '
-        'txtESocial
-        '
-        Me.txtESocial.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.txtESocial.Location = New System.Drawing.Point(363, 203)
-        Me.txtESocial.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtESocial.Mask = "0000000000"
-        Me.txtESocial.Name = "txtESocial"
-        Me.txtESocial.Size = New System.Drawing.Size(66, 20)
-        Me.txtESocial.TabIndex = 200030
-        Me.txtESocial.Visible = False
-        '
-        'txtCPFRedesim
-        '
-        Me.txtCPFRedesim.Location = New System.Drawing.Point(355, 429)
-        Me.txtCPFRedesim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtCPFRedesim.Mask = "000.000.000-00"
-        Me.txtCPFRedesim.Name = "txtCPFRedesim"
-        Me.txtCPFRedesim.ReadOnly = True
-        Me.txtCPFRedesim.Size = New System.Drawing.Size(102, 20)
-        Me.txtCPFRedesim.TabIndex = 200053
-        Me.txtCPFRedesim.Visible = False
-        '
-        'txtFuncPublico
-        '
-        Me.txtFuncPublico.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.txtFuncPublico.FormattingEnabled = True
-        Me.txtFuncPublico.Items.AddRange(New Object() {"Municipal", "Estadual", "Federal"})
-        Me.txtFuncPublico.Location = New System.Drawing.Point(396, 117)
-        Me.txtFuncPublico.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtFuncPublico.Name = "txtFuncPublico"
-        Me.txtFuncPublico.Size = New System.Drawing.Size(109, 22)
-        Me.txtFuncPublico.TabIndex = 200024
-        Me.txtFuncPublico.Visible = False
-        '
-        'txtCodRFB
-        '
-        Me.txtCodRFB.Location = New System.Drawing.Point(347, 485)
-        Me.txtCodRFB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtCodRFB.Name = "txtCodRFB"
-        Me.txtCodRFB.Size = New System.Drawing.Size(123, 20)
-        Me.txtCodRFB.TabIndex = 200046
-        Me.txtCodRFB.Visible = False
-        '
-        'chbCodRFB
-        '
-        Me.chbCodRFB.AutoSize = True
-        Me.chbCodRFB.Location = New System.Drawing.Point(280, 487)
-        Me.chbCodRFB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbCodRFB.Name = "chbCodRFB"
-        Me.chbCodRFB.Size = New System.Drawing.Size(69, 17)
-        Me.chbCodRFB.TabIndex = 200052
-        Me.chbCodRFB.Text = "CódRFB:"
-        Me.chbCodRFB.UseVisualStyleBackColor = True
-        '
-        'txtInativo
-        '
-        Me.txtInativo.Location = New System.Drawing.Point(338, 172)
-        Me.txtInativo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtInativo.Multiline = True
-        Me.txtInativo.Name = "txtInativo"
-        Me.txtInativo.Size = New System.Drawing.Size(119, 23)
-        Me.txtInativo.TabIndex = 200028
-        Me.txtInativo.Visible = False
-        '
-        'chbInativo
-        '
-        Me.chbInativo.AutoSize = True
-        Me.chbInativo.Location = New System.Drawing.Point(280, 177)
-        Me.chbInativo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbInativo.Name = "chbInativo"
-        Me.chbInativo.Size = New System.Drawing.Size(61, 17)
-        Me.chbInativo.TabIndex = 200027
-        Me.chbInativo.Text = "Inativo:"
-        Me.chbInativo.UseVisualStyleBackColor = True
-        '
-        'txtFalecido
-        '
-        Me.txtFalecido.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.txtFalecido.Location = New System.Drawing.Point(399, 148)
-        Me.txtFalecido.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtFalecido.Mask = "00/00/0000"
-        Me.txtFalecido.Name = "txtFalecido"
-        Me.txtFalecido.Size = New System.Drawing.Size(89, 20)
-        Me.txtFalecido.TabIndex = 200026
-        Me.txtFalecido.ValidatingType = GetType(Date)
-        Me.txtFalecido.Visible = False
-        '
-        'lblSenhaRedesim
-        '
-        Me.lblSenhaRedesim.AutoSize = True
-        Me.lblSenhaRedesim.Location = New System.Drawing.Point(284, 462)
-        Me.lblSenhaRedesim.Name = "lblSenhaRedesim"
-        Me.lblSenhaRedesim.Size = New System.Drawing.Size(41, 13)
-        Me.lblSenhaRedesim.TabIndex = 200051
-        Me.lblSenhaRedesim.Text = "Senha:"
-        Me.lblSenhaRedesim.Visible = False
-        '
-        'txtSenhaRedesim
-        '
-        Me.txtSenhaRedesim.Location = New System.Drawing.Point(329, 459)
-        Me.txtSenhaRedesim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtSenhaRedesim.Name = "txtSenhaRedesim"
-        Me.txtSenhaRedesim.Size = New System.Drawing.Size(160, 20)
-        Me.txtSenhaRedesim.TabIndex = 200045
-        Me.txtSenhaRedesim.Visible = False
-        '
-        'chbRedesim
-        '
-        Me.chbRedesim.AutoSize = True
-        Me.chbRedesim.Location = New System.Drawing.Point(280, 431)
-        Me.chbRedesim.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbRedesim.Name = "chbRedesim"
-        Me.chbRedesim.Size = New System.Drawing.Size(70, 17)
-        Me.chbRedesim.TabIndex = 200044
-        Me.chbRedesim.Text = "Redesim:"
-        Me.chbRedesim.UseVisualStyleBackColor = True
-        '
-        'lblEsocialSenha
-        '
-        Me.lblEsocialSenha.AutoSize = True
-        Me.lblEsocialSenha.Location = New System.Drawing.Point(435, 208)
-        Me.lblEsocialSenha.Name = "lblEsocialSenha"
-        Me.lblEsocialSenha.Size = New System.Drawing.Size(41, 13)
-        Me.lblEsocialSenha.TabIndex = 200031
-        Me.lblEsocialSenha.Text = "Senha:"
-        Me.lblEsocialSenha.Visible = False
-        '
-        'txtEsocialSenha
-        '
-        Me.txtEsocialSenha.Location = New System.Drawing.Point(479, 205)
-        Me.txtEsocialSenha.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtEsocialSenha.Name = "txtEsocialSenha"
-        Me.txtEsocialSenha.Size = New System.Drawing.Size(88, 20)
-        Me.txtEsocialSenha.TabIndex = 200032
-        Me.txtEsocialSenha.Visible = False
-        '
-        'txtValidadeRFB
-        '
-        Me.txtValidadeRFB.Location = New System.Drawing.Point(511, 487)
-        Me.txtValidadeRFB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtValidadeRFB.Mask = "00/00/0000"
-        Me.txtValidadeRFB.Name = "txtValidadeRFB"
-        Me.txtValidadeRFB.Size = New System.Drawing.Size(60, 20)
-        Me.txtValidadeRFB.TabIndex = 200047
-        Me.txtValidadeRFB.ValidatingType = GetType(Date)
-        Me.txtValidadeRFB.Visible = False
-        '
-        'lblValidoRFB
-        '
-        Me.lblValidoRFB.AutoSize = True
-        Me.lblValidoRFB.Location = New System.Drawing.Point(471, 490)
-        Me.lblValidoRFB.Name = "lblValidoRFB"
-        Me.lblValidoRFB.Size = New System.Drawing.Size(33, 13)
-        Me.lblValidoRFB.TabIndex = 200054
-        Me.lblValidoRFB.Text = "Valid:"
-        Me.lblValidoRFB.Visible = False
-        '
-        'txtSenhaWeb
-        '
-        Me.txtSenhaWeb.Location = New System.Drawing.Point(426, 404)
-        Me.txtSenhaWeb.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtSenhaWeb.Name = "txtSenhaWeb"
-        Me.txtSenhaWeb.Size = New System.Drawing.Size(86, 20)
-        Me.txtSenhaWeb.TabIndex = 200043
-        Me.txtSenhaWeb.Visible = False
-        '
-        'chbSenhaWeb
-        '
-        Me.chbSenhaWeb.AutoSize = True
-        Me.chbSenhaWeb.Location = New System.Drawing.Point(280, 404)
-        Me.chbSenhaWeb.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbSenhaWeb.Name = "chbSenhaWeb"
-        Me.chbSenhaWeb.Size = New System.Drawing.Size(147, 17)
-        Me.chbSenhaWeb.TabIndex = 200042
-        Me.chbSenhaWeb.Text = "Senha Web PrefeituraPF:"
-        Me.chbSenhaWeb.UseVisualStyleBackColor = True
-        '
-        'chbESocial
-        '
-        Me.chbESocial.AutoSize = True
-        Me.chbESocial.Location = New System.Drawing.Point(280, 205)
-        Me.chbESocial.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbESocial.Name = "chbESocial"
-        Me.chbESocial.Size = New System.Drawing.Size(84, 17)
-        Me.chbESocial.TabIndex = 200029
-        Me.chbESocial.Text = "Empr. Dom.:"
-        Me.chbESocial.UseVisualStyleBackColor = True
-        '
-        'txtMensalista
-        '
-        Me.txtMensalista.Location = New System.Drawing.Point(379, 320)
-        Me.txtMensalista.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtMensalista.Name = "txtMensalista"
-        Me.txtMensalista.Size = New System.Drawing.Size(126, 20)
-        Me.txtMensalista.TabIndex = 200050
-        Me.txtMensalista.Visible = False
-        '
-        'chbMensalista
-        '
-        Me.chbMensalista.AutoSize = True
-        Me.chbMensalista.Location = New System.Drawing.Point(280, 322)
-        Me.chbMensalista.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbMensalista.Name = "chbMensalista"
-        Me.chbMensalista.Size = New System.Drawing.Size(102, 17)
-        Me.chbMensalista.TabIndex = 200049
-        Me.chbMensalista.Text = "Cliente Contábil:"
-        Me.chbMensalista.UseVisualStyleBackColor = True
-        '
-        'txtIRPF
-        '
-        Me.txtIRPF.Location = New System.Drawing.Point(335, 376)
-        Me.txtIRPF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtIRPF.Name = "txtIRPF"
-        Me.txtIRPF.Size = New System.Drawing.Size(160, 20)
-        Me.txtIRPF.TabIndex = 200040
-        Me.txtIRPF.Visible = False
-        '
-        'txtDecore
-        '
-        Me.txtDecore.Location = New System.Drawing.Point(352, 348)
-        Me.txtDecore.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtDecore.Name = "txtDecore"
-        Me.txtDecore.Size = New System.Drawing.Size(160, 20)
-        Me.txtDecore.TabIndex = 200038
-        Me.txtDecore.Visible = False
-        '
-        'txtITR
-        '
-        Me.txtITR.Location = New System.Drawing.Point(320, 290)
-        Me.txtITR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtITR.Name = "txtITR"
-        Me.txtITR.Size = New System.Drawing.Size(160, 20)
-        Me.txtITR.TabIndex = 200048
-        Me.txtITR.Visible = False
-        '
-        'txtVIP
-        '
-        Me.txtVIP.Location = New System.Drawing.Point(329, 259)
-        Me.txtVIP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtVIP.Name = "txtVIP"
-        Me.txtVIP.Size = New System.Drawing.Size(142, 20)
-        Me.txtVIP.TabIndex = 200036
-        Me.txtVIP.Visible = False
-        '
-        'txtParcelamentos
-        '
-        Me.txtParcelamentos.Location = New System.Drawing.Point(377, 234)
-        Me.txtParcelamentos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtParcelamentos.Name = "txtParcelamentos"
-        Me.txtParcelamentos.Size = New System.Drawing.Size(190, 20)
-        Me.txtParcelamentos.TabIndex = 200034
-        Me.txtParcelamentos.Visible = False
-        '
-        'chbVIP
-        '
-        Me.chbVIP.AutoSize = True
-        Me.chbVIP.Location = New System.Drawing.Point(280, 262)
-        Me.chbVIP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbVIP.Name = "chbVIP"
-        Me.chbVIP.Size = New System.Drawing.Size(46, 17)
-        Me.chbVIP.TabIndex = 200035
-        Me.chbVIP.Text = "VIP:"
-        Me.chbVIP.UseVisualStyleBackColor = True
-        '
-        'chbFuncPublico
-        '
-        Me.chbFuncPublico.AutoSize = True
-        Me.chbFuncPublico.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.chbFuncPublico.Location = New System.Drawing.Point(280, 119)
-        Me.chbFuncPublico.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbFuncPublico.Name = "chbFuncPublico"
-        Me.chbFuncPublico.Size = New System.Drawing.Size(100, 19)
-        Me.chbFuncPublico.TabIndex = 200023
-        Me.chbFuncPublico.Text = "Func. Público"
-        Me.chbFuncPublico.UseVisualStyleBackColor = True
-        '
-        'chbAposentado
-        '
-        Me.chbAposentado.AutoSize = True
-        Me.chbAposentado.Location = New System.Drawing.Point(280, 91)
-        Me.chbAposentado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbAposentado.Name = "chbAposentado"
-        Me.chbAposentado.Size = New System.Drawing.Size(105, 17)
-        Me.chbAposentado.TabIndex = 200021
-        Me.chbAposentado.Text = "Nº de Benefício "
-        Me.chbAposentado.UseVisualStyleBackColor = True
-        '
-        'chbDecore
-        '
-        Me.chbDecore.AutoSize = True
-        Me.chbDecore.Location = New System.Drawing.Point(280, 349)
-        Me.chbDecore.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbDecore.Name = "chbDecore"
-        Me.chbDecore.Size = New System.Drawing.Size(74, 17)
-        Me.chbDecore.TabIndex = 200037
-        Me.chbDecore.Text = "DECORE:"
-        Me.chbDecore.UseVisualStyleBackColor = True
-        '
-        'chbIRPF
-        '
-        Me.chbIRPF.AutoSize = True
-        Me.chbIRPF.Location = New System.Drawing.Point(280, 378)
-        Me.chbIRPF.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbIRPF.Name = "chbIRPF"
-        Me.chbIRPF.Size = New System.Drawing.Size(53, 17)
-        Me.chbIRPF.TabIndex = 200039
-        Me.chbIRPF.Text = "IRPF:"
-        Me.chbIRPF.UseVisualStyleBackColor = True
-        '
-        'chbParcelamentos
-        '
-        Me.chbParcelamentos.AutoSize = True
-        Me.chbParcelamentos.Location = New System.Drawing.Point(280, 237)
-        Me.chbParcelamentos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbParcelamentos.Name = "chbParcelamentos"
-        Me.chbParcelamentos.Size = New System.Drawing.Size(99, 17)
-        Me.chbParcelamentos.TabIndex = 200033
-        Me.chbParcelamentos.Text = "Parcelamentos:"
-        Me.chbParcelamentos.UseVisualStyleBackColor = True
-        '
-        'chbFalecido
-        '
-        Me.chbFalecido.AutoSize = True
-        Me.chbFalecido.Location = New System.Drawing.Point(280, 151)
-        Me.chbFalecido.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbFalecido.Name = "chbFalecido"
-        Me.chbFalecido.Size = New System.Drawing.Size(110, 17)
-        Me.chbFalecido.TabIndex = 200025
-        Me.chbFalecido.Text = "Falecido na Data:"
-        Me.chbFalecido.UseVisualStyleBackColor = True
-        '
-        'chbITR
-        '
-        Me.chbITR.AutoSize = True
-        Me.chbITR.Location = New System.Drawing.Point(280, 292)
-        Me.chbITR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbITR.Name = "chbITR"
-        Me.chbITR.Size = New System.Drawing.Size(47, 17)
-        Me.chbITR.TabIndex = 200041
-        Me.chbITR.Text = "ITR:"
-        Me.chbITR.UseVisualStyleBackColor = True
+        'GroupBox4
+        '
+        Me.GroupBox4.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Location = New System.Drawing.Point(4, 4)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(359, 297)
+        Me.GroupBox4.TabIndex = 0
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Dados da Empresa"
         '
         'frmClientes
         '
@@ -1174,6 +1187,7 @@ Partial Class frmClientes
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.TabEmpresa.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1273,4 +1287,5 @@ Partial Class frmClientes
     Friend WithEvents btSair As System.Windows.Forms.Button
     Friend WithEvents btPesquisaEmpresa As System.Windows.Forms.Button
     Friend WithEvents btLimpar As System.Windows.Forms.Button
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
 End Class

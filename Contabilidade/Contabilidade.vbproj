@@ -48,6 +48,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Imagens\Balance.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -181,13 +184,15 @@
   <ItemGroup>
     <Content Include="Imagens\Action-file-new-icon.png" />
     <Content Include="Imagens\Actions-edit-clear-icon.png" />
+    <Content Include="Imagens\agenda2.png" />
     <Content Include="Imagens\alterar.png" />
     <Content Include="Imagens\alterarDados.png" />
-    <Content Include="Imagens\Balance-icon.png" />
+    <Content Include="Imagens\Balance.ico" />
     <Content Include="Imagens\binoculars.png" />
     <Content Include="Imagens\Button-Add-icon.png" />
     <Content Include="Imagens\clear-icon %281%29.png" />
     <Content Include="Imagens\Edit-Document-icon.png" />
+    <Content Include="Imagens\Edit-file.ico" />
     <Content Include="Imagens\forms-icon.png" />
     <Content Include="Imagens\logo webfacil.png" />
     <Content Include="Imagens\lupa.png" />
