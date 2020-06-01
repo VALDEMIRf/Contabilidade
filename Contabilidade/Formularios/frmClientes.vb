@@ -209,9 +209,94 @@ Public Class frmClientes
 
     End Sub
 
+    Private Sub btSair_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btSair.Click
+        Me.Close()
+    End Sub
 
-   
+    'BOTÃO QUE ALTERA DADOS PESSOA FÍSICA
+    Private Sub btAlterarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterarDados.Click
+        If txtCPF.Text.Equals(String.Empty) Then
+            errErro.SetError(txtCPF, "Digite um CPF")
+            txtCPF.Focus()
+            Exit Sub
+        Else
+            errErro.SetError(txtCPF, "")
 
+        End If
+        If txtNome.Text.Equals(String.Empty) Then
+            errErro.SetError(txtNome, "Digite um nome")
+            Exit Sub
+        Else
+            errErro.SetError(txtNome, "")
+        End If
+
+        Try
+            cliente.cli_id = lblciID.Text
+            cliente.cli_CPF = txtCPF.Text
+            cliente.cli_Situacao = cboSituacao.Text
+            cliente.cli_RG = txtRG.Text
+            cliente.cli_Nome = txtNome.Text
+            cliente.cli_PIS = txtPIS.Text
+            cliente.cli_TitEleitoral = txtTitEleitoral.Text
+            cliente.cli_Dia = cmbDia.Text
+            cliente.cli_Mes = cmbMes.Text
+            cliente.cli_Ano = cmbAno.Text
+            cliente.cli_Logradouro = txtLogradouro.Text
+            cliente.cli_Numero = txtNumero.Text
+            cliente.cli_complemento = txtComplemento.Text
+            cliente.cli_Bairro = txtBairro.Text
+            cliente.cli_Cidade = txtCidade.Text
+            cliente.cli_UF = cboUF.Text
+            cliente.cli_CEP = txtCEP.Text
+            cliente.cli_FoneRes = txtFoneRes.Text
+            cliente.cli_FoneCel = txtFoneCel1.Text
+            cliente.cli_FoneCel2 = txtFoneCel2.Text
+            cliente.cli_Email = txtEmail.Text
+            cliente.cli_observacoes = txtObs.Text
+            cliente.cli_Autonomo = chbAutonomo.Checked
+            cliente.cli_PJ = chbPJ.Checked
+            cliente.cli_MEI = chbMEI.Checked
+            cliente.cli_Curriculo = chbCurriculo.Checked
+            cliente.cli_Aposentado = chbAposentado.Checked
+            cliente.cli_NumBeneficio = txtNumBeneficio.Text
+            cliente.cli_FuncPublico = chbFuncPublico.Checked
+            cliente.cli_NomeFunc = txtFuncPublico.Text
+            cliente.cli_Falecido = chbFalecido.Checked
+            cliente.cli_DataFalecido = txtFalecido.Text
+            cliente.cli_Inativo = chbInativo.Checked
+            cliente.cli_InativoObs = txtInativo.Text
+            cliente.cli_EmprDom = chbESocial.Checked
+            cliente.cli_ESocial = txtESocial.Text
+            cliente.cli_EsocialSenha = txtEsocialSenha.Text
+            cliente.cli_Parcelamento = chbParcelamentos.Checked
+            cliente.cli_NumParcelamento = txtParcelamentos.Text
+            cliente.cli_VIP = chbVIP.Checked
+            cliente.cli_VIPDescricao = txtVIP.Text
+            cliente.cli_ITR = chbITR.Checked
+            cliente.cli_NumITR = txtITR.Text
+            cliente.cli_Mensalista = chbMensalista.Checked
+            cliente.cli_NomeMensalista = txtMensalista.Text
+            cliente.cli_Decore = chbDecore.Checked
+            cliente.cli_DecoreDescricao = txtDecore.Text
+            cliente.cli_IRPF = chbIRPF.Checked
+            cliente.cli_NumIRPF = txtIRPF.Text
+            cliente.cli_SenWebPrefeitura = chbSenhaWeb.Checked
+            cliente.cli_SenhaWebPrefeitura = txtSenhaWeb.Text
+            cliente.cli_Redesim = chbRedesim.Checked
+            cliente.cli_SenhaRedesim = txtSenhaRedesim.Text
+            cliente.cli_CodRFB = chbCodRFB.Checked
+            cliente.cli_CodRFBNum = txtCodRFB.Text
+            cliente.cli_CodRFBValidade = txtValidadeRFB.Text
+
+            cliente.AlterarDados()
+            LimparCampos()
+
+        Catch ex As Exception
+            MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgBox(ex.Message.ToString)
+        End Try
+
+    End Sub
 
 
 
@@ -633,11 +718,4 @@ Public Class frmClientes
             txtSenhaPJValidade.Visible = False
         End If
     End Sub
-
-    Private Sub btSair_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btSair.Click
-        Me.Close()
-    End Sub
-
-    
-   
 End Class

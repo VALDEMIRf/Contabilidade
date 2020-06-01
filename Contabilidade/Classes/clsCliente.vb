@@ -744,5 +744,84 @@ Public Class clsCliente
         Return cldBancoDados.RetornaDataSet(strQuery.ToString)
     End Function
 
+    'METODO QUE ALTERA DADOS PESSOA FÍSICA
+    Public Sub AlterarDados()
+
+        Using con As OleDbConnection = GetConnection()
+            Try
+                con.Open()     'cli_id,cli_CPF,cli_Situacao,cli_RG,cli_Nome,cli_PIS,cli_TitEleitoral,cli_Dia,cli_Mes,cli_Ano,cli_Logradouro,cli_Numero,cli_complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_FoneCel2,cli_Email,cli_observacoes,cli_Autonomo,cli_PJ,cli_MEI,cli_Curriculo,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NivelFunc,cli_Falecido,cli_DataFalecido,cli_Inativo,cli_InativoObs,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_Parcelamento,cli_NumParcelamento,cli_VIP,cli_VIPDescricao,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_Redesim,cli_SenhaRedesim,cli_CodRFB,cli_CodRFBNum,cli_CodRFBValidade,cli_DtCadastro
+                Dim sql As String = "UPDATE tbClientes SET cli_CPF=?,cli_Situacao=?,cli_RG=?,cli_Nome=?,cli_PIS=?,cli_TitEleitoral=?,cli_Dia=?,cli_Mes=?,cli_Ano=?,cli_Logradouro=?,cli_Numero=?,cli_complemento=?,cli_Bairro=?,cli_Cidade=?,cli_UF=?,cli_CEP=?,cli_FoneRes=?,cli_FoneCel=?,cli_FoneCel2=?,cli_Email=?,cli_observacoes=?,cli_Autonomo=?,cli_PJ=?,cli_MEI=?,cli_Curriculo=?,cli_Aposentado=?,cli_NumBeneficio=?,cli_FuncPublico=?,cli_NivelFunc=?,cli_Falecido=?,cli_DataFalecido=?,cli_Inativo=?,cli_InativoObs=?,cli_EmprDom=?,cli_ESocial=?,cli_EsocialSenha=?,cli_Parcelamento=?,cli_NumParcelamento=?,cli_VIP=?,cli_VIPDescricao=?,cli_ITR=?,cli_NumITR=?,cli_Mensalista=?,cli_NomeMensalista=?,cli_Decore=?,cli_DecoreDescricao=?,cli_IRPF=?,cli_NumIRPF=?,cli_SenWebPrefeitura=?,cli_SenhaWebPrefeitura=?,cli_Redesim=?,cli_SenhaRedesim=?,cli_CodRFB=?,cli_CodRFBNum=?,cli_CodRFBValidade=? WHERE cli_Id=" & CInt(cli_id)
+                Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
+
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CPF", _cli_CPF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Situacao", _cli_Situacao))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_RG", _cli_RG))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Nome", _cli_Nome))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_PIS", _cli_PIS))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_TitEleitoral", _cli_TitEleitoral))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Dia", _cli_Dia))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Mes", _cli_Mes))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Ano", _cli_Ano))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Logradouro", _cli_Logradouro))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Numero", _cli_Numero))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_complemento", _cli_complemento))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Bairro", _cli_Bairro))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Cidade", _cli_Cidade))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_UF", _cli_UF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CEP", _cli_CEP))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_FoneRes", _cli_FoneRes))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_FoneCel", _cli_FoneCel))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_FoneCel2", _cli_FoneCel2))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Email", _cli_Email))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_observacoes", _cli_observacoes))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Autonomo", _cli_Autonomo))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_PJ", _cli_PJ))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_MEI", _cli_MEI))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Curriculo", _cli_Curriculo))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Aposentado", _cli_Aposentado))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_NumBeneficio", _cli_NumBeneficio))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_FuncPublico", _cli_FuncPublico))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_NomeFunc", _cli_NomeFunc))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Falecido", _cli_Falecido))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_DataFalecido", _cli_DataFalecido))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Inativo", _cli_Inativo))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_InativoObs", _cli_InativoObs))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_EmprDom", _cli_EmprDom))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_ESocial", _cli_ESocial))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_EsocialSenha", _cli_EsocialSenha))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Parcelamento", _cli_Parcelamento))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_NumParcelamento", _cli_NumParcelamento))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_VIP", _cli_VIP))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_VIPDescricao", _cli_VIPDescricao))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_ITR", _cli_ITR))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_NumITR", _cli_NumITR))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Mensalista", _cli_Mensalista))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Mensalista", _cli_NomeMensalista))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Decore", _cli_Decore))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_DecoreDescricao", _cli_DecoreDescricao))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_IRPF", _cli_IRPF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_NumIRPF", _cli_NumIRPF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenWebPrefeitura", _cli_SenWebPrefeitura))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaWebPrefeitura", _cli_SenhaWebPrefeitura))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Redesim", _cli_Redesim))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaRedesim", _cli_SenhaRedesim))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CodRFB", _cli_CodRFB))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CodRFBNum", _cli_CodRFBNum))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CodRFBValidade", _cli_CodRFBValidade))
+
+                cmd.ExecuteNonQuery()
+
+                MessageBox.Show("Operação de alteração realizada com sucesso!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+            Catch ex As Exception
+                MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MsgBox(ex.Message.ToString)
+            Finally
+                con.Close()
+            End Try
+        End Using
+    End Sub
+
 
 End Class
