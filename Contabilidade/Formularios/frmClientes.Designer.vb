@@ -314,7 +314,7 @@ Partial Class frmClientes
         Me.txtCodRFB.Location = New System.Drawing.Point(347, 485)
         Me.txtCodRFB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCodRFB.Name = "txtCodRFB"
-        Me.txtCodRFB.Size = New System.Drawing.Size(123, 20)
+        Me.txtCodRFB.Size = New System.Drawing.Size(110, 20)
         Me.txtCodRFB.TabIndex = 200046
         Me.txtCodRFB.Visible = False
         '
@@ -413,11 +413,11 @@ Partial Class frmClientes
         '
         'txtValidadeRFB
         '
-        Me.txtValidadeRFB.Location = New System.Drawing.Point(511, 487)
+        Me.txtValidadeRFB.Location = New System.Drawing.Point(489, 487)
         Me.txtValidadeRFB.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtValidadeRFB.Mask = "00/00/0000"
         Me.txtValidadeRFB.Name = "txtValidadeRFB"
-        Me.txtValidadeRFB.Size = New System.Drawing.Size(60, 20)
+        Me.txtValidadeRFB.Size = New System.Drawing.Size(88, 20)
         Me.txtValidadeRFB.TabIndex = 200047
         Me.txtValidadeRFB.ValidatingType = GetType(Date)
         Me.txtValidadeRFB.Visible = False
@@ -425,7 +425,7 @@ Partial Class frmClientes
         'lblValidoRFB
         '
         Me.lblValidoRFB.AutoSize = True
-        Me.lblValidoRFB.Location = New System.Drawing.Point(471, 490)
+        Me.lblValidoRFB.Location = New System.Drawing.Point(458, 490)
         Me.lblValidoRFB.Name = "lblValidoRFB"
         Me.lblValidoRFB.Size = New System.Drawing.Size(33, 13)
         Me.lblValidoRFB.TabIndex = 200054

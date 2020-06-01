@@ -1,16 +1,31 @@
-﻿'Adiciona as Namespaces necessárias nesta classe
-Imports System.Data.OleDb
-Imports System.Text
+﻿Public Class frmClienteConsulta
 
-Public Class clsCliente
-    Dim sql As String
-    Dim ds As New DataSet
-    Dim con As New Conexao
-    'Cria todos os métodos internos e propriedades externas com os mesmos atributos do banco de dados
+    Public Enum TipoConsulta
+        Cliente
+        '  Empresa
+    End Enum
+    Private Sub CarregaGrid()
+        Dim dsConsulta As New Data.DataSet
+        Select Case _ConsultaTipo
+            Case TipoConsulta.Cliente
+                Dim clnCliente As New clsCliente
+                dsConsulta = clnCliente.ListarCpf(txtCPFPesquisa.Text)
+
+        End Select
+        dgvGrid.DataSource = dsConsulta.Tables(0)
+    End Sub
+
+    Private _ConsultaTipo As TipoConsulta
+    Public Property ConsultaTipo() As TipoConsulta
+        Get
+            Return _ConsultaTipo
+        End Get
+        Set(ByVal value As TipoConsulta)
+            _ConsultaTipo = value
+        End Set
+    End Property
 
     Private _cli_id As Integer
-    Friend Shared nome As Object
-
     Public Property cli_id() As Integer
         Get
             Return _cli_id
@@ -641,108 +656,94 @@ Public Class clsCliente
         End Set
     End Property
 
-    Private _cli_DtCadastro As DateTime
 
-    Public Property cli_DtCadastro() As DateTime
-        Get
-            Return _cli_DtCadastro
-        End Get
-        Set(ByVal value As DateTime)
-            _cli_DtCadastro = value
-        End Set
-    End Property
 
-    Public Sub GravarDados()
-        Using con As OleDbConnection = GetConnection()
-            Try
-                con.Open()                          'cli_id,cli_CPF,cli_Situacao,cli_RG,cli_Nome,cli_PIS,cli_TitEleitoral,cli_Dia,cli_Mes,cli_Ano,cli_Logradouro,cli_Numero,cli_complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_FoneCel2,cli_Email,cli_observacoes,cli_Autonomo,cli_PJ,cli_MEI,cli_Curriculo,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NivelFunc,cli_Falecido,cli_DataFalecido,cli_Inativo,cli_InativoObs,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_Parcelamento,cli_NumParcelamento,cli_VIP,cli_VIPDescricao,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_Redesim,cli_SenhaRedesim,cli_CodRFB,cli_CodRFBNum,cli_CodRFBValidade,cli_DtCadastro
-                Dim sql As String = "INSERT INTO tbClientes(cli_CPF,cli_Situacao,cli_RG,cli_Nome,cli_PIS,cli_TitEleitoral,cli_Dia,cli_Mes,cli_Ano,cli_Logradouro,cli_Numero,cli_complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_FoneCel2,cli_Email,cli_observacoes,cli_Autonomo,cli_PJ,cli_MEI,cli_Curriculo,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NivelFunc,cli_Falecido,cli_DataFalecido,cli_Inativo,cli_InativoObs,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_Parcelamento,cli_NumParcelamento,cli_VIP,cli_VIPDescricao,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_Redesim,cli_SenhaRedesim,cli_CodRFB,cli_CodRFBNum,cli_CodRFBValidade,cli_DtCadastro) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-                Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
 
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CPF", _cli_CPF))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Situacao", _cli_Situacao))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_RG", _cli_RG))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Nome", _cli_Nome))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_PIS", _cli_PIS))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_TitEleitoral", _cli_TitEleitoral))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Dia", _cli_Dia))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Mes", _cli_Mes))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Ano", _cli_Ano))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Logradouro", _cli_Logradouro))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Numero", _cli_Numero))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_complemento", _cli_complemento))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Bairro", _cli_Bairro))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Cidade", _cli_Cidade))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_UF", _cli_UF))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CEP", _cli_CEP))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_FoneRes", _cli_FoneRes))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_FoneCel", _cli_FoneCel))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_FoneCel2", _cli_FoneCel2))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Email", _cli_Email))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_observacoes", _cli_observacoes))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Autonomo", _cli_Autonomo))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_PJ", _cli_PJ))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_MEI", _cli_MEI))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Curriculo", _cli_Curriculo))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Aposentado", _cli_Aposentado))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_NumBeneficio", _cli_NumBeneficio))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_FuncPublico", _cli_FuncPublico))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_NomeFunc", _cli_NomeFunc))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Falecido", _cli_Falecido))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_DataFalecido", _cli_DataFalecido))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Inativo", _cli_Inativo))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_InativoObs", _cli_InativoObs))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_EmprDom", _cli_EmprDom))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_ESocial", _cli_ESocial))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_EsocialSenha", _cli_EsocialSenha))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Parcelamento", _cli_Parcelamento))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_NumParcelamento", _cli_NumParcelamento))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_VIP", _cli_VIP))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_VIPDescricao", _cli_VIPDescricao))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_ITR", _cli_ITR))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_NumITR", _cli_NumITR))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Mensalista", _cli_Mensalista))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Mensalista", _cli_NomeMensalista))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Decore", _cli_Decore))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_DecoreDescricao", _cli_DecoreDescricao))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_IRPF", _cli_IRPF))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_NumIRPF", _cli_NumIRPF))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenWebPrefeitura", _cli_SenWebPrefeitura))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaWebPrefeitura", _cli_SenhaWebPrefeitura))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_Redesim", _cli_Redesim))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_SenhaRedesim", _cli_SenhaRedesim))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CodRFB", _cli_CodRFB))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CodRFBNum", _cli_CodRFBNum))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_CodRFBValidade", _cli_CodRFBValidade))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_DtCadastro", Now.Date))
-
-                cmd.ExecuteNonQuery()
-
-                MessageBox.Show("Operação realizada com sucesso!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            Catch ex As Exception
-                MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                MsgBox(ex.Message.ToString)
-            Finally
-                con.Close()
-            End Try
-        End Using
+    '  BOTÃO QUE CARREGA OS DADOS DA PESQUISA PESSOA FÍSICA
+    Private Sub btPesquisaCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisaCliente.Click
+        CarregaGrid()
     End Sub
 
-    'METODO QUE LISTA PESSOA FÍSICA
-    Public Function ListarCpf(ByVal strDescricao As String) As DataSet
-        'Cria um StringBuilder para concatenar a Query Sql
-        Dim strQuery As New StringBuilder              'cli_id,cli_CPF,cli_Situacao,cli_RG,cli_Nome,cli_PIS,cli_TitEleitoral,cli_Dia,cli_Mes,cli_Ano,cli_Logradouro,cli_Numero,cli_complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_FoneCel2,cli_Email,cli_observacoes,cli_Autonomo,cli_PJ,cli_MEI,cli_Curriculo,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NivelFunc,cli_Falecido,cli_DataFalecido,cli_Inativo,cli_InativoObs,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_Parcelamento,cli_NumParcelamento,cli_VIP,cli_VIPDescricao,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_Redesim,cli_SenhaRedesim,cli_CodRFB,cli_CodRFBNum,cli_CodRFBValidade,cli_DtCadastro
-        strQuery.Append(" SELECT cli_id as Codigo,cli_CPF as CPF,cli_Situacao as Situacao,cli_RG as RG,cli_Nome as Nome,cli_PIS,cli_TitEleitoral,cli_Dia,cli_Mes,cli_Ano,cli_Logradouro,cli_Numero,cli_complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_FoneCel2,cli_Email,cli_observacoes,cli_Autonomo,cli_PJ,cli_MEI,cli_Curriculo,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NivelFunc,cli_Falecido,cli_DataFalecido,cli_Inativo,cli_InativoObs,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_Parcelamento,cli_NumParcelamento,cli_VIP,cli_VIPDescricao,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_Redesim,cli_SenhaRedesim,cli_CodRFB,cli_CodRFBNum,cli_CodRFBValidade ")
-        strQuery.Append(" FROM tbClientes ")
-        If Not strDescricao.Equals(String.Empty) Then
-            strQuery.Append(" WHERE cli_CPF like '%" & strDescricao & "%'")
-        End If
+    'BOTÃO QUE ENVIA DADOS PARA O FORMULARIO PESSOA FÍSICA
+    Private Sub btEnviarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btEnviarDados.Click
+        dadosEnviados()
+    End Sub
 
-        'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader
-        Dim cldBancoDados As New cldBancoDados()
-        Return cldBancoDados.RetornaDataSet(strQuery.ToString)
-    End Function
+    Private Sub dgvGrid_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvGrid.DoubleClick
+        dadosEnviados()
+    End Sub
 
 
+    'METODO DE DUPLO CLICK QUE ENVIA DADOS PARA O FORMULARIO PESSOA FÍSICA
+    Private Sub dadosEnviados()
+        Select Case _ConsultaTipo
+            Case TipoConsulta.Cliente
+
+                If dgvGrid.RowCount <> 0 Then
+                    _cli_id = dgvGrid.CurrentRow.Cells(0).Value
+                    _cli_CPF = dgvGrid.CurrentRow.Cells(1).Value
+                    _cli_Situacao = dgvGrid.CurrentRow.Cells(2).Value.ToString
+                    _cli_RG = dgvGrid.CurrentRow.Cells(3).Value
+                    _cli_Nome = dgvGrid.CurrentRow.Cells(4).Value
+                    _cli_PIS = dgvGrid.CurrentRow.Cells(5).Value
+                    _cli_TitEleitoral = dgvGrid.CurrentRow.Cells(6).Value
+                    _cli_Dia = dgvGrid.CurrentRow.Cells(7).Value.ToString
+                    _cli_Mes = dgvGrid.CurrentRow.Cells(8).Value.ToString
+                    _cli_Ano = dgvGrid.CurrentRow.Cells(9).Value.ToString
+                    _cli_Logradouro = dgvGrid.CurrentRow.Cells(10).Value
+                    _cli_Numero = dgvGrid.CurrentRow.Cells(11).Value
+                    _cli_complemento = dgvGrid.CurrentRow.Cells(12).Value
+                    _cli_Bairro = dgvGrid.CurrentRow.Cells(13).Value
+                    _cli_Cidade = dgvGrid.CurrentRow.Cells(14).Value
+                    _cli_UF = dgvGrid.CurrentRow.Cells(15).Value
+                    _cli_CEP = dgvGrid.CurrentRow.Cells(16).Value
+                    _cli_FoneRes = dgvGrid.CurrentRow.Cells(17).Value
+                    _cli_FoneCel = dgvGrid.CurrentRow.Cells(18).Value
+                    _cli_FoneCel2 = dgvGrid.CurrentRow.Cells(19).Value
+                    _cli_Email = dgvGrid.CurrentRow.Cells(20).Value
+                    _cli_observacoes = dgvGrid.CurrentRow.Cells(21).Value
+                    _cli_Autonomo = dgvGrid.CurrentRow.Cells(22).Value
+                    _cli_PJ = dgvGrid.CurrentRow.Cells(23).Value
+                    _cli_MEI = dgvGrid.CurrentRow.Cells(24).Value
+                    _cli_Curriculo = dgvGrid.CurrentRow.Cells(25).Value
+                    _cli_Aposentado = dgvGrid.CurrentRow.Cells(26).Value
+                    _cli_NumBeneficio = dgvGrid.CurrentRow.Cells(27).Value
+                    _cli_FuncPublico = dgvGrid.CurrentRow.Cells(28).Value
+                    _cli_NomeFunc = dgvGrid.CurrentRow.Cells(29).Value
+                    _cli_Falecido = dgvGrid.CurrentRow.Cells(30).Value
+                    _cli_DataFalecido = dgvGrid.CurrentRow.Cells(31).Value
+                    _cli_Inativo = dgvGrid.CurrentRow.Cells(32).Value
+                    _cli_InativoObs = dgvGrid.CurrentRow.Cells(33).Value
+                    _cli_EmprDom = dgvGrid.CurrentRow.Cells(34).Value
+                    _cli_ESocial = dgvGrid.CurrentRow.Cells(35).Value
+                    _cli_EsocialSenha = dgvGrid.CurrentRow.Cells(36).Value
+                    _cli_Parcelamento = dgvGrid.CurrentRow.Cells(37).Value
+                    _cli_NumParcelamento = dgvGrid.CurrentRow.Cells(38).Value
+                    _cli_VIP = dgvGrid.CurrentRow.Cells(39).Value
+                    _cli_VIPDescricao = dgvGrid.CurrentRow.Cells(40).Value
+                    _cli_ITR = dgvGrid.CurrentRow.Cells(41).Value
+                    _cli_NumITR = dgvGrid.CurrentRow.Cells(42).Value
+                    _cli_Mensalista = dgvGrid.CurrentRow.Cells(43).Value
+                    _cli_NomeMensalista = dgvGrid.CurrentRow.Cells(44).Value
+                    _cli_Decore = dgvGrid.CurrentRow.Cells(45).Value
+                    _cli_DecoreDescricao = dgvGrid.CurrentRow.Cells(46).Value
+                    _cli_IRPF = dgvGrid.CurrentRow.Cells(47).Value
+                    _cli_NumIRPF = dgvGrid.CurrentRow.Cells(48).Value
+                    _cli_SenWebPrefeitura = dgvGrid.CurrentRow.Cells(49).Value
+                    _cli_SenhaWebPrefeitura = dgvGrid.CurrentRow.Cells(50).Value
+                    _cli_Redesim = dgvGrid.CurrentRow.Cells(51).Value
+                    _cli_SenhaRedesim = dgvGrid.CurrentRow.Cells(52).Value
+                    _cli_CodRFB = dgvGrid.CurrentRow.Cells(53).Value
+                    _cli_CodRFBNum = dgvGrid.CurrentRow.Cells(54).Value
+                    _cli_CodRFBValidade = dgvGrid.CurrentRow.Cells(55).Value
+
+                    Me.Close()
+                End If
+
+        End Select
+    End Sub
+
+    Private Sub btFechar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btFechar.Click
+        Me.Close()
+    End Sub
 End Class

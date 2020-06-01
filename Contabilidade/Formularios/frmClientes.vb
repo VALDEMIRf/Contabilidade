@@ -48,6 +48,7 @@ Public Class frmClientes
     
     'empr_ID,empr_razaosocial,empr_nomefantasia,empr_cnpj,empr_Situacaocnpj,empr_InscrEstadual,empr_NIRE,empr_CCM,empr_Porte,empr_atividade,empr_dataInicio,cli_id,cat_Id,empr_TelCel1,empr_TelCel2,empr_endereco,empr_numero,empr_complemento,empr_bairro,empr_cidade,empr_UF,empr_CEP,empr_obs,empr_Simples,empr_SimplesNacional,empr_Simei,empr_CodSimei,empr_sefaz,empr_SefazUsu,empr_SefazSen,empr_CodReceitaPJ,empr_SenhaCodReceitaPJ,empr_ValReceitaPJ
 
+    'BOTÃO DE CADASTRO DE PESSOA FÍSICA
     Private Sub btSalvar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btSalvar.Click
 
         If txtCPF.Text.Equals(String.Empty) Then
@@ -137,7 +138,79 @@ Public Class frmClientes
 
     End Sub
 
+    'BOTÃO QUE PESQUISA PESSOA FÍSICA
+    Private Sub btPesquisarCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCliente.Click
+        Dim frmClienteConsulta As New frmClienteConsulta
+        frmClienteConsulta.Text = "Consulta de Cliente"
+        frmClienteConsulta.ConsultaTipo = frmClienteConsulta.TipoConsulta.Cliente
+        frmClienteConsulta.ShowDialog()
 
+        CodigoCliente = frmClienteConsulta.cli_id
+        lblciID.Text = frmClienteConsulta.cli_id
+        txtEmprCPF.Text = frmClienteConsulta.cli_CPF
+        txtCPFRedesim.Text = frmClienteConsulta.cli_CPF
+        lblclienteID.Text = frmClienteConsulta.cli_id
+        txtCPF.Text = frmClienteConsulta.cli_CPF
+        cboSituacao.Text = frmClienteConsulta.cli_Situacao
+        txtRG.Text = frmClienteConsulta.cli_RG
+        txtNome.Text = frmClienteConsulta.cli_Nome
+        txtPIS.Text = frmClienteConsulta.cli_PIS
+        txtTitEleitoral.Text = frmClienteConsulta.cli_TitEleitoral
+        cmbDia.Text = frmClienteConsulta.cli_Dia
+        cmbMes.Text = frmClienteConsulta.cli_Mes
+        cmbAno.Text = frmClienteConsulta.cli_Ano
+        txtLogradouro.Text = frmClienteConsulta.cli_Logradouro
+        txtNumero.Text = frmClienteConsulta.cli_Numero
+        txtComplemento.Text = frmClienteConsulta.cli_complemento
+        txtBairro.Text = frmClienteConsulta.cli_Bairro
+        txtCidade.Text = frmClienteConsulta.cli_Cidade
+        cboUF.Text = frmClienteConsulta.cli_UF
+        txtCEP.Text = frmClienteConsulta.cli_CEP
+        txtFoneRes.Text = frmClienteConsulta.cli_FoneRes
+        txtFoneCel1.Text = frmClienteConsulta.cli_FoneCel
+        txtFoneCel2.Text = frmClienteConsulta.cli_FoneCel2
+        txtEmail.Text = frmClienteConsulta.cli_Email
+        txtObs.Text = frmClienteConsulta.cli_observacoes
+        chbAutonomo.Checked = frmClienteConsulta.cli_Autonomo
+        chbPJ.Checked = frmClienteConsulta.cli_PJ
+        chbMEI.Checked = frmClienteConsulta.cli_MEI
+        chbCurriculo.Checked = frmClienteConsulta.cli_Curriculo
+        chbAposentado.Checked = frmClienteConsulta.cli_Aposentado
+        txtNumBeneficio.Text = frmClienteConsulta.cli_NumBeneficio
+        chbFuncPublico.Checked = frmClienteConsulta.cli_FuncPublico
+        txtFuncPublico.Text = frmClienteConsulta.cli_NomeFunc
+        chbFalecido.Checked = frmClienteConsulta.cli_Falecido
+        txtFalecido.Text = frmClienteConsulta.cli_DataFalecido
+        chbInativo.Checked = frmClienteConsulta.cli_Inativo
+        txtInativo.Text = frmClienteConsulta.cli_InativoObs
+        chbESocial.Checked = frmClienteConsulta.cli_EmprDom
+        txtESocial.Text = frmClienteConsulta.cli_ESocial
+        txtEsocialSenha.Text = frmClienteConsulta.cli_EsocialSenha
+        chbParcelamentos.Checked = frmClienteConsulta.cli_Parcelamento
+        txtParcelamentos.Text = frmClienteConsulta.cli_NumParcelamento
+        chbVIP.Checked = frmClienteConsulta.cli_VIP
+        txtVIP.Text = frmClienteConsulta.cli_VIPDescricao
+        chbITR.Checked = frmClienteConsulta.cli_ITR
+        txtITR.Text = frmClienteConsulta.cli_NumITR
+        chbMensalista.Checked = frmClienteConsulta.cli_Mensalista
+        txtMensalista.Text = frmClienteConsulta.cli_NomeMensalista
+        chbDecore.Checked = frmClienteConsulta.cli_Decore
+        txtDecore.Text = frmClienteConsulta.cli_DecoreDescricao
+        chbIRPF.Checked = frmClienteConsulta.cli_IRPF
+        txtIRPF.Text = frmClienteConsulta.cli_NumIRPF
+        chbSenhaWeb.Checked = frmClienteConsulta.cli_SenWebPrefeitura
+        txtSenhaWeb.Text = frmClienteConsulta.cli_SenhaWebPrefeitura
+        chbRedesim.Checked = frmClienteConsulta.cli_Redesim
+        txtSenhaRedesim.Text = frmClienteConsulta.cli_SenhaRedesim
+        chbCodRFB.Checked = frmClienteConsulta.cli_CodRFB
+        txtCodRFB.Text = frmClienteConsulta.cli_CodRFBNum
+        txtValidadeRFB.Text = frmClienteConsulta.cli_CodRFBValidade
+
+
+    End Sub
+
+
+   
 
 
 
@@ -560,4 +633,11 @@ Public Class frmClientes
             txtSenhaPJValidade.Visible = False
         End If
     End Sub
+
+    Private Sub btSair_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btSair.Click
+        Me.Close()
+    End Sub
+
+    
+   
 End Class

@@ -81,6 +81,12 @@
     <Compile Include="Classes\clsEmpresa.vb" />
     <Compile Include="Classes\Conexao.vb" />
     <Compile Include="cldBancoDados.vb" />
+    <Compile Include="Formularios\frmClienteConsulta.Designer.vb">
+      <DependentUpon>frmClienteConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmClienteConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmClientes.Designer.vb">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </Compile>
@@ -136,6 +142,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Formularios\frmClienteConsulta.resx">
+      <DependentUpon>frmClienteConsulta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +197,7 @@
     <Content Include="Imagens\agenda2.png" />
     <Content Include="Imagens\alterar.png" />
     <Content Include="Imagens\alterarDados.png" />
+    <Content Include="Imagens\Arrow-Up-icon.png" />
     <Content Include="Imagens\Balance.ico" />
     <Content Include="Imagens\binoculars.png" />
     <Content Include="Imagens\Button-Add-icon.png" />
@@ -202,6 +212,7 @@
     <Content Include="Imagens\sair.png" />
     <Content Include="Imagens\sair4.png" />
     <Content Include="Imagens\salvar.png" />
+    <Content Include="Imagens\Teachers.ico" />
     <Content Include="Imagens\usuarios.png" />
     <Content Include="WEBFACIL_DB.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
