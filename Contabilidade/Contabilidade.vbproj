@@ -87,6 +87,7 @@
     <Compile Include="Formularios\frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="modValidaTextBox.vb" />
     <Compile Include="TESTES\frm Memorando.Designer.vb">
       <DependentUpon>frm Memorando.vb</DependentUpon>
     </Compile>

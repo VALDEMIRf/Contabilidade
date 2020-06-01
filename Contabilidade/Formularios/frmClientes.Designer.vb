@@ -117,6 +117,20 @@ Partial Class frmClientes
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TabEmpresa = New System.Windows.Forms.TabPage()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.txtEmprSimei = New System.Windows.Forms.TextBox()
+        Me.chbSIMEI = New System.Windows.Forms.CheckBox()
+        Me.txtSenhaPJValidade = New System.Windows.Forms.MaskedTextBox()
+        Me.txtSenhaWebPJ = New System.Windows.Forms.TextBox()
+        Me.chbSenhaWebPJ = New System.Windows.Forms.CheckBox()
+        Me.txtSefazSen = New System.Windows.Forms.TextBox()
+        Me.txtSefazUsu = New System.Windows.Forms.TextBox()
+        Me.chbSefaz = New System.Windows.Forms.CheckBox()
+        Me.txtSimplesNacional = New System.Windows.Forms.TextBox()
+        Me.chbSimples = New System.Windows.Forms.CheckBox()
         Me.btAlteraEmpresa = New System.Windows.Forms.Button()
         Me.btSalvarEmpresa = New System.Windows.Forms.Button()
         Me.txtEmprObs = New System.Windows.Forms.TextBox()
@@ -174,20 +188,6 @@ Partial Class frmClientes
         Me.btLimpar = New System.Windows.Forms.Button()
         Me.lblciID = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.txtEmprSimei = New System.Windows.Forms.TextBox()
-        Me.chbSIMEI = New System.Windows.Forms.CheckBox()
-        Me.txtSenhaPJValidade = New System.Windows.Forms.MaskedTextBox()
-        Me.txtSenhaWebPJ = New System.Windows.Forms.TextBox()
-        Me.chbSenhaWebPJ = New System.Windows.Forms.CheckBox()
-        Me.txtSefazSen = New System.Windows.Forms.TextBox()
-        Me.txtSefazUsu = New System.Windows.Forms.TextBox()
-        Me.chbSefaz = New System.Windows.Forms.CheckBox()
-        Me.txtSimplesNacional = New System.Windows.Forms.TextBox()
-        Me.chbSimples = New System.Windows.Forms.CheckBox()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -1203,6 +1203,143 @@ Partial Class frmClientes
         Me.TabEmpresa.TabIndex = 1
         Me.TabEmpresa.Text = "Empresa"
         '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Location = New System.Drawing.Point(367, 288)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(51, 13)
+        Me.Label45.TabIndex = 200039
+        Me.Label45.Text = "Validade:"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Location = New System.Drawing.Point(367, 255)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(41, 13)
+        Me.Label44.TabIndex = 200038
+        Me.Label44.Text = "Senha:"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(367, 197)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(41, 13)
+        Me.Label42.TabIndex = 200037
+        Me.Label42.Text = "Senha:"
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(367, 169)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(46, 13)
+        Me.Label41.TabIndex = 200019
+        Me.Label41.Text = "Usuario:"
+        '
+        'txtEmprSimei
+        '
+        Me.txtEmprSimei.Location = New System.Drawing.Point(428, 98)
+        Me.txtEmprSimei.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtEmprSimei.Name = "txtEmprSimei"
+        Me.txtEmprSimei.Size = New System.Drawing.Size(136, 20)
+        Me.txtEmprSimei.TabIndex = 200030
+        Me.txtEmprSimei.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtEmprSimei.Visible = False
+        '
+        'chbSIMEI
+        '
+        Me.chbSIMEI.AutoSize = True
+        Me.chbSIMEI.Location = New System.Drawing.Point(367, 100)
+        Me.chbSIMEI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbSIMEI.Name = "chbSIMEI"
+        Me.chbSIMEI.Size = New System.Drawing.Size(55, 17)
+        Me.chbSIMEI.TabIndex = 200029
+        Me.chbSIMEI.Text = "SIMEI"
+        Me.chbSIMEI.UseVisualStyleBackColor = True
+        '
+        'txtSenhaPJValidade
+        '
+        Me.txtSenhaPJValidade.Location = New System.Drawing.Point(420, 284)
+        Me.txtSenhaPJValidade.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSenhaPJValidade.Mask = "00/00/0000"
+        Me.txtSenhaPJValidade.Name = "txtSenhaPJValidade"
+        Me.txtSenhaPJValidade.Size = New System.Drawing.Size(74, 20)
+        Me.txtSenhaPJValidade.TabIndex = 200036
+        Me.txtSenhaPJValidade.ValidatingType = GetType(Date)
+        Me.txtSenhaPJValidade.Visible = False
+        '
+        'txtSenhaWebPJ
+        '
+        Me.txtSenhaWebPJ.Location = New System.Drawing.Point(414, 252)
+        Me.txtSenhaWebPJ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSenhaWebPJ.Name = "txtSenhaWebPJ"
+        Me.txtSenhaWebPJ.Size = New System.Drawing.Size(131, 20)
+        Me.txtSenhaWebPJ.TabIndex = 200035
+        Me.txtSenhaWebPJ.Visible = False
+        '
+        'chbSenhaWebPJ
+        '
+        Me.chbSenhaWebPJ.AutoSize = True
+        Me.chbSenhaWebPJ.Location = New System.Drawing.Point(367, 226)
+        Me.chbSenhaWebPJ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbSenhaWebPJ.Name = "chbSenhaWebPJ"
+        Me.chbSenhaWebPJ.Size = New System.Drawing.Size(98, 17)
+        Me.chbSenhaWebPJ.TabIndex = 200034
+        Me.chbSenhaWebPJ.Text = "Senha Web PJ"
+        Me.chbSenhaWebPJ.UseVisualStyleBackColor = True
+        '
+        'txtSefazSen
+        '
+        Me.txtSefazSen.Location = New System.Drawing.Point(418, 194)
+        Me.txtSefazSen.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSefazSen.Name = "txtSefazSen"
+        Me.txtSefazSen.Size = New System.Drawing.Size(128, 20)
+        Me.txtSefazSen.TabIndex = 200033
+        Me.txtSefazSen.Visible = False
+        '
+        'txtSefazUsu
+        '
+        Me.txtSefazUsu.Location = New System.Drawing.Point(418, 166)
+        Me.txtSefazUsu.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSefazUsu.Name = "txtSefazUsu"
+        Me.txtSefazUsu.Size = New System.Drawing.Size(128, 20)
+        Me.txtSefazUsu.TabIndex = 200032
+        Me.txtSefazUsu.Visible = False
+        '
+        'chbSefaz
+        '
+        Me.chbSefaz.AutoSize = True
+        Me.chbSefaz.Location = New System.Drawing.Point(367, 136)
+        Me.chbSefaz.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbSefaz.Name = "chbSefaz"
+        Me.chbSefaz.Size = New System.Drawing.Size(94, 17)
+        Me.chbSefaz.TabIndex = 200031
+        Me.chbSefaz.Text = "Acesso Sefaz:"
+        Me.chbSefaz.UseVisualStyleBackColor = True
+        '
+        'txtSimplesNacional
+        '
+        Me.txtSimplesNacional.Location = New System.Drawing.Point(475, 67)
+        Me.txtSimplesNacional.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtSimplesNacional.Name = "txtSimplesNacional"
+        Me.txtSimplesNacional.Size = New System.Drawing.Size(99, 20)
+        Me.txtSimplesNacional.TabIndex = 200028
+        Me.txtSimplesNacional.Visible = False
+        '
+        'chbSimples
+        '
+        Me.chbSimples.AutoSize = True
+        Me.chbSimples.Location = New System.Drawing.Point(367, 69)
+        Me.chbSimples.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.chbSimples.Name = "chbSimples"
+        Me.chbSimples.Size = New System.Drawing.Size(110, 17)
+        Me.chbSimples.TabIndex = 200027
+        Me.chbSimples.Text = "Simples Nacional:"
+        Me.chbSimples.UseVisualStyleBackColor = True
+        '
         'btAlteraEmpresa
         '
         Me.btAlteraEmpresa.Cursor = System.Windows.Forms.Cursors.Hand
@@ -1770,143 +1907,6 @@ Partial Class frmClientes
         'errErro
         '
         Me.errErro.ContainerControl = Me
-        '
-        'txtEmprSimei
-        '
-        Me.txtEmprSimei.Location = New System.Drawing.Point(428, 98)
-        Me.txtEmprSimei.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtEmprSimei.Name = "txtEmprSimei"
-        Me.txtEmprSimei.Size = New System.Drawing.Size(136, 20)
-        Me.txtEmprSimei.TabIndex = 200030
-        Me.txtEmprSimei.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtEmprSimei.Visible = False
-        '
-        'chbSIMEI
-        '
-        Me.chbSIMEI.AutoSize = True
-        Me.chbSIMEI.Location = New System.Drawing.Point(367, 100)
-        Me.chbSIMEI.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbSIMEI.Name = "chbSIMEI"
-        Me.chbSIMEI.Size = New System.Drawing.Size(55, 17)
-        Me.chbSIMEI.TabIndex = 200029
-        Me.chbSIMEI.Text = "SIMEI"
-        Me.chbSIMEI.UseVisualStyleBackColor = True
-        '
-        'txtSenhaPJValidade
-        '
-        Me.txtSenhaPJValidade.Location = New System.Drawing.Point(420, 284)
-        Me.txtSenhaPJValidade.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtSenhaPJValidade.Mask = "00/00/0000"
-        Me.txtSenhaPJValidade.Name = "txtSenhaPJValidade"
-        Me.txtSenhaPJValidade.Size = New System.Drawing.Size(74, 20)
-        Me.txtSenhaPJValidade.TabIndex = 200036
-        Me.txtSenhaPJValidade.ValidatingType = GetType(Date)
-        Me.txtSenhaPJValidade.Visible = False
-        '
-        'txtSenhaWebPJ
-        '
-        Me.txtSenhaWebPJ.Location = New System.Drawing.Point(414, 252)
-        Me.txtSenhaWebPJ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtSenhaWebPJ.Name = "txtSenhaWebPJ"
-        Me.txtSenhaWebPJ.Size = New System.Drawing.Size(131, 20)
-        Me.txtSenhaWebPJ.TabIndex = 200035
-        Me.txtSenhaWebPJ.Visible = False
-        '
-        'chbSenhaWebPJ
-        '
-        Me.chbSenhaWebPJ.AutoSize = True
-        Me.chbSenhaWebPJ.Location = New System.Drawing.Point(367, 226)
-        Me.chbSenhaWebPJ.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbSenhaWebPJ.Name = "chbSenhaWebPJ"
-        Me.chbSenhaWebPJ.Size = New System.Drawing.Size(98, 17)
-        Me.chbSenhaWebPJ.TabIndex = 200034
-        Me.chbSenhaWebPJ.Text = "Senha Web PJ"
-        Me.chbSenhaWebPJ.UseVisualStyleBackColor = True
-        '
-        'txtSefazSen
-        '
-        Me.txtSefazSen.Location = New System.Drawing.Point(418, 194)
-        Me.txtSefazSen.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtSefazSen.Name = "txtSefazSen"
-        Me.txtSefazSen.Size = New System.Drawing.Size(128, 20)
-        Me.txtSefazSen.TabIndex = 200033
-        Me.txtSefazSen.Visible = False
-        '
-        'txtSefazUsu
-        '
-        Me.txtSefazUsu.Location = New System.Drawing.Point(418, 166)
-        Me.txtSefazUsu.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtSefazUsu.Name = "txtSefazUsu"
-        Me.txtSefazUsu.Size = New System.Drawing.Size(128, 20)
-        Me.txtSefazUsu.TabIndex = 200032
-        Me.txtSefazUsu.Visible = False
-        '
-        'chbSefaz
-        '
-        Me.chbSefaz.AutoSize = True
-        Me.chbSefaz.Location = New System.Drawing.Point(367, 136)
-        Me.chbSefaz.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbSefaz.Name = "chbSefaz"
-        Me.chbSefaz.Size = New System.Drawing.Size(94, 17)
-        Me.chbSefaz.TabIndex = 200031
-        Me.chbSefaz.Text = "Acesso Sefaz:"
-        Me.chbSefaz.UseVisualStyleBackColor = True
-        '
-        'txtSimplesNacional
-        '
-        Me.txtSimplesNacional.Location = New System.Drawing.Point(475, 67)
-        Me.txtSimplesNacional.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txtSimplesNacional.Name = "txtSimplesNacional"
-        Me.txtSimplesNacional.Size = New System.Drawing.Size(99, 20)
-        Me.txtSimplesNacional.TabIndex = 200028
-        Me.txtSimplesNacional.Visible = False
-        '
-        'chbSimples
-        '
-        Me.chbSimples.AutoSize = True
-        Me.chbSimples.Location = New System.Drawing.Point(367, 69)
-        Me.chbSimples.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.chbSimples.Name = "chbSimples"
-        Me.chbSimples.Size = New System.Drawing.Size(110, 17)
-        Me.chbSimples.TabIndex = 200027
-        Me.chbSimples.Text = "Simples Nacional:"
-        Me.chbSimples.UseVisualStyleBackColor = True
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(367, 169)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(46, 13)
-        Me.Label41.TabIndex = 200019
-        Me.Label41.Text = "Usuario:"
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(367, 197)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(41, 13)
-        Me.Label42.TabIndex = 200037
-        Me.Label42.Text = "Senha:"
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(367, 255)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(41, 13)
-        Me.Label44.TabIndex = 200038
-        Me.Label44.Text = "Senha:"
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(367, 288)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(51, 13)
-        Me.Label45.TabIndex = 200039
-        Me.Label45.Text = "Validade:"
         '
         'frmClientes
         '
