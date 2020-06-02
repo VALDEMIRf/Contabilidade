@@ -1346,9 +1346,9 @@ Partial Class frmClientes
         Me.btAlteraEmpresa.FlatAppearance.BorderSize = 0
         Me.btAlteraEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAlteraEmpresa.Image = CType(resources.GetObject("btAlteraEmpresa.Image"), System.Drawing.Image)
-        Me.btAlteraEmpresa.Location = New System.Drawing.Point(369, 14)
+        Me.btAlteraEmpresa.Location = New System.Drawing.Point(377, 8)
         Me.btAlteraEmpresa.Name = "btAlteraEmpresa"
-        Me.btAlteraEmpresa.Size = New System.Drawing.Size(81, 48)
+        Me.btAlteraEmpresa.Size = New System.Drawing.Size(88, 52)
         Me.btAlteraEmpresa.TabIndex = 200026
         Me.btAlteraEmpresa.Text = "Alterar Dados"
         Me.btAlteraEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1360,7 +1360,7 @@ Partial Class frmClientes
         Me.btSalvarEmpresa.FlatAppearance.BorderSize = 0
         Me.btSalvarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvarEmpresa.Image = CType(resources.GetObject("btSalvarEmpresa.Image"), System.Drawing.Image)
-        Me.btSalvarEmpresa.Location = New System.Drawing.Point(476, 14)
+        Me.btSalvarEmpresa.Location = New System.Drawing.Point(476, 13)
         Me.btSalvarEmpresa.Name = "btSalvarEmpresa"
         Me.btSalvarEmpresa.Size = New System.Drawing.Size(88, 41)
         Me.btSalvarEmpresa.TabIndex = 200025
