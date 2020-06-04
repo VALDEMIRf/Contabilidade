@@ -813,7 +813,6 @@ Public Class clsCliente
 
                 MessageBox.Show("Operação de alteração realizada com sucesso!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-
             Catch ex As Exception
                 MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 MsgBox(ex.Message.ToString)
@@ -823,5 +822,26 @@ Public Class clsCliente
         End Using
     End Sub
 
+    'LISTA DADOS DO CLIENTE E EMPRESA
+    Public Function ListaCliente(ByVal strDescricao As String) As DataSet
+        'Cria um StringBuilder para concatenar a Query Sql
+
+        '
+        '  c.cli_id, c.cli_CPF, c.cli_Situacao, c.cli_RG, c.cli_Nome, c.cli_PIS, c.cli_TitEleitoral, c.cli_Dia, c.cli_Mes, c.cli_Ano, c.cli_Logradouro, c.cli_Numero, c.cli_complemento, c.cli_Bairro, c.cli_Cidade, c.cli_UF, c.cli_CEP, c.cli_FoneRes, c.cli_FoneCel, c.cli_FoneCel2, c.cli_Email, c.cli_observacoes, c.cli_Autonomo, c.cli_PJ, c.cli_MEI, c.cli_Curriculo, c.cli_Aposentado, c.cli_NumBeneficio, c.cli_FuncPublico, c.cli_NivelFunc, c.cli_Falecido, c.cli_DataFalecido, c.cli_Inativo, c.cli_InativoObs, c.cli_EmprDom, c.cli_ESocial, c.cli_EsocialSenha, c.cli_Parcelamento, c.cli_NumParcelamento, c.cli_VIP, c.cli_VIPDescricao, c.cli_ITR, c.cli_NumITR, c.cli_Mensalista, c.cli_NomeMensalista, c.cli_Decore, c.cli_DecoreDescricao, c.cli_IRPF, c.cli_NumIRPF, c.cli_SenWebPrefeitura, c.cli_SenhaWebPrefeitura, c.cli_Redesim, c.cli_SenhaRedesim, c.cli_CodRFB, c.cli_CodRFBNum, c.cli_CodRFBValidade, e.empr_ID, e.empr_razaosocial, e.empr_nomefantasia, e.empr_cnpj, e.empr_Situacaocnpj, e.empr_InscrEstadual, e.empr_NIRE, e.empr_CCM, e.empr_Porte, e.empr_atividade, e.empr_dataInicio, e.cli_id, e.cat_Id, e.empr_TelCel1, e.empr_TelCel2, e.empr_endereco, e.empr_numero, e.empr_complemento, e.empr_bairro, e.empr_cidade, e.empr_UF, e.empr_CEP, e.empr_obs, e.empr_Simples, e.empr_SimplesNacional, e.empr_Simei, e.empr_CodSimei, e.empr_sefaz, e.empr_SefazUsu, e.empr_SefazSen, e.empr_CodReceitaPJ, e.empr_SenhaCodReceitaPJ, e.empr_ValReceitaPJ
+        'empr_ID,empr_razaosocial,empr_nomefantasia,empr_cnpj,empr_Situacaocnpj,empr_InscrEstadual,empr_NIRE,empr_CCM,empr_Porte,empr_atividade,empr_dataInicio,cli_id,cat_Id,empr_TelCel1,empr_TelCel2,empr_endereco,empr_numero,empr_complemento,empr_bairro,empr_cidade,empr_UF,empr_CEP,empr_obs,empr_Simples,empr_SimplesNacional,empr_Simei,empr_CodSimei,empr_sefaz,empr_SefazUsu,empr_SefazSen,empr_CodReceitaPJ,empr_SenhaCodReceitaPJ,empr_ValReceitaPJ
+
+        Dim strQuery As New StringBuilder              'cli_id,cli_CPF,cli_Situacao,cli_RG,cli_Nome,cli_PIS,cli_TitEleitoral,cli_Dia,cli_Mes,cli_Ano,cli_Logradouro,cli_Numero,cli_complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_FoneCel2,cli_Email,cli_observacoes,cli_Autonomo,cli_PJ,cli_MEI,cli_Curriculo,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NivelFunc,cli_Falecido,cli_DataFalecido,cli_Inativo,cli_InativoObs,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_Parcelamento,cli_NumParcelamento,cli_VIP,cli_VIPDescricao,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_Redesim,cli_SenhaRedesim,cli_CodRFB,cli_CodRFBNum,cli_CodRFBValidade,cli_DtCadastro                                                                                                                      e.empr_ID,e.empr_razaosocial,e.empr_nomefantasia,e.empr_cnpj,e.empr_Situacaocnpj,e.empr_InscrEstadual,e.empr_NIRE,e.empr_CCM,e.empr_Porte,e.empr_atividade,e.empr_dataInicio,e.cli_id,e.cat_Id,e.empr_TelCel1,e.empr_TelCel2,e.empr_endereco,e.empr_numero,e.empr_complemento,e.empr_bairro,e.empr_cidade,e.empr_UF,e.empr_CEP,e.empr_obs,e.empr_Simples,e.empr_SimplesNacional,e.empr_Simei,e.empr_CodSimei,e.empr_sefaz,e.empr_SefazUsu,e.empr_SefazSen,e.empr_CodReceitaPJ,e.empr_SenhaCodReceitaPJ,e.empr_ValReceitaPJ                           
+        strQuery.Append(" SELECT c.cli_id AS Codigo,c.cli_CPF AS CPF,c.cli_Situacao AS Situacao,c.cli_RG AS RG,c.cli_Nome AS Nome,c.cli_PIS,c.cli_TitEleitoral,c.cli_Dia,c.cli_Mes,c.cli_Ano,c.cli_Logradouro,c.cli_Numero,c.cli_complemento,c.cli_Bairro,c.cli_Cidade,c.cli_UF,c.cli_CEP,c.cli_FoneRes,c.cli_FoneCel,c.cli_FoneCel2,c.cli_Email,c.cli_observacoes,c.cli_Autonomo,c.cli_PJ,c.cli_MEI,c.cli_Curriculo,c.cli_Aposentado,c.cli_NumBeneficio,c.cli_FuncPublico,c.cli_NivelFunc,c.cli_Falecido,c.cli_DataFalecido,c.cli_Inativo,c.cli_InativoObs,c.cli_EmprDom,c.cli_ESocial,c.cli_EsocialSenha,c.cli_Parcelamento,c.cli_NumParcelamento,c.cli_VIP,c.cli_VIPDescricao,c.cli_ITR,c.cli_NumITR,c.cli_Mensalista,c.cli_NomeMensalista,c.cli_Decore,c.cli_DecoreDescricao,c.cli_IRPF,c.cli_NumIRPF,c.cli_SenWebPrefeitura,c.cli_SenhaWebPrefeitura,c.cli_Redesim,c.cli_SenhaRedesim,c.cli_CodRFB,c.cli_CodRFBNum,c.cli_CodRFBValidade,e.empr_ID,e.empr_razaosocial,e.empr_nomefantasia,e.empr_cnpj,e.empr_Situacaocnpj,e.empr_InscrEstadual,e.empr_NIRE,e.empr_CCM,e.empr_Porte,e.empr_atividade,e.empr_dataInicio,e.cli_id,e.cat_Id,e.empr_TelCel1,e.empr_TelCel2,e.empr_endereco,e.empr_numero,e.empr_complemento,e.empr_bairro,e.empr_cidade,e.empr_UF,e.empr_CEP,e.empr_obs,e.empr_Simples,e.empr_SimplesNacional,e.empr_Simei,e.empr_CodSimei,e.empr_sefaz,e.empr_SefazUsu,e.empr_SefazSen,e.empr_CodReceitaPJ,e.empr_SenhaCodReceitaPJ,e.empr_ValReceitaPJ ")
+        strQuery.Append(" FROM tbClientes as c INNER JOIN tbEmpresas as e ")
+        strQuery.Append(" ON c.cli_id = e.cli_id")
+        If Not strDescricao.Equals(String.Empty) Then
+            strQuery.Append(" WHERE c.cli_CPF like '%" & strDescricao & "%'")
+        End If
+
+        'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader
+        Dim cldBancoDados As New cldBancoDados()
+        Return cldBancoDados.RetornaDataSet(strQuery.ToString)
+        
+    End Function
 
 End Class

@@ -93,6 +93,12 @@
     <Compile Include="Formularios\frmClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\frmEmpresaConsulta.Designer.vb">
+      <DependentUpon>frmEmpresaConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmEmpresaConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="modValidaTextBox.vb" />
     <Compile Include="TESTES\frm Memorando.Designer.vb">
       <DependentUpon>frm Memorando.vb</DependentUpon>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmEmpresaConsulta.resx">
+      <DependentUpon>frmEmpresaConsulta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TESTES\frm Memorando.resx">
       <DependentUpon>frm Memorando.vb</DependentUpon>
@@ -204,7 +213,9 @@
     <Content Include="Imagens\clear-icon %281%29.png" />
     <Content Include="Imagens\Edit-Document-icon.png" />
     <Content Include="Imagens\Edit-file.ico" />
+    <Content Include="Imagens\empresa.ico" />
     <Content Include="Imagens\forms-icon.png" />
+    <Content Include="Imagens\Log-Out-icon.png" />
     <Content Include="Imagens\logo webfacil.png" />
     <Content Include="Imagens\lupa.png" />
     <Content Include="Imagens\Maintenance.ico" />

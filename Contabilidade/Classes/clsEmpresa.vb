@@ -414,4 +414,19 @@ Public Class clsEmpresa
             End Try
         End Using
     End Sub
+
+
+    Public Function Listar(ByVal strDescricao As String) As DataSet
+        'Cria um StringBuilder para concatenar a Query Sql
+        Dim strQuery As New StringBuilder
+        strQuery.Append(" SELECT empr_ID,empr_razaosocial,empr_nomefantasia,empr_cnpj,empr_Situacaocnpj,empr_InscrEstadual,empr_NIRE,empr_CCM,empr_Porte,empr_atividade,empr_dataInicio,cli_id,cat_Id,empr_TelCel1,empr_TelCel2,empr_endereco,empr_numero,empr_complemento,empr_bairro,empr_cidade,empr_UF,empr_CEP,empr_obs,empr_Simples,empr_SimplesNacional,empr_Simei,empr_CodSimei,empr_sefaz,empr_SefazUsu,empr_SefazSen,empr_CodReceitaPJ,empr_SenhaCodReceitaPJ,empr_ValReceitaPJ")
+        strQuery.Append(" FROM tbEmpresas ")
+        If Not strDescricao.Equals(String.Empty) Then
+            strQuery.Append(" WHERE empr_cnpj like '%" & strDescricao & "%'")
+        End If
+
+        'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader
+        Dim cldBancoDados As New cldBancoDados()
+        Return cldBancoDados.RetornaDataSet(strQuery.ToString)
+    End Function
 End Class
