@@ -429,4 +429,61 @@ Public Class clsEmpresa
         Dim cldBancoDados As New cldBancoDados()
         Return cldBancoDados.RetornaDataSet(strQuery.ToString)
     End Function
+
+    'ALTERA DADOS PESSOA JURÍDICA
+    Public Sub AlterarDados()
+
+        Using con As OleDbConnection = GetConnection()
+
+            Try
+                con.Open()
+                Dim sql As String = "UPDATE tbEmpresas SET empr_razaosocial=?,empr_nomefantasia=?,empr_cnpj=?,empr_Situacaocnpj=?,empr_InscrEstadual=?,empr_NIRE=?,empr_CCM=?,empr_Porte=?,empr_atividade=?,empr_dataInicio=?,cli_id=?,cat_Id=?,empr_TelCel1=?,empr_TelCel2=?,empr_endereco=?,empr_numero=?,empr_complemento=?,empr_bairro=?,empr_cidade=?,empr_UF=?,empr_CEP=?,empr_obs=?,empr_Simples=?,empr_SimplesNacional=?,empr_Simei=?,empr_CodSimei=?,empr_sefaz=?,empr_SefazUsu=?,empr_SefazSen=?,empr_CodReceitaPJ=?,empr_SenhaCodReceitaPJ=?,empr_ValReceitaPJ=? WHERE empr_ID =" & CInt(empr_ID)
+                Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
+
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_razaosocial", _empr_razaosocial))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_nomefantasia", _empr_nomefantasia))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_cnpj", _empr_cnpj))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_Situacaocnpj", _empr_Situacaocnpj))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_InscrEstadual", _empr_InscrEstadual))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_NIRE", _empr_NIRE))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_CCM", _empr_CCM))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_Porte", _empr_Porte))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_atividade", _empr_atividade))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_dataInicio", _empr_dataInicio))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_id", _empr_lblclienteID))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cat_Id", _clsCategoria.cat_ID))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_TelCel1", _empr_TelCel1))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_TelCel2", _empr_TelCel2))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_endereco", _empr_endereco))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_numero", _empr_numero))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_complemento", _empr_complemento))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_bairro", _empr_bairro))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_cidade", _empr_cidade))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_UF", _empr_UF))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_CEP", _empr_CEP))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_obs", _empr_obs))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_Simples", _empr_Simples))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_SimplesNacional", _empr_SimplesNacional))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_Simei", _empr_Simei))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_CodSimei", _empr_CodSimei))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_sefaz", _empr_sefaz))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_SefazUsu", _empr_SefazUsu))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_SefazSen", _empr_SefazSen))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_CodReceitaPJ", _empr_CodReceitaPJ))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_NumCodReceitaPJ", _empr_NumCodReceitaPJ))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_ValReceitaPJ", _empr_ValReceitaPJ))
+
+                cmd.ExecuteNonQuery()
+
+                MessageBox.Show("Operação de alteração realizada com sucesso!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+            Catch ex As Exception
+                MessageBox.Show("não foi possível alterar os dados!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MsgBox(ex.Message.ToString)
+            Finally
+                con.Close()
+            End Try
+        End Using
+    End Sub
 End Class

@@ -1873,7 +1873,7 @@ Partial Class frmClientes
         Me.btPesquisaEmpresa.FlatAppearance.BorderSize = 0
         Me.btPesquisaEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisaEmpresa.Image = CType(resources.GetObject("btPesquisaEmpresa.Image"), System.Drawing.Image)
-        Me.btPesquisaEmpresa.Location = New System.Drawing.Point(598, 84)
+        Me.btPesquisaEmpresa.Location = New System.Drawing.Point(594, 144)
         Me.btPesquisaEmpresa.Name = "btPesquisaEmpresa"
         Me.btPesquisaEmpresa.Size = New System.Drawing.Size(99, 44)
         Me.btPesquisaEmpresa.TabIndex = 2
@@ -1887,9 +1887,9 @@ Partial Class frmClientes
         Me.btLimpar.FlatAppearance.BorderSize = 0
         Me.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btLimpar.Image = CType(resources.GetObject("btLimpar.Image"), System.Drawing.Image)
-        Me.btLimpar.Location = New System.Drawing.Point(598, 134)
+        Me.btLimpar.Location = New System.Drawing.Point(594, 78)
         Me.btLimpar.Name = "btLimpar"
-        Me.btLimpar.Size = New System.Drawing.Size(107, 53)
+        Me.btLimpar.Size = New System.Drawing.Size(103, 60)
         Me.btLimpar.TabIndex = 3
         Me.btLimpar.Text = "Limpar Campos"
         Me.btLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
