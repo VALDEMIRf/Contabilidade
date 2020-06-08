@@ -35,6 +35,17 @@
         End Set
     End Property
 
+
+    Private _vinc_id As Integer
+    Public Property vinc_id() As Integer
+        Get
+            Return _vinc_id
+        End Get
+        Set(ByVal value As Integer)
+            _vinc_id = value
+        End Set
+    End Property
+
     Private _cli_CPF As String
     Public Property cli_CPF() As String
         Get
@@ -736,6 +747,7 @@
                     _cli_CodRFB = dgvGrid.CurrentRow.Cells(53).Value
                     _cli_CodRFBNum = dgvGrid.CurrentRow.Cells(54).Value
                     _cli_CodRFBValidade = dgvGrid.CurrentRow.Cells(55).Value
+                    _vinc_id = dgvGrid.CurrentRow.Cells(56).Value
 
                     Me.Close()
                 End If

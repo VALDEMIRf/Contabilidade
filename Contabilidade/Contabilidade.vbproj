@@ -81,6 +81,7 @@
     <Compile Include="Classes\clsEmpresa.vb" />
     <Compile Include="Classes\Conexao.vb" />
     <Compile Include="cldBancoDados.vb" />
+    <Compile Include="clsFuncoesGerais.vb" />
     <Compile Include="Formularios\frmClienteConsulta.Designer.vb">
       <DependentUpon>frmClienteConsulta.vb</DependentUpon>
     </Compile>
@@ -97,6 +98,18 @@
       <DependentUpon>frmEmpresaConsulta.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmEmpresaConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmVinculadoCadastro.Designer.vb">
+      <DependentUpon>frmVinculadoCadastro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmVinculadoCadastro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmVinculadoConsulta.Designer.vb">
+      <DependentUpon>frmVinculadoConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmVinculadoConsulta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="modValidaTextBox.vb" />
@@ -157,6 +170,12 @@
     <EmbeddedResource Include="Formularios\frmEmpresaConsulta.resx">
       <DependentUpon>frmEmpresaConsulta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmVinculadoCadastro.resx">
+      <DependentUpon>frmVinculadoCadastro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmVinculadoConsulta.resx">
+      <DependentUpon>frmVinculadoConsulta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TESTES\frm Memorando.resx">
       <DependentUpon>frm Memorando.vb</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +230,7 @@
     <Content Include="Imagens\binoculars.png" />
     <Content Include="Imagens\Button-Add-icon.png" />
     <Content Include="Imagens\clear-icon %281%29.png" />
+    <Content Include="Imagens\Consultar.ico" />
     <Content Include="Imagens\Edit-Document-icon.png" />
     <Content Include="Imagens\Edit-file.ico" />
     <Content Include="Imagens\empresa.ico" />
@@ -220,6 +240,7 @@
     <Content Include="Imagens\lupa.png" />
     <Content Include="Imagens\Maintenance.ico" />
     <Content Include="Imagens\People.png" />
+    <Content Include="Imagens\Register.ico" />
     <Content Include="Imagens\sair.png" />
     <Content Include="Imagens\sair4.png" />
     <Content Include="Imagens\salvar.png" />

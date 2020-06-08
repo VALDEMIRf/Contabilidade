@@ -183,11 +183,29 @@ Partial Class frmClientes
         Me.lblidEmpresa = New System.Windows.Forms.Label()
         Me.lblclienteID = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Vinculo = New System.Windows.Forms.TabPage()
+        Me.dgvGridVinculo = New System.Windows.Forms.DataGridView()
+        Me.btAlterarVinculo = New System.Windows.Forms.Button()
+        Me.btGravarVinculo = New System.Windows.Forms.Button()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.txtClienteVinculo = New System.Windows.Forms.TextBox()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.txtCPFVinculo = New System.Windows.Forms.MaskedTextBox()
+        Me.txtTipoVinculo = New System.Windows.Forms.TextBox()
+        Me.txtNomeVinculado = New System.Windows.Forms.TextBox()
+        Me.lblRecebeIDVinculo = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
         Me.btSair = New System.Windows.Forms.Button()
         Me.btPesquisaEmpresa = New System.Windows.Forms.Button()
         Me.btLimpar = New System.Windows.Forms.Button()
         Me.lblciID = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CPF = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -196,6 +214,9 @@ Partial Class frmClientes
         Me.TabEmpresa.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.Vinculo.SuspendLayout()
+        CType(Me.dgvGridVinculo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -203,7 +224,8 @@ Partial Class frmClientes
         '
         Me.TabControl1.Controls.Add(Me.TabCliente)
         Me.TabControl1.Controls.Add(Me.TabEmpresa)
-        Me.TabControl1.Location = New System.Drawing.Point(4, 12)
+        Me.TabControl1.Controls.Add(Me.Vinculo)
+        Me.TabControl1.Location = New System.Drawing.Point(4, 9)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(588, 660)
@@ -981,7 +1003,7 @@ Partial Class frmClientes
         Me.btPesquisarCPFVinculado.FlatAppearance.BorderSize = 0
         Me.btPesquisarCPFVinculado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisarCPFVinculado.Image = CType(resources.GetObject("btPesquisarCPFVinculado.Image"), System.Drawing.Image)
-        Me.btPesquisarCPFVinculado.Location = New System.Drawing.Point(178, 145)
+        Me.btPesquisarCPFVinculado.Location = New System.Drawing.Point(206, 145)
         Me.btPesquisarCPFVinculado.Name = "btPesquisarCPFVinculado"
         Me.btPesquisarCPFVinculado.Size = New System.Drawing.Size(31, 29)
         Me.btPesquisarCPFVinculado.TabIndex = 11
@@ -989,22 +1011,22 @@ Partial Class frmClientes
         '
         'txtDtNasc
         '
-        Me.txtDtNasc.Location = New System.Drawing.Point(202, 177)
+        Me.txtDtNasc.Location = New System.Drawing.Point(252, 177)
         Me.txtDtNasc.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtDtNasc.Mask = "00/00/0000"
         Me.txtDtNasc.Name = "txtDtNasc"
-        Me.txtDtNasc.Size = New System.Drawing.Size(60, 20)
+        Me.txtDtNasc.Size = New System.Drawing.Size(10, 20)
         Me.txtDtNasc.TabIndex = 8
         Me.txtDtNasc.ValidatingType = GetType(Date)
         Me.txtDtNasc.Visible = False
         '
         'txtVinculo
         '
-        Me.txtVinculo.Location = New System.Drawing.Point(52, 177)
+        Me.txtVinculo.Location = New System.Drawing.Point(90, 176)
         Me.txtVinculo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtVinculo.Name = "txtVinculo"
         Me.txtVinculo.ReadOnly = True
-        Me.txtVinculo.Size = New System.Drawing.Size(74, 20)
+        Me.txtVinculo.Size = New System.Drawing.Size(98, 20)
         Me.txtVinculo.TabIndex = 12
         '
         'txtCPFVinculado
@@ -1013,7 +1035,7 @@ Partial Class frmClientes
         Me.txtCPFVinculado.Location = New System.Drawing.Point(76, 150)
         Me.txtCPFVinculado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCPFVinculado.Name = "txtCPFVinculado"
-        Me.txtCPFVinculado.Size = New System.Drawing.Size(105, 21)
+        Me.txtCPFVinculado.Size = New System.Drawing.Size(112, 21)
         Me.txtCPFVinculado.TabIndex = 10
         '
         'txtRG
@@ -1028,9 +1050,9 @@ Partial Class frmClientes
         Me.Label39.AutoSize = True
         Me.Label39.Location = New System.Drawing.Point(5, 180)
         Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(45, 13)
+        Me.Label39.Size = New System.Drawing.Size(84, 13)
         Me.Label39.TabIndex = 200008
-        Me.Label39.Text = "Vinculo:"
+        Me.Label39.Text = "Tipo de Vinculo:"
         '
         'Label19
         '
@@ -1175,7 +1197,7 @@ Partial Class frmClientes
         '
         'TabEmpresa
         '
-        Me.TabEmpresa.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.TabEmpresa.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.TabEmpresa.Controls.Add(Me.Label45)
         Me.TabEmpresa.Controls.Add(Me.Label44)
         Me.TabEmpresa.Controls.Add(Me.Label42)
@@ -1853,6 +1875,150 @@ Partial Class frmClientes
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "ID:"
         '
+        'Vinculo
+        '
+        Me.Vinculo.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Vinculo.Controls.Add(Me.dgvGridVinculo)
+        Me.Vinculo.Controls.Add(Me.btAlterarVinculo)
+        Me.Vinculo.Controls.Add(Me.btGravarVinculo)
+        Me.Vinculo.Controls.Add(Me.GroupBox6)
+        Me.Vinculo.Location = New System.Drawing.Point(4, 22)
+        Me.Vinculo.Name = "Vinculo"
+        Me.Vinculo.Size = New System.Drawing.Size(580, 634)
+        Me.Vinculo.TabIndex = 2
+        Me.Vinculo.Text = "Pessoas Vinculadas"
+        '
+        'dgvGridVinculo
+        '
+        Me.dgvGridVinculo.BackgroundColor = System.Drawing.Color.White
+        Me.dgvGridVinculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvGridVinculo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.Nome, Me.CPF, Me.Tipo})
+        Me.dgvGridVinculo.Location = New System.Drawing.Point(11, 305)
+        Me.dgvGridVinculo.Name = "dgvGridVinculo"
+        Me.dgvGridVinculo.Size = New System.Drawing.Size(513, 230)
+        Me.dgvGridVinculo.TabIndex = 7
+        '
+        'btAlterarVinculo
+        '
+        Me.btAlterarVinculo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btAlterarVinculo.FlatAppearance.BorderSize = 0
+        Me.btAlterarVinculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAlterarVinculo.Image = CType(resources.GetObject("btAlterarVinculo.Image"), System.Drawing.Image)
+        Me.btAlterarVinculo.Location = New System.Drawing.Point(381, 16)
+        Me.btAlterarVinculo.Name = "btAlterarVinculo"
+        Me.btAlterarVinculo.Size = New System.Drawing.Size(80, 46)
+        Me.btAlterarVinculo.TabIndex = 6
+        Me.btAlterarVinculo.Text = "Alterar"
+        Me.btAlterarVinculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btAlterarVinculo.UseVisualStyleBackColor = True
+        '
+        'btGravarVinculo
+        '
+        Me.btGravarVinculo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btGravarVinculo.FlatAppearance.BorderSize = 0
+        Me.btGravarVinculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btGravarVinculo.Image = CType(resources.GetObject("btGravarVinculo.Image"), System.Drawing.Image)
+        Me.btGravarVinculo.Location = New System.Drawing.Point(484, 16)
+        Me.btGravarVinculo.Name = "btGravarVinculo"
+        Me.btGravarVinculo.Size = New System.Drawing.Size(80, 46)
+        Me.btGravarVinculo.TabIndex = 5
+        Me.btGravarVinculo.Text = "Gravar"
+        Me.btGravarVinculo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btGravarVinculo.UseVisualStyleBackColor = True
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.txtClienteVinculo)
+        Me.GroupBox6.Controls.Add(Me.Label52)
+        Me.GroupBox6.Controls.Add(Me.txtCPFVinculo)
+        Me.GroupBox6.Controls.Add(Me.txtTipoVinculo)
+        Me.GroupBox6.Controls.Add(Me.txtNomeVinculado)
+        Me.GroupBox6.Controls.Add(Me.lblRecebeIDVinculo)
+        Me.GroupBox6.Controls.Add(Me.Label46)
+        Me.GroupBox6.Controls.Add(Me.Label47)
+        Me.GroupBox6.Controls.Add(Me.Label48)
+        Me.GroupBox6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox6.Location = New System.Drawing.Point(13, 77)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(511, 211)
+        Me.GroupBox6.TabIndex = 3
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Pessoas Vinculadas ao Cliente"
+        '
+        'txtClienteVinculo
+        '
+        Me.txtClienteVinculo.Location = New System.Drawing.Point(163, 36)
+        Me.txtClienteVinculo.Name = "txtClienteVinculo"
+        Me.txtClienteVinculo.Size = New System.Drawing.Size(315, 26)
+        Me.txtClienteVinculo.TabIndex = 9
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Location = New System.Drawing.Point(12, 39)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(129, 18)
+        Me.Label52.TabIndex = 8
+        Me.Label52.Text = "Nome do Cliente:"
+        '
+        'txtCPFVinculo
+        '
+        Me.txtCPFVinculo.Location = New System.Drawing.Point(163, 125)
+        Me.txtCPFVinculo.Mask = "000.000.000-00"
+        Me.txtCPFVinculo.Name = "txtCPFVinculo"
+        Me.txtCPFVinculo.Size = New System.Drawing.Size(129, 26)
+        Me.txtCPFVinculo.TabIndex = 7
+        '
+        'txtTipoVinculo
+        '
+        Me.txtTipoVinculo.Location = New System.Drawing.Point(163, 173)
+        Me.txtTipoVinculo.Name = "txtTipoVinculo"
+        Me.txtTipoVinculo.Size = New System.Drawing.Size(315, 26)
+        Me.txtTipoVinculo.TabIndex = 6
+        '
+        'txtNomeVinculado
+        '
+        Me.txtNomeVinculado.Location = New System.Drawing.Point(163, 88)
+        Me.txtNomeVinculado.Name = "txtNomeVinculado"
+        Me.txtNomeVinculado.Size = New System.Drawing.Size(315, 26)
+        Me.txtNomeVinculado.TabIndex = 4
+        '
+        'lblRecebeIDVinculo
+        '
+        Me.lblRecebeIDVinculo.AutoSize = True
+        Me.lblRecebeIDVinculo.Location = New System.Drawing.Point(488, 22)
+        Me.lblRecebeIDVinculo.Name = "lblRecebeIDVinculo"
+        Me.lblRecebeIDVinculo.Size = New System.Drawing.Size(17, 18)
+        Me.lblRecebeIDVinculo.TabIndex = 3
+        Me.lblRecebeIDVinculo.Text = "0"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Location = New System.Drawing.Point(34, 176)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(118, 18)
+        Me.Label46.TabIndex = 2
+        Me.Label46.Text = "Tipo de Vínculo:"
+        '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Location = New System.Drawing.Point(116, 125)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(45, 18)
+        Me.Label47.TabIndex = 1
+        Me.Label47.Text = "CPF:"
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Location = New System.Drawing.Point(12, 91)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(149, 18)
+        Me.Label48.TabIndex = 0
+        Me.Label48.Text = "Nome do Vinculado:"
+        '
         'btSair
         '
         Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
@@ -1908,6 +2074,34 @@ Partial Class frmClientes
         '
         Me.errErro.ContainerControl = Me
         '
+        'codigo
+        '
+        Me.codigo.DataPropertyName = "codigo"
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.Name = "codigo"
+        Me.codigo.Width = 50
+        '
+        'Nome
+        '
+        Me.Nome.DataPropertyName = "Nome"
+        Me.Nome.HeaderText = "Nome"
+        Me.Nome.Name = "Nome"
+        Me.Nome.Width = 270
+        '
+        'CPF
+        '
+        Me.CPF.DataPropertyName = "CPF"
+        Me.CPF.HeaderText = "CPF"
+        Me.CPF.Name = "CPF"
+        Me.CPF.Width = 90
+        '
+        'Tipo
+        '
+        Me.Tipo.DataPropertyName = "Tipo"
+        Me.Tipo.HeaderText = "Tipo"
+        Me.Tipo.Name = "Tipo"
+        Me.Tipo.Width = 95
+        '
         'frmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1920,6 +2114,7 @@ Partial Class frmClientes
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmClientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Manutenção de Clientes"
@@ -1938,6 +2133,10 @@ Partial Class frmClientes
         Me.GroupBox5.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.Vinculo.ResumeLayout(False)
+        CType(Me.dgvGridVinculo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         CType(Me.errErro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -2107,4 +2306,22 @@ Partial Class frmClientes
     Friend WithEvents chbSefaz As System.Windows.Forms.CheckBox
     Public WithEvents txtSimplesNacional As System.Windows.Forms.TextBox
     Friend WithEvents chbSimples As System.Windows.Forms.CheckBox
+    Friend WithEvents Vinculo As System.Windows.Forms.TabPage
+    Friend WithEvents btAlterarVinculo As System.Windows.Forms.Button
+    Friend WithEvents btGravarVinculo As System.Windows.Forms.Button
+    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
+    Friend WithEvents txtCPFVinculo As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txtTipoVinculo As System.Windows.Forms.TextBox
+    Friend WithEvents txtNomeVinculado As System.Windows.Forms.TextBox
+    Friend WithEvents lblRecebeIDVinculo As System.Windows.Forms.Label
+    Friend WithEvents Label46 As System.Windows.Forms.Label
+    Friend WithEvents Label47 As System.Windows.Forms.Label
+    Friend WithEvents Label48 As System.Windows.Forms.Label
+    Friend WithEvents dgvGridVinculo As System.Windows.Forms.DataGridView
+    Friend WithEvents txtClienteVinculo As System.Windows.Forms.TextBox
+    Friend WithEvents Label52 As System.Windows.Forms.Label
+    Friend WithEvents codigo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Nome As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CPF As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Tipo As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

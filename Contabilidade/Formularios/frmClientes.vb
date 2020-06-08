@@ -8,6 +8,8 @@ Public Class frmClientes
     Dim CodigoEmpresa As Integer
     Dim cliente As New clsCliente
     Dim empresa As New clsEmpresa
+    Dim pessoaVinculada As New clsCPFVinculado
+
     Public Enum TipoConsulta
         Cliente
         '  Empresa
@@ -27,6 +29,8 @@ Public Class frmClientes
         TabEmpresa.Enabled = False
         ' btPesquisaEmpresa.Enabled = False
         ' btPesquisaEmpresa.Visible = False
+        btPesquisarCPFVinculado.Enabled = False
+
 
 
         Dim clnCategoria As New clsCategoria
@@ -157,6 +161,7 @@ Public Class frmClientes
         cboSituacao.Text = frmClienteConsulta.cli_Situacao
         txtRG.Text = frmClienteConsulta.cli_RG
         txtNome.Text = frmClienteConsulta.cli_Nome
+        txtClienteVinculo.Text = frmClienteConsulta.cli_Nome
         txtPIS.Text = frmClienteConsulta.cli_PIS
         txtTitEleitoral.Text = frmClienteConsulta.cli_TitEleitoral
         cmbDia.Text = frmClienteConsulta.cli_Dia
@@ -208,7 +213,10 @@ Public Class frmClientes
         chbCodRFB.Checked = frmClienteConsulta.cli_CodRFB
         txtCodRFB.Text = frmClienteConsulta.cli_CodRFBNum
         txtValidadeRFB.Text = frmClienteConsulta.cli_CodRFBValidade
+        '  lblRecebeIDVinculo.Text = frmClienteConsulta.cli_id
+        'lblciID
 
+        CarregaGridVinculo()
 
     End Sub
 
@@ -392,6 +400,11 @@ Public Class frmClientes
         chbSenhaWebPJ.Checked = False
         txtSenhaWebPJ.Text = ""
         lblclienteID.Text = ""
+        txtNomeVinculado.Text = ""
+        txtCPFVinculo.Text = ""
+        txtTipoVinculo.Text = ""
+
+
     End Sub
 
 
@@ -809,6 +822,7 @@ Public Class frmClientes
         cboSituacao.Text = frmEmpresaConsulta.cli_Situacao
         txtRG.Text = frmEmpresaConsulta.cli_RG
         txtNome.Text = frmEmpresaConsulta.cli_Nome
+        txtClienteVinculo.Text = frmEmpresaConsulta.cli_Nome
         txtPIS.Text = frmEmpresaConsulta.cli_PIS
         txtTitEleitoral.Text = frmEmpresaConsulta.cli_TitEleitoral
         cmbDia.Text = frmEmpresaConsulta.cli_Dia
@@ -896,8 +910,8 @@ Public Class frmClientes
         txtSenhaWebPJ.Text = frmEmpresaConsulta.empr_NumCodReceitaPJ
         txtSenhaPJValidade.Text = frmEmpresaConsulta.empr_ValReceitaPJ
 
-
-
+        CarregaGridVinculo()
+       
     End Sub
 
     'BOTÃO QUE ALTERA DADOS PESSOA JURÍDICA
@@ -967,5 +981,128 @@ Public Class frmClientes
 
     Private Sub btLimpar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btLimpar.Click
         LimparCampos()
+    End Sub
+
+    'BOTÃO QUE PESQUISA PESSOA VINCULADO AO CLIENTE
+    Private Sub btPesquisarCPFVinculado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCPFVinculado.Click
+        'Dim frmVinculadoCadastro As New frmVinculadoConsulta
+        Dim enviarDados As New frmVinculadoConsulta
+        enviarDados.ConsultaTipo = frmVinculadoConsulta.TipoConsulta.Vinculo
+        enviarDados.myString = txtNome.Text
+        enviarDados.vinc_id = lblciID.Text
+        enviarDados.ShowDialog()
+
+        txtCPFVinculado.Text = frmVinculadoConsulta.vinc_CPF
+        txtVinculo.Text = frmVinculadoConsulta.vinc_nome
+
+    End Sub
+
+    'BOTÃO DE CADASTRO DE PESSOA Vinculada
+    Private Sub btGravarVinculo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btGravarVinculo.Click
+        If txtNomeVinculado.Text.Equals(String.Empty) Then
+            errErro.SetError(txtNomeVinculado, "Digite o Nome do Vinculado")
+            txtNomeVinculado.Focus()
+            Exit Sub
+        Else
+            errErro.SetError(txtNomeVinculado, "")
+
+        End If
+        If txtCPFVinculo.Text.Equals(String.Empty) Then
+            errErro.SetError(txtCPFVinculo, "Digite o CPF")
+            Exit Sub
+        Else
+            errErro.SetError(txtCPFVinculo, "")
+        End If
+
+        If txtTipoVinculo.Text.Equals(String.Empty) Then
+            errErro.SetError(txtTipoVinculo, "Digite o Tipo de Vinculo")
+            Exit Sub
+        Else
+            errErro.SetError(txtTipoVinculo, "")
+        End If
+        'lblciID
+
+        Dim recebeIDCliente As Integer
+        recebeIDCliente = lblciID.Text
+
+        Try
+            pessoaVinculada.vinc_lblVincID = lblciID.Text
+            pessoaVinculada.vinc_nome = txtNomeVinculado.Text
+            pessoaVinculada.vinc_CPF = txtCPFVinculo.Text
+            pessoaVinculada.vinc_vinculo = txtTipoVinculo.Text
+
+
+            pessoaVinculada.GravarDados()
+
+            LimparCampos()
+            ' MessageBox.Show("Registro gravado com sucesso", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' Me.Close()
+            CarregaGridVinculo()
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
+
+
+    Private Sub CarregaGridVinculo()
+        Dim dsConsulta As New Data.DataSet
+        Select Case _ConsultaTipo
+            Case TipoConsulta.Cliente
+                Dim clnVinculo As New clsCPFVinculado
+                dsConsulta = clnVinculo.Listar(txtClienteVinculo.Text)
+
+        End Select
+        dgvGridVinculo.DataSource = dsConsulta.Tables(0)
+    End Sub
+
+    Private Sub btAlterarVinculo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterarVinculo.Click
+        If txtCPF.Text.Equals(String.Empty) Then
+            errErro.SetError(txtCPF, "Digite um CPF")
+            txtCPF.Focus()
+            Exit Sub
+        Else
+            errErro.SetError(txtCPF, "")
+
+        End If
+
+        If txtNome.Text.Equals(String.Empty) Then
+            errErro.SetError(txtNome, "Digite um nome")
+            txtNome.Focus()
+            Exit Sub
+        Else
+            errErro.SetError(txtNome, "")
+        End If
+
+        Try
+            pessoaVinculada.vinc_lblVincID = lblRecebeIDVinculo.Text
+            pessoaVinculada.vinc_nome = txtNomeVinculado.Text
+            pessoaVinculada.vinc_CPF = txtCPFVinculo.Text
+            pessoaVinculada.vinc_vinculo = txtTipoVinculo.Text
+
+            pessoaVinculada.AlterarDados()
+
+            CarregaGridVinculo()
+
+            LimparCampos()
+
+
+
+        Catch ex As Exception
+            MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgBox(ex.Message.ToString)
+        End Try
+
+    End Sub
+
+    Private Sub dgvGridVinculo_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvGridVinculo.DoubleClick
+        Select Case _ConsultaTipo
+            Case TipoConsulta.Cliente
+                If dgvGridVinculo.RowCount <> 0 Then
+                    lblRecebeIDVinculo.Text = dgvGridVinculo.CurrentRow.Cells(0).Value
+                    txtNomeVinculado.Text = dgvGridVinculo.CurrentRow.Cells(1).Value
+                    txtCPFVinculo.Text = dgvGridVinculo.CurrentRow.Cells(2).Value
+                    txtTipoVinculo.Text = dgvGridVinculo.CurrentRow.Cells(3).Value
+                End If
+        End Select
     End Sub
 End Class
