@@ -29,7 +29,7 @@ Public Class frmClientes
         TabEmpresa.Enabled = False
         ' btPesquisaEmpresa.Enabled = False
         ' btPesquisaEmpresa.Visible = False
-        btPesquisarCPFVinculado.Enabled = False
+
 
 
 
@@ -385,7 +385,6 @@ Public Class frmClientes
         txtEmprBairro.Text = ""
         txtEmprCidade.Text = ""
         txtEmprCPF.Text = ""
-        cboCliente.Text = ""
         txtEmprUF.Text = ""
         txtEmprCEP.Text = ""
         txtEmprObs.Text = ""
@@ -760,7 +759,7 @@ Public Class frmClientes
         clnCategoria.cat_ID = cbTipo.SelectedValue
 
         Dim clnCliente As New clsCliente
-        clnCliente.cli_id = cboCliente.SelectedValue
+        '  clnCliente.cli_id = cboCliente.SelectedValue
 
 
         Dim recebeIDCliente As Integer
@@ -933,7 +932,7 @@ Public Class frmClientes
         clnCategoria.cat_ID = cbTipo.SelectedValue
 
         Dim clnCliente As New clsCliente
-        clnCliente.cli_id = cboCliente.SelectedValue
+        'clnCliente.cli_id = cboCliente.SelectedValue
 
         Try
             empresa.empr_ID = lblidEmpresa.Text
@@ -984,7 +983,7 @@ Public Class frmClientes
     End Sub
 
     'BOTÃO QUE PESQUISA PESSOA VINCULADO AO CLIENTE
-    Private Sub btPesquisarCPFVinculado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCPFVinculado.Click
+    Private Sub btPesquisarCPFVinculado_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'Dim frmVinculadoCadastro As New frmVinculadoConsulta
         Dim enviarDados As New frmVinculadoConsulta
         enviarDados.ConsultaTipo = frmVinculadoConsulta.TipoConsulta.Vinculo
@@ -992,8 +991,7 @@ Public Class frmClientes
         enviarDados.vinc_id = lblciID.Text
         enviarDados.ShowDialog()
 
-        txtCPFVinculado.Text = frmVinculadoConsulta.vinc_CPF
-        txtVinculo.Text = frmVinculadoConsulta.vinc_nome
+        
 
     End Sub
 
