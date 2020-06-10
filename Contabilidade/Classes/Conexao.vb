@@ -14,12 +14,12 @@ Public Class Conexao
     Dim daImagem As OleDbDataAdapter
     Dim dsImagem As DataSet
 
-    Dim cnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Valdemir\Documents\DB_Access\WEBFACIL_DB.accdb"
+    Dim cnString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Valdemir\Documents\BancoDados\DB_Access\WEBFACIL_DB.accdb"
 
     Public Sub Conectar()
         Try
             con.Open()
-            con.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Valdemir\Documents\DB_Access\WEBFACIL_DB.accdb"
+            con.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Valdemir\Documents\BancoDados\DB_Access\WEBFACIL_DB.accdb"
 
 
         Catch ex As Exception

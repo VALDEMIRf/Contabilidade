@@ -23,4 +23,9 @@
     Private Sub SairToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SairToolStripMenuItem.Click
         Application.Exit()
     End Sub
+
+    Private Sub ControleDeClientesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ControleDeClientesToolStripMenuItem.Click
+        Dim frmCadAssessoria As New frmCadAcessoria
+        frmCadAssessoria.ShowDialog()
+    End Sub
 End Class
