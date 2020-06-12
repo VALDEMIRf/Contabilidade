@@ -337,6 +337,19 @@ Public Class frmAcessoriaConsulta
     End Sub
 
     Private Sub btEnviarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btEnviarDados.Click
+        dadosEnviados()
+    End Sub
+
+    Private Sub btFechar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btFechar.Click
+        Me.Close()
+    End Sub
+
+    Private Sub dgvGridAssessoria_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvGridAssessoria.DoubleClick
+        dadosEnviados()
+    End Sub
+
+    'METODO DE DUPLO CLICK QUE ENVIA DADOS PARA O FORMULARIO DE CONSULTAR ASSESSORIA
+    Private Sub dadosEnviados()
         Select Case _ConsultaTipo
             Case TipoConsulta.Assessoria
                 If dgvGridAssessoria.RowCount <> 0 Then
@@ -373,9 +386,5 @@ Public Class frmAcessoriaConsulta
 
                 End If
         End Select
-    End Sub
-
-    Private Sub btFechar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btFechar.Click
-        Me.Close()
     End Sub
 End Class

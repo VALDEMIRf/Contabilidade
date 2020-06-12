@@ -168,4 +168,42 @@ Public Class frmCadAcessoria
         End If
     End Sub
 
+    Private Sub btAlterar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterar.Click
+        Try
+            assessoria.IdAssessoria = lblAcessoID.Text
+            assessoria.empresa = txtEmpresa.Text
+            assessoria.mes = txtMes.Text
+            assessoria.ano = txtAno.Text
+            assessoria.gerente = txtGerente.Text
+            assessoria.responsavel = txtResponsavel.Text
+            assessoria.telefone = txtTelefone.Text
+            assessoria.PROLABORE = chbProlabore.Checked
+            assessoria.SALARIOTREZE = txtTrezesalario.Text
+            assessoria.FOLHA = chbFolha.Checked
+            assessoria.DARF = chbDARF.Checked
+            assessoria.GRRF = chbGRRF.Checked
+            assessoria.SEFIP = chbSefip.Checked
+            assessoria.GPS = chbGPS.Checked
+            assessoria.GRF = chbGRF.Checked
+            assessoria.DAS = chbDAS.Checked
+            assessoria.DASZERADO = chbDASZERO.Checked
+            assessoria.DASN = chbDASN.Checked
+            assessoria.DEFIS = chbDEFIS.Checked
+            assessoria.IRRF = chbIRRF.Checked
+            assessoria.DCTF = chbDCTF.Checked
+            assessoria.RAIS = chbRAIS.Checked
+            assessoria.RAISNEGATIVA = chbRAISNEGATIVA.Checked
+            assessoria.ECF = chbECF.Checked
+            assessoria.EFD = chbEFD.Checked
+            assessoria.GIA = chbGIA.Checked
+            assessoria.CAGED = chbCAGED.Checked
+            assessoria.obs = txtObs.Text
+
+            assessoria.AlterarDados()
+
+            LimparCampos()
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
 End Class
