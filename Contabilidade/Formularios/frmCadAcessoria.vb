@@ -112,4 +112,60 @@ Public Class frmCadAcessoria
         txtObs.Text = ""
     End Sub
 
+    Private Sub btnPesquisar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPesquisar.Click
+        Dim frmAcessoriaConsulta As New frmAcessoriaConsulta
+        frmAcessoriaConsulta.Text = "Consulta de Cliente"
+        frmAcessoriaConsulta.ConsultaTipo = frmAcessoriaConsulta.TipoConsulta.Assessoria
+        frmAcessoriaConsulta.ShowDialog()
+
+        CodigoEmpresa = frmAcessoriaConsulta.IdAssessoria
+        lblAcessoID.Text = frmAcessoriaConsulta.IdAssessoria
+        txtEmpresa.Text = frmAcessoriaConsulta.empresa
+        txtMes.Text = frmAcessoriaConsulta.mes
+        txtAno.Text = frmAcessoriaConsulta.ano
+        txtGerente.Text = frmAcessoriaConsulta.gerente
+        txtResponsavel.Text = frmAcessoriaConsulta.responsavel
+        txtTelefone.Text = frmAcessoriaConsulta.telefone
+        chbProlabore.Checked = frmAcessoriaConsulta.PROLABORE
+        txtTrezesalario.Text = frmAcessoriaConsulta.SALARIOTREZE
+        chbFolha.Checked = frmAcessoriaConsulta.FOLHA
+        chbDARF.Checked = frmAcessoriaConsulta.DARF
+        chbGRRF.Checked = frmAcessoriaConsulta.GRRF
+        chbSefip.Checked = frmAcessoriaConsulta.SEFIP
+        chbGPS.Checked = frmAcessoriaConsulta.GPS
+        chbGRF.Checked = frmAcessoriaConsulta.GRF
+        chbDAS.Checked = frmAcessoriaConsulta.DAS
+        chbDASZERO.Checked = frmAcessoriaConsulta.DASZERADO
+        chbDASN.Checked = frmAcessoriaConsulta.DASN
+        chbDEFIS.Checked = frmAcessoriaConsulta.DEFIS
+        chbIRRF.Checked = frmAcessoriaConsulta.IRRF
+        chbDCTF.Checked = frmAcessoriaConsulta.DCTF
+        chbRAIS.Checked = frmAcessoriaConsulta.RAIS
+        chbRAISNEGATIVA.Checked = frmAcessoriaConsulta.RAISNEGATIVA
+        chbECF.Checked = frmAcessoriaConsulta.ECF
+        chbEFD.Checked = frmAcessoriaConsulta.EFD
+        chbGIA.Checked = frmAcessoriaConsulta.GIA
+        chbCAGED.Checked = frmAcessoriaConsulta.CAGED
+        txtObs.Text = frmAcessoriaConsulta.obs
+
+    End Sub
+
+    Private Sub txtMes_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtMes.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub txtAno_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtAno.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
 End Class

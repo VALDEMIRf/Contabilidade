@@ -1103,4 +1103,24 @@ Public Class frmClientes
                 End If
         End Select
     End Sub
+
+    Private Sub txtRG_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtRG.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub txtEmprSimei_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtEmprSimei.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+   
 End Class

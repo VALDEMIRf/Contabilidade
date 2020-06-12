@@ -178,6 +178,10 @@ Partial Class frmClientes
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Vinculo = New System.Windows.Forms.TabPage()
         Me.dgvGridVinculo = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CPF = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btAlterarVinculo = New System.Windows.Forms.Button()
         Me.btGravarVinculo = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -195,10 +199,6 @@ Partial Class frmClientes
         Me.btLimpar = New System.Windows.Forms.Button()
         Me.lblciID = New System.Windows.Forms.Label()
         Me.errErro = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CPF = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabControl1.SuspendLayout()
         Me.TabCliente.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -1818,6 +1818,34 @@ Partial Class frmClientes
         Me.dgvGridVinculo.Size = New System.Drawing.Size(513, 230)
         Me.dgvGridVinculo.TabIndex = 7
         '
+        'codigo
+        '
+        Me.codigo.DataPropertyName = "codigo"
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.Name = "codigo"
+        Me.codigo.Width = 50
+        '
+        'Nome
+        '
+        Me.Nome.DataPropertyName = "Nome"
+        Me.Nome.HeaderText = "Nome"
+        Me.Nome.Name = "Nome"
+        Me.Nome.Width = 270
+        '
+        'CPF
+        '
+        Me.CPF.DataPropertyName = "CPF"
+        Me.CPF.HeaderText = "CPF"
+        Me.CPF.Name = "CPF"
+        Me.CPF.Width = 90
+        '
+        'Tipo
+        '
+        Me.Tipo.DataPropertyName = "Tipo"
+        Me.Tipo.HeaderText = "Tipo"
+        Me.Tipo.Name = "Tipo"
+        Me.Tipo.Width = 95
+        '
         'btAlterarVinculo
         '
         Me.btAlterarVinculo.Cursor = System.Windows.Forms.Cursors.Hand
@@ -1999,34 +2027,6 @@ Partial Class frmClientes
         'errErro
         '
         Me.errErro.ContainerControl = Me
-        '
-        'codigo
-        '
-        Me.codigo.DataPropertyName = "codigo"
-        Me.codigo.HeaderText = "codigo"
-        Me.codigo.Name = "codigo"
-        Me.codigo.Width = 50
-        '
-        'Nome
-        '
-        Me.Nome.DataPropertyName = "Nome"
-        Me.Nome.HeaderText = "Nome"
-        Me.Nome.Name = "Nome"
-        Me.Nome.Width = 270
-        '
-        'CPF
-        '
-        Me.CPF.DataPropertyName = "CPF"
-        Me.CPF.HeaderText = "CPF"
-        Me.CPF.Name = "CPF"
-        Me.CPF.Width = 90
-        '
-        'Tipo
-        '
-        Me.Tipo.DataPropertyName = "Tipo"
-        Me.Tipo.HeaderText = "Tipo"
-        Me.Tipo.Name = "Tipo"
-        Me.Tipo.Width = 95
         '
         'frmClientes
         '

@@ -1,11 +1,36 @@
-﻿'Adiciona as Namespaces necessárias nesta classe
-Imports System.Data.OleDb
-Imports System.Text
-Public Class clsAcessoria
-    'Dim sql As String
-    ' Dim ds As New DataSet
-    '  Dim con As New Conexao
-    'Cria todos os métodos internos e propriedades externas com os mesmos atributos do banco de dados
+﻿Imports System.Data.OleDb
+
+Public Class frmAcessoriaConsulta
+    Private Sub frmAcessoriaConsulta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Public Enum TipoConsulta
+        Assessoria
+
+    End Enum
+    Private Sub CarregaGrid()
+        Dim dsConsulta As New Data.DataSet
+        Select Case _ConsultaTipo
+            Case TipoConsulta.Assessoria
+                Dim clnAssessoria As New clsAcessoria
+                ' dsConsulta = clnAssessoria.Listar(txtPesquisarCliente.Text, txtMes.Text, txtAno.Text)
+                dsConsulta = clnAssessoria.Listar(txtPesquisarCliente.Text)
+
+
+        End Select
+        dgvGridAssessoria.DataSource = dsConsulta.Tables(0)
+    End Sub
+
+    Private _ConsultaTipo As TipoConsulta
+    Public Property ConsultaTipo() As TipoConsulta
+        Get
+            Return _ConsultaTipo
+        End Get
+        Set(ByVal value As TipoConsulta)
+            _ConsultaTipo = value
+        End Set
+    End Property
 
     Private _IdAssessoria As Integer
     Public Property IdAssessoria() As Integer
@@ -159,7 +184,6 @@ Public Class clsAcessoria
         End Set
     End Property
 
-
     Private _GRRF As Boolean
     Public Property GRRF() As Boolean
         Get
@@ -290,71 +314,68 @@ Public Class clsAcessoria
         End Set
     End Property
 
-    'METODO QUE GRAVA DADOS em Acessoria Contábil
-    Public Sub GravarDados()
-
-        Using con As OleDbConnection = GetConnection()
-            Try
-                con.Open()
-                Dim sql As String = "INSERT INTO tbAssessoria(empresa,mes,ano,gerente,responsavel,telefone,PROLABORE,SALARIOTREZE,FOLHA,DARF,GRRF,SEFIP,GPS,GRF,DAS,DASZERADO,DASN,DEFIS,IRRF,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
-                Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
-
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@empresa", _empresa))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@mes", _mes))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@ano", _ano))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@gerente", _gerente))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@responsavel", _responsavel))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@telefone", _telefone))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@PROLABORE", _PROLABORE))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@SALARIOTREZE", _SALARIOTREZE))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@FOLHA", _FOLHA))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@DARF", _DARF))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@GRRF", _GRRF))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@SEFIP", _SEFIP))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@GPS", _GPS))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@GRF", _GRF))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@DAS", _DAS))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@DASZERADO", _DASZERADO))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@DASN", _DASN))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@DEFIS", _DEFIS))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@IRRF", _IRRF))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@DCTF", _DCTF))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@RAIS", _RAIS))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@RAISNEGATIVA", _RAISNEGATIVA))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@ECF", _ECF))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@EFD", _EFD))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@GIA", _GIA))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@CAGED", _CAGED))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@obs", _obs))
-
-                cmd.ExecuteNonQuery()
-
-                MessageBox.Show("Operação realizada com sucesso!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            Catch ex As Exception
-                MessageBox.Show("não foi possível fazer o gravar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                MsgBox(ex.Message.ToString)
-            Finally
-                con.Close()
-            End Try
-        End Using
-
+    Private Sub btPesquisarCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisarCliente.Click
+        CarregaGrid()
     End Sub
 
-    Public Function Listar(ByVal strEmpresa As String) As DataSet
-        'Cria um StringBuilder para concatenar a Query Sql
-        Dim strQuery As New StringBuilder               'empresa,mes,ano,gerente,responsavel,telefone,PROLABORE,SALARIOTREZE,FOLHA,DARF,GRRF,SEFIP,GPS,GRF,DAS,DASZERADO,DASN,DEFIS,IRRF,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs
-        strQuery.Append(" SELECT IdAssessoria as Codigo,empresa as Empresa,mes as Mes,ano as Ano,gerente as Gerente,responsavel as Responsavel,telefone as Telefone,PROLABORE,SALARIOTREZE,FOLHA,DARF,GRRF,SEFIP,GPS,GRF,DAS,DASZERADO,DASN,DEFIS,IRRF,DCTF,RAIS,RAISNEGATIVA,ECF,EFD,GIA,CAGED,obs ")
-        strQuery.Append(" FROM tbAssessoria ")
-        If Not strEmpresa.Equals(String.Empty) Then
-            ' strQuery.Append(" WHERE mes = " & strMes & "AND ano = " & strAno & "")
-            strQuery.Append(" WHERE empresa like '%" & strEmpresa & "%'")
+    Private Sub txtMes_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtMes.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+    End Sub
 
-        'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader
-        Dim cldBancoDados As New cldBancoDados()
-        Return cldBancoDados.RetornaDataSet(strQuery.ToString)
-    End Function
+    Private Sub txtAno_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtAno.KeyPress
+        Dim KeyAscii As Short = CShort(Asc(e.KeyChar))
+        KeyAscii = CShort(SoNumeros(KeyAscii))
+        If KeyAscii = 0 Then
+            e.Handled = True
+            MessageBox.Show("Digite apenas números", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
 
+    Private Sub btEnviarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btEnviarDados.Click
+        Select Case _ConsultaTipo
+            Case TipoConsulta.Assessoria
+                If dgvGridAssessoria.RowCount <> 0 Then
+                    _IdAssessoria = dgvGridAssessoria.CurrentRow.Cells(0).Value
+                    _empresa = dgvGridAssessoria.CurrentRow.Cells(1).Value
+                    _mes = dgvGridAssessoria.CurrentRow.Cells(2).Value.ToString
+                    _ano = dgvGridAssessoria.CurrentRow.Cells(3).Value.ToString
+                    _gerente = dgvGridAssessoria.CurrentRow.Cells(4).Value
+                    _responsavel = dgvGridAssessoria.CurrentRow.Cells(5).Value
+                    _telefone = dgvGridAssessoria.CurrentRow.Cells(6).Value.ToString
+                    _PROLABORE = dgvGridAssessoria.CurrentRow.Cells(7).Value
+                    _SALARIOTREZE = dgvGridAssessoria.CurrentRow.Cells(8).Value.ToString
+                    _FOLHA = dgvGridAssessoria.CurrentRow.Cells(9).Value
+                    _DARF = dgvGridAssessoria.CurrentRow.Cells(10).Value
+                    _GRRF = dgvGridAssessoria.CurrentRow.Cells(11).Value
+                    _SEFIP = dgvGridAssessoria.CurrentRow.Cells(12).Value
+                    _GPS = dgvGridAssessoria.CurrentRow.Cells(13).Value
+                    _GRF = dgvGridAssessoria.CurrentRow.Cells(14).Value
+                    _DAS = dgvGridAssessoria.CurrentRow.Cells(15).Value
+                    _DASZERADO = dgvGridAssessoria.CurrentRow.Cells(16).Value
+                    _DASN = dgvGridAssessoria.CurrentRow.Cells(17).Value
+                    _DEFIS = dgvGridAssessoria.CurrentRow.Cells(18).Value
+                    _IRRF = dgvGridAssessoria.CurrentRow.Cells(19).Value
+                    _DCTF = dgvGridAssessoria.CurrentRow.Cells(20).Value
+                    _RAIS = dgvGridAssessoria.CurrentRow.Cells(21).Value
+                    _RAISNEGATIVA = dgvGridAssessoria.CurrentRow.Cells(22).Value
+                    _ECF = dgvGridAssessoria.CurrentRow.Cells(23).Value
+                    _EFD = dgvGridAssessoria.CurrentRow.Cells(24).Value
+                    _GIA = dgvGridAssessoria.CurrentRow.Cells(25).Value
+                    _CAGED = dgvGridAssessoria.CurrentRow.Cells(26).Value
+                    _obs = dgvGridAssessoria.CurrentRow.Cells(27).Value.ToString
 
+                    Me.Close()
+
+                End If
+        End Select
+    End Sub
+
+    Private Sub btFechar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btFechar.Click
+        Me.Close()
+    End Sub
 End Class

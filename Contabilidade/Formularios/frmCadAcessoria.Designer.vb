@@ -119,7 +119,7 @@ Partial Class frmCadAcessoria
         Me.txtTelefone.Mask = "(99) 0 0000-0000"
         Me.txtTelefone.Name = "txtTelefone"
         Me.txtTelefone.Size = New System.Drawing.Size(107, 21)
-        Me.txtTelefone.TabIndex = 11
+        Me.txtTelefone.TabIndex = 6
         '
         'Label6
         '
@@ -135,7 +135,7 @@ Partial Class frmCadAcessoria
         Me.txtResponsavel.Location = New System.Drawing.Point(270, 64)
         Me.txtResponsavel.Name = "txtResponsavel"
         Me.txtResponsavel.Size = New System.Drawing.Size(123, 21)
-        Me.txtResponsavel.TabIndex = 9
+        Me.txtResponsavel.TabIndex = 5
         '
         'Label5
         '
@@ -151,7 +151,7 @@ Partial Class frmCadAcessoria
         Me.txtAno.Location = New System.Drawing.Point(451, 26)
         Me.txtAno.Name = "txtAno"
         Me.txtAno.Size = New System.Drawing.Size(50, 21)
-        Me.txtAno.TabIndex = 7
+        Me.txtAno.TabIndex = 3
         '
         'btnPesquisar
         '
@@ -162,7 +162,7 @@ Partial Class frmCadAcessoria
         Me.btnPesquisar.Location = New System.Drawing.Point(505, 20)
         Me.btnPesquisar.Name = "btnPesquisar"
         Me.btnPesquisar.Size = New System.Drawing.Size(33, 36)
-        Me.btnPesquisar.TabIndex = 2
+        Me.btnPesquisar.TabIndex = 28
         Me.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnPesquisar.UseVisualStyleBackColor = True
         '
@@ -180,7 +180,7 @@ Partial Class frmCadAcessoria
         Me.txtMes.Location = New System.Drawing.Point(365, 26)
         Me.txtMes.Name = "txtMes"
         Me.txtMes.Size = New System.Drawing.Size(50, 21)
-        Me.txtMes.TabIndex = 5
+        Me.txtMes.TabIndex = 2
         '
         'Label3
         '
@@ -196,7 +196,7 @@ Partial Class frmCadAcessoria
         Me.txtGerente.Location = New System.Drawing.Point(59, 64)
         Me.txtGerente.Name = "txtGerente"
         Me.txtGerente.Size = New System.Drawing.Size(123, 21)
-        Me.txtGerente.TabIndex = 3
+        Me.txtGerente.TabIndex = 4
         '
         'Label2
         '
@@ -232,7 +232,7 @@ Partial Class frmCadAcessoria
         Me.btSalvar.Location = New System.Drawing.Point(9, 331)
         Me.btSalvar.Name = "btSalvar"
         Me.btSalvar.Size = New System.Drawing.Size(124, 53)
-        Me.btSalvar.TabIndex = 3
+        Me.btSalvar.TabIndex = 29
         Me.btSalvar.Text = "Salvar"
         Me.btSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSalvar.UseVisualStyleBackColor = True
@@ -246,7 +246,7 @@ Partial Class frmCadAcessoria
         Me.btAlterar.Location = New System.Drawing.Point(145, 331)
         Me.btAlterar.Name = "btAlterar"
         Me.btAlterar.Size = New System.Drawing.Size(105, 57)
-        Me.btAlterar.TabIndex = 4
+        Me.btAlterar.TabIndex = 30
         Me.btAlterar.Text = "Alterar"
         Me.btAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btAlterar.UseVisualStyleBackColor = True
@@ -260,7 +260,7 @@ Partial Class frmCadAcessoria
         Me.btRegistroAnterior.Location = New System.Drawing.Point(265, 331)
         Me.btRegistroAnterior.Name = "btRegistroAnterior"
         Me.btRegistroAnterior.Size = New System.Drawing.Size(114, 60)
-        Me.btRegistroAnterior.TabIndex = 5
+        Me.btRegistroAnterior.TabIndex = 31
         Me.btRegistroAnterior.Text = "Registro Anterior"
         Me.btRegistroAnterior.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btRegistroAnterior.UseVisualStyleBackColor = True
@@ -274,7 +274,7 @@ Partial Class frmCadAcessoria
         Me.btProximoRegistro.Location = New System.Drawing.Point(393, 331)
         Me.btProximoRegistro.Name = "btProximoRegistro"
         Me.btProximoRegistro.Size = New System.Drawing.Size(135, 56)
-        Me.btProximoRegistro.TabIndex = 6
+        Me.btProximoRegistro.TabIndex = 32
         Me.btProximoRegistro.Text = "Próximo Registro"
         Me.btProximoRegistro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btProximoRegistro.UseVisualStyleBackColor = True
@@ -288,7 +288,7 @@ Partial Class frmCadAcessoria
         Me.btSair.Location = New System.Drawing.Point(529, 331)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(75, 49)
-        Me.btSair.TabIndex = 7
+        Me.btSair.TabIndex = 33
         Me.btSair.Text = "Sair"
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = True
@@ -317,7 +317,7 @@ Partial Class frmCadAcessoria
         Me.chbGRF.Location = New System.Drawing.Point(297, 70)
         Me.chbGRF.Name = "chbGRF"
         Me.chbGRF.Size = New System.Drawing.Size(51, 19)
-        Me.chbGRF.TabIndex = 21
+        Me.chbGRF.TabIndex = 14
         Me.chbGRF.Text = "GRF"
         Me.chbGRF.UseVisualStyleBackColor = True
         '
@@ -327,7 +327,7 @@ Partial Class frmCadAcessoria
         Me.chbProlabore.Location = New System.Drawing.Point(4, 32)
         Me.chbProlabore.Name = "chbProlabore"
         Me.chbProlabore.Size = New System.Drawing.Size(88, 19)
-        Me.chbProlabore.TabIndex = 20
+        Me.chbProlabore.TabIndex = 7
         Me.chbProlabore.Text = "Pro-Labore"
         Me.chbProlabore.UseVisualStyleBackColor = True
         '
@@ -337,7 +337,7 @@ Partial Class frmCadAcessoria
         Me.chbFolha.Location = New System.Drawing.Point(4, 70)
         Me.chbFolha.Name = "chbFolha"
         Me.chbFolha.Size = New System.Drawing.Size(57, 19)
-        Me.chbFolha.TabIndex = 19
+        Me.chbFolha.TabIndex = 9
         Me.chbFolha.Text = "Folha"
         Me.chbFolha.UseVisualStyleBackColor = True
         '
@@ -347,7 +347,7 @@ Partial Class frmCadAcessoria
         Me.chbDARF.Location = New System.Drawing.Point(64, 70)
         Me.chbDARF.Name = "chbDARF"
         Me.chbDARF.Size = New System.Drawing.Size(58, 19)
-        Me.chbDARF.TabIndex = 18
+        Me.chbDARF.TabIndex = 10
         Me.chbDARF.Text = "DARF"
         Me.chbDARF.UseVisualStyleBackColor = True
         '
@@ -357,7 +357,7 @@ Partial Class frmCadAcessoria
         Me.chbGRRF.Location = New System.Drawing.Point(121, 70)
         Me.chbGRRF.Name = "chbGRRF"
         Me.chbGRRF.Size = New System.Drawing.Size(60, 19)
-        Me.chbGRRF.TabIndex = 17
+        Me.chbGRRF.TabIndex = 11
         Me.chbGRRF.Text = "GRRF"
         Me.chbGRRF.UseVisualStyleBackColor = True
         '
@@ -367,7 +367,7 @@ Partial Class frmCadAcessoria
         Me.chbSefip.Location = New System.Drawing.Point(185, 70)
         Me.chbSefip.Name = "chbSefip"
         Me.chbSefip.Size = New System.Drawing.Size(54, 19)
-        Me.chbSefip.TabIndex = 16
+        Me.chbSefip.TabIndex = 12
         Me.chbSefip.Text = "Sefip"
         Me.chbSefip.UseVisualStyleBackColor = True
         '
@@ -377,7 +377,7 @@ Partial Class frmCadAcessoria
         Me.chbGPS.Location = New System.Drawing.Point(243, 70)
         Me.chbGPS.Name = "chbGPS"
         Me.chbGPS.Size = New System.Drawing.Size(51, 19)
-        Me.chbGPS.TabIndex = 15
+        Me.chbGPS.TabIndex = 13
         Me.chbGPS.Text = "GPS"
         Me.chbGPS.UseVisualStyleBackColor = True
         '
@@ -386,7 +386,7 @@ Partial Class frmCadAcessoria
         Me.txtTrezesalario.Location = New System.Drawing.Point(175, 30)
         Me.txtTrezesalario.Name = "txtTrezesalario"
         Me.txtTrezesalario.Size = New System.Drawing.Size(146, 21)
-        Me.txtTrezesalario.TabIndex = 13
+        Me.txtTrezesalario.TabIndex = 8
         '
         'Label7
         '
@@ -403,7 +403,7 @@ Partial Class frmCadAcessoria
         Me.chbECF.Location = New System.Drawing.Point(303, 31)
         Me.chbECF.Name = "chbECF"
         Me.chbECF.Size = New System.Drawing.Size(50, 19)
-        Me.chbECF.TabIndex = 14
+        Me.chbECF.TabIndex = 23
         Me.chbECF.Text = "ECF"
         Me.chbECF.UseVisualStyleBackColor = True
         '
@@ -426,7 +426,7 @@ Partial Class frmCadAcessoria
         Me.chbDEFIS.Location = New System.Drawing.Point(114, 70)
         Me.chbDEFIS.Name = "chbDEFIS"
         Me.chbDEFIS.Size = New System.Drawing.Size(61, 19)
-        Me.chbDEFIS.TabIndex = 25
+        Me.chbDEFIS.TabIndex = 18
         Me.chbDEFIS.Text = "DEFIS"
         Me.chbDEFIS.UseVisualStyleBackColor = True
         '
@@ -436,7 +436,7 @@ Partial Class frmCadAcessoria
         Me.chbDASZERO.Location = New System.Drawing.Point(9, 70)
         Me.chbDASZERO.Name = "chbDASZERO"
         Me.chbDASZERO.Size = New System.Drawing.Size(102, 19)
-        Me.chbDASZERO.TabIndex = 24
+        Me.chbDASZERO.TabIndex = 17
         Me.chbDASZERO.Text = "DAS ZERADO"
         Me.chbDASZERO.UseVisualStyleBackColor = True
         '
@@ -446,7 +446,7 @@ Partial Class frmCadAcessoria
         Me.chbDASN.Location = New System.Drawing.Point(114, 29)
         Me.chbDASN.Name = "chbDASN"
         Me.chbDASN.Size = New System.Drawing.Size(59, 19)
-        Me.chbDASN.TabIndex = 23
+        Me.chbDASN.TabIndex = 16
         Me.chbDASN.Text = "DASN"
         Me.chbDASN.UseVisualStyleBackColor = True
         '
@@ -456,7 +456,7 @@ Partial Class frmCadAcessoria
         Me.chbDAS.Location = New System.Drawing.Point(9, 29)
         Me.chbDAS.Name = "chbDAS"
         Me.chbDAS.Size = New System.Drawing.Size(50, 19)
-        Me.chbDAS.TabIndex = 22
+        Me.chbDAS.TabIndex = 15
         Me.chbDAS.Text = "DAS"
         Me.chbDAS.UseVisualStyleBackColor = True
         '
@@ -483,7 +483,7 @@ Partial Class frmCadAcessoria
         Me.chbCAGED.Location = New System.Drawing.Point(470, 31)
         Me.chbCAGED.Name = "chbCAGED"
         Me.chbCAGED.Size = New System.Drawing.Size(68, 19)
-        Me.chbCAGED.TabIndex = 13
+        Me.chbCAGED.TabIndex = 26
         Me.chbCAGED.Text = "CAGED"
         Me.chbCAGED.UseVisualStyleBackColor = True
         '
@@ -493,7 +493,7 @@ Partial Class frmCadAcessoria
         Me.chbRAISNEGATIVA.Location = New System.Drawing.Point(185, 31)
         Me.chbRAISNEGATIVA.Name = "chbRAISNEGATIVA"
         Me.chbRAISNEGATIVA.Size = New System.Drawing.Size(111, 19)
-        Me.chbRAISNEGATIVA.TabIndex = 3
+        Me.chbRAISNEGATIVA.TabIndex = 22
         Me.chbRAISNEGATIVA.Text = "RAIS NEGATIVA"
         Me.chbRAISNEGATIVA.UseVisualStyleBackColor = True
         '
@@ -503,7 +503,7 @@ Partial Class frmCadAcessoria
         Me.chbGIA.Location = New System.Drawing.Point(415, 31)
         Me.chbGIA.Name = "chbGIA"
         Me.chbGIA.Size = New System.Drawing.Size(45, 19)
-        Me.chbGIA.TabIndex = 12
+        Me.chbGIA.TabIndex = 25
         Me.chbGIA.Text = "GIA"
         Me.chbGIA.UseVisualStyleBackColor = True
         '
@@ -513,7 +513,7 @@ Partial Class frmCadAcessoria
         Me.chbDCTF.Location = New System.Drawing.Point(64, 31)
         Me.chbDCTF.Name = "chbDCTF"
         Me.chbDCTF.Size = New System.Drawing.Size(58, 19)
-        Me.chbDCTF.TabIndex = 2
+        Me.chbDCTF.TabIndex = 20
         Me.chbDCTF.Text = "DCTF"
         Me.chbDCTF.UseVisualStyleBackColor = True
         '
@@ -523,7 +523,7 @@ Partial Class frmCadAcessoria
         Me.chbEFD.Location = New System.Drawing.Point(360, 31)
         Me.chbEFD.Name = "chbEFD"
         Me.chbEFD.Size = New System.Drawing.Size(50, 19)
-        Me.chbEFD.TabIndex = 11
+        Me.chbEFD.TabIndex = 24
         Me.chbEFD.Text = "EFD"
         Me.chbEFD.UseVisualStyleBackColor = True
         '
@@ -533,7 +533,7 @@ Partial Class frmCadAcessoria
         Me.chbIRRF.Location = New System.Drawing.Point(4, 31)
         Me.chbIRRF.Name = "chbIRRF"
         Me.chbIRRF.Size = New System.Drawing.Size(54, 19)
-        Me.chbIRRF.TabIndex = 1
+        Me.chbIRRF.TabIndex = 19
         Me.chbIRRF.Text = "IRRF"
         Me.chbIRRF.UseVisualStyleBackColor = True
         '
@@ -543,7 +543,7 @@ Partial Class frmCadAcessoria
         Me.chbRAIS.Location = New System.Drawing.Point(125, 31)
         Me.chbRAIS.Name = "chbRAIS"
         Me.chbRAIS.Size = New System.Drawing.Size(53, 19)
-        Me.chbRAIS.TabIndex = 0
+        Me.chbRAIS.TabIndex = 21
         Me.chbRAIS.Text = "RAIS"
         Me.chbRAIS.UseVisualStyleBackColor = True
         '
@@ -554,7 +554,7 @@ Partial Class frmCadAcessoria
         Me.txtObs.Name = "txtObs"
         Me.txtObs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObs.Size = New System.Drawing.Size(241, 272)
-        Me.txtObs.TabIndex = 13
+        Me.txtObs.TabIndex = 27
         '
         'Label8
         '
