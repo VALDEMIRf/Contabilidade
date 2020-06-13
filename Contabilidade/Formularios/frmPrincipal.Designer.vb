@@ -43,16 +43,23 @@ Partial Class frmPrincipal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.cbPesquisa = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.rbAtivo = New System.Windows.Forms.RadioButton()
         Me.dgvTarefas = New System.Windows.Forms.DataGridView()
+        Me.btRecarregarTarefas = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cmbMes = New System.Windows.Forms.ComboBox()
+        Me.dgvAniversariantes = New System.Windows.Forms.DataGridView()
+        Me.chbAtivo = New System.Windows.Forms.CheckBox()
+        Me.cbPesquisa = New System.Windows.Forms.ComboBox()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvTarefas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.dgvAniversariantes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -214,46 +221,27 @@ Partial Class frmPrincipal
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.chbAtivo)
+        Me.GroupBox1.Controls.Add(Me.btRecarregarTarefas)
         Me.GroupBox1.Controls.Add(Me.dgvTarefas)
-        Me.GroupBox1.Controls.Add(Me.rbAtivo)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.cbPesquisa)
-        Me.GroupBox1.Location = New System.Drawing.Point(460, 127)
+        Me.GroupBox1.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(510, 121)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(552, 311)
+        Me.GroupBox1.Size = New System.Drawing.Size(450, 271)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Lista de Tarefas"
-        '
-        'cbPesquisa
-        '
-        Me.cbPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbPesquisa.FormattingEnabled = True
-        Me.cbPesquisa.Items.AddRange(New Object() {"<Selecione a Atividade>", "Ativo"})
-        Me.cbPesquisa.Location = New System.Drawing.Point(7, 19)
-        Me.cbPesquisa.Name = "cbPesquisa"
-        Me.cbPesquisa.Size = New System.Drawing.Size(121, 21)
-        Me.cbPesquisa.TabIndex = 0
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(134, 22)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(113, 13)
+        Me.Label2.Size = New System.Drawing.Size(149, 17)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Selecione a Atividade:"
-        '
-        'rbAtivo
-        '
-        Me.rbAtivo.AutoSize = True
-        Me.rbAtivo.Location = New System.Drawing.Point(282, 22)
-        Me.rbAtivo.Name = "rbAtivo"
-        Me.rbAtivo.Size = New System.Drawing.Size(49, 17)
-        Me.rbAtivo.TabIndex = 2
-        Me.rbAtivo.TabStop = True
-        Me.rbAtivo.Text = "Ativo"
-        Me.rbAtivo.UseVisualStyleBackColor = True
         '
         'dgvTarefas
         '
@@ -263,8 +251,84 @@ Partial Class frmPrincipal
         Me.dgvTarefas.Location = New System.Drawing.Point(8, 46)
         Me.dgvTarefas.Name = "dgvTarefas"
         Me.dgvTarefas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvTarefas.Size = New System.Drawing.Size(538, 259)
+        Me.dgvTarefas.Size = New System.Drawing.Size(428, 216)
         Me.dgvTarefas.TabIndex = 3
+        '
+        'btRecarregarTarefas
+        '
+        Me.btRecarregarTarefas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btRecarregarTarefas.FlatAppearance.BorderSize = 0
+        Me.btRecarregarTarefas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btRecarregarTarefas.Image = CType(resources.GetObject("btRecarregarTarefas.Image"), System.Drawing.Image)
+        Me.btRecarregarTarefas.Location = New System.Drawing.Point(416, 14)
+        Me.btRecarregarTarefas.Name = "btRecarregarTarefas"
+        Me.btRecarregarTarefas.Size = New System.Drawing.Size(28, 27)
+        Me.btRecarregarTarefas.TabIndex = 4
+        Me.btRecarregarTarefas.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.dgvAniversariantes)
+        Me.GroupBox2.Controls.Add(Me.cmbMes)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(10, 127)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(463, 265)
+        Me.GroupBox2.TabIndex = 4
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Aniversariantes"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(16, 30)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 17)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Mês:"
+        '
+        'cmbMes
+        '
+        Me.cmbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbMes.FormattingEnabled = True
+        Me.cmbMes.Items.AddRange(New Object() {"<Selecione o Mês>", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"})
+        Me.cmbMes.Location = New System.Drawing.Point(58, 25)
+        Me.cmbMes.Name = "cmbMes"
+        Me.cmbMes.Size = New System.Drawing.Size(158, 25)
+        Me.cmbMes.TabIndex = 1
+        '
+        'dgvAniversariantes
+        '
+        Me.dgvAniversariantes.BackgroundColor = System.Drawing.Color.White
+        Me.dgvAniversariantes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvAniversariantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAniversariantes.Location = New System.Drawing.Point(6, 56)
+        Me.dgvAniversariantes.Name = "dgvAniversariantes"
+        Me.dgvAniversariantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvAniversariantes.Size = New System.Drawing.Size(449, 200)
+        Me.dgvAniversariantes.TabIndex = 2
+        '
+        'chbAtivo
+        '
+        Me.chbAtivo.AutoSize = True
+        Me.chbAtivo.Location = New System.Drawing.Point(286, 20)
+        Me.chbAtivo.Name = "chbAtivo"
+        Me.chbAtivo.Size = New System.Drawing.Size(58, 21)
+        Me.chbAtivo.TabIndex = 5
+        Me.chbAtivo.Text = "Ativo"
+        Me.chbAtivo.UseVisualStyleBackColor = True
+        '
+        'cbPesquisa
+        '
+        Me.cbPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbPesquisa.FormattingEnabled = True
+        Me.cbPesquisa.Items.AddRange(New Object() {"<Selecione a Atividade>", "Ativo"})
+        Me.cbPesquisa.Location = New System.Drawing.Point(7, 19)
+        Me.cbPesquisa.Name = "cbPesquisa"
+        Me.cbPesquisa.Size = New System.Drawing.Size(121, 25)
+        Me.cbPesquisa.TabIndex = 0
+        Me.cbPesquisa.Visible = False
         '
         'frmPrincipal
         '
@@ -272,6 +336,7 @@ Partial Class frmPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1012, 566)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -292,6 +357,9 @@ Partial Class frmPrincipal
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgvTarefas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.dgvAniversariantes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -316,8 +384,13 @@ Partial Class frmPrincipal
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents dgvTarefas As System.Windows.Forms.DataGridView
-    Friend WithEvents rbAtivo As System.Windows.Forms.RadioButton
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents btRecarregarTarefas As System.Windows.Forms.Button
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents dgvAniversariantes As System.Windows.Forms.DataGridView
+    Friend WithEvents cmbMes As System.Windows.Forms.ComboBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents chbAtivo As System.Windows.Forms.CheckBox
     Friend WithEvents cbPesquisa As System.Windows.Forms.ComboBox
 
 End Class
