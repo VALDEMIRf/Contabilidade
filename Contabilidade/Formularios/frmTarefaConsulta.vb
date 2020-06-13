@@ -110,14 +110,7 @@ Public Class frmTarefaConsulta
         Me.Close()
     End Sub
 
-    Private Sub btNovo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btNovo.Click
-        Dim frmTarefa As New frmTarefasCadastro
-        With frmTarefa
-            .Operacao = clsFuncoesGerais.Operacao.Inclusao
-            .ShowDialog()
-        End With
-        CarregaGrid()
-    End Sub
+    
 
     Private Sub btEnviarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btEnviarDados.Click
         DadosEnviados()
@@ -141,10 +134,22 @@ Public Class frmTarefaConsulta
                     _dtConclusao = dgdGrid.CurrentRow.Cells(6).Value
 
                     Me.Close()
-
+                   
                 End If
         End Select
         
+    End Sub
+
+    Private Sub btExcluirTarefa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btExcluirTarefa.Click
+        If dgdGrid.RowCount <> 0 Then
+            If (MessageBox.Show("Deseja excluir o registro?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
+            Dim cldTarefa As New clsTarefas
+            cldTarefa.Excluir(dgdGrid.CurrentRow.Cells(0).Value)
+            MessageBox.Show("Registro excluído com sucesso", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            CarregaGrid()
+        Else
+            MessageBox.Show("Clique no botão pesquisar e selecione uma Tarefa", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 End Class
 

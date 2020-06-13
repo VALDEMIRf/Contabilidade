@@ -31,7 +31,6 @@ Partial Class frmPrincipal
         Me.ControleDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TarefasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CadastroDeTarefasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultaDeTarefasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatóriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TestesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,15 +42,15 @@ Partial Class frmPrincipal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.dgvTarefas = New System.Windows.Forms.DataGridView()
-        Me.btRecarregarTarefas = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cmbMes = New System.Windows.Forms.ComboBox()
-        Me.dgvAniversariantes = New System.Windows.Forms.DataGridView()
         Me.chbAtivo = New System.Windows.Forms.CheckBox()
+        Me.btRecarregarTarefas = New System.Windows.Forms.Button()
+        Me.dgvTarefas = New System.Windows.Forms.DataGridView()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.cbPesquisa = New System.Windows.Forms.ComboBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.dgvAniversariantes = New System.Windows.Forms.DataGridView()
+        Me.cmbMes = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,7 +115,7 @@ Partial Class frmPrincipal
         '
         'TarefasToolStripMenuItem
         '
-        Me.TarefasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastroDeTarefasToolStripMenuItem, Me.ConsultaDeTarefasToolStripMenuItem})
+        Me.TarefasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CadastroDeTarefasToolStripMenuItem})
         Me.TarefasToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.TarefasToolStripMenuItem.Image = CType(resources.GetObject("TarefasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TarefasToolStripMenuItem.Name = "TarefasToolStripMenuItem"
@@ -129,13 +128,6 @@ Partial Class frmPrincipal
         Me.CadastroDeTarefasToolStripMenuItem.Name = "CadastroDeTarefasToolStripMenuItem"
         Me.CadastroDeTarefasToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.CadastroDeTarefasToolStripMenuItem.Text = "Cadastro de Tarefas"
-        '
-        'ConsultaDeTarefasToolStripMenuItem
-        '
-        Me.ConsultaDeTarefasToolStripMenuItem.Image = CType(resources.GetObject("ConsultaDeTarefasToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ConsultaDeTarefasToolStripMenuItem.Name = "ConsultaDeTarefasToolStripMenuItem"
-        Me.ConsultaDeTarefasToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
-        Me.ConsultaDeTarefasToolStripMenuItem.Text = "Consulta de Tarefas"
         '
         'RelatóriosToolStripMenuItem
         '
@@ -234,25 +226,15 @@ Partial Class frmPrincipal
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Lista de Tarefas"
         '
-        'Label2
+        'chbAtivo
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(134, 22)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(149, 17)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Selecione a Atividade:"
-        '
-        'dgvTarefas
-        '
-        Me.dgvTarefas.BackgroundColor = System.Drawing.Color.White
-        Me.dgvTarefas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvTarefas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTarefas.Location = New System.Drawing.Point(8, 46)
-        Me.dgvTarefas.Name = "dgvTarefas"
-        Me.dgvTarefas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvTarefas.Size = New System.Drawing.Size(428, 216)
-        Me.dgvTarefas.TabIndex = 3
+        Me.chbAtivo.AutoSize = True
+        Me.chbAtivo.Location = New System.Drawing.Point(286, 20)
+        Me.chbAtivo.Name = "chbAtivo"
+        Me.chbAtivo.Size = New System.Drawing.Size(58, 21)
+        Me.chbAtivo.TabIndex = 5
+        Me.chbAtivo.Text = "Ativo"
+        Me.chbAtivo.UseVisualStyleBackColor = True
         '
         'btRecarregarTarefas
         '
@@ -265,6 +247,37 @@ Partial Class frmPrincipal
         Me.btRecarregarTarefas.Size = New System.Drawing.Size(28, 27)
         Me.btRecarregarTarefas.TabIndex = 4
         Me.btRecarregarTarefas.UseVisualStyleBackColor = True
+        '
+        'dgvTarefas
+        '
+        Me.dgvTarefas.BackgroundColor = System.Drawing.Color.White
+        Me.dgvTarefas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvTarefas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTarefas.Location = New System.Drawing.Point(8, 46)
+        Me.dgvTarefas.Name = "dgvTarefas"
+        Me.dgvTarefas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvTarefas.Size = New System.Drawing.Size(428, 216)
+        Me.dgvTarefas.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(134, 22)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(149, 17)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Selecione a Atividade:"
+        '
+        'cbPesquisa
+        '
+        Me.cbPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbPesquisa.FormattingEnabled = True
+        Me.cbPesquisa.Items.AddRange(New Object() {"<Selecione a Atividade>", "Ativo"})
+        Me.cbPesquisa.Location = New System.Drawing.Point(7, 19)
+        Me.cbPesquisa.Name = "cbPesquisa"
+        Me.cbPesquisa.Size = New System.Drawing.Size(121, 25)
+        Me.cbPesquisa.TabIndex = 0
+        Me.cbPesquisa.Visible = False
         '
         'GroupBox2
         '
@@ -279,25 +292,6 @@ Partial Class frmPrincipal
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Aniversariantes"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(16, 30)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 17)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Mês:"
-        '
-        'cmbMes
-        '
-        Me.cmbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbMes.FormattingEnabled = True
-        Me.cmbMes.Items.AddRange(New Object() {"<Selecione o Mês>", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"})
-        Me.cmbMes.Location = New System.Drawing.Point(58, 25)
-        Me.cmbMes.Name = "cmbMes"
-        Me.cmbMes.Size = New System.Drawing.Size(158, 25)
-        Me.cmbMes.TabIndex = 1
-        '
         'dgvAniversariantes
         '
         Me.dgvAniversariantes.BackgroundColor = System.Drawing.Color.White
@@ -309,26 +303,24 @@ Partial Class frmPrincipal
         Me.dgvAniversariantes.Size = New System.Drawing.Size(449, 200)
         Me.dgvAniversariantes.TabIndex = 2
         '
-        'chbAtivo
+        'cmbMes
         '
-        Me.chbAtivo.AutoSize = True
-        Me.chbAtivo.Location = New System.Drawing.Point(286, 20)
-        Me.chbAtivo.Name = "chbAtivo"
-        Me.chbAtivo.Size = New System.Drawing.Size(58, 21)
-        Me.chbAtivo.TabIndex = 5
-        Me.chbAtivo.Text = "Ativo"
-        Me.chbAtivo.UseVisualStyleBackColor = True
+        Me.cmbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbMes.FormattingEnabled = True
+        Me.cmbMes.Items.AddRange(New Object() {"<Selecione o Mês>", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"})
+        Me.cmbMes.Location = New System.Drawing.Point(58, 25)
+        Me.cmbMes.Name = "cmbMes"
+        Me.cmbMes.Size = New System.Drawing.Size(158, 25)
+        Me.cmbMes.TabIndex = 1
         '
-        'cbPesquisa
+        'Label3
         '
-        Me.cbPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbPesquisa.FormattingEnabled = True
-        Me.cbPesquisa.Items.AddRange(New Object() {"<Selecione a Atividade>", "Ativo"})
-        Me.cbPesquisa.Location = New System.Drawing.Point(7, 19)
-        Me.cbPesquisa.Name = "cbPesquisa"
-        Me.cbPesquisa.Size = New System.Drawing.Size(121, 25)
-        Me.cbPesquisa.TabIndex = 0
-        Me.cbPesquisa.Visible = False
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(16, 30)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 17)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Mês:"
         '
         'frmPrincipal
         '
@@ -369,7 +361,6 @@ Partial Class frmPrincipal
     Friend WithEvents ManutençãoDeClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TarefasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CadastroDeTarefasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ConsultaDeTarefasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AssessoriaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ControleDeClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RelatóriosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

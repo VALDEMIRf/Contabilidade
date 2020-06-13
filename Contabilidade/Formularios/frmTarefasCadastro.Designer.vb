@@ -24,7 +24,9 @@ Partial Class frmTarefasCadastro
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTarefasCadastro))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtDtConclusao = New System.Windows.Forms.MaskedTextBox()
         Me.lblRecebeIDTarefa = New System.Windows.Forms.Label()
+        Me.btPesquisar = New System.Windows.Forms.Button()
         Me.txtDtCadastro = New System.Windows.Forms.MaskedTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -35,12 +37,9 @@ Partial Class frmTarefasCadastro
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtTarefa = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.btPesquisar = New System.Windows.Forms.Button()
+        Me.btAlterarTarefa = New System.Windows.Forms.Button()
         Me.btGravar = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
-        Me.txtDtConclusao = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -48,6 +47,7 @@ Partial Class frmTarefasCadastro
         '
         Me.GroupBox1.Controls.Add(Me.txtDtConclusao)
         Me.GroupBox1.Controls.Add(Me.lblRecebeIDTarefa)
+        Me.GroupBox1.Controls.Add(Me.btPesquisar)
         Me.GroupBox1.Controls.Add(Me.txtDtCadastro)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -62,23 +62,46 @@ Partial Class frmTarefasCadastro
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.GroupBox1.Size = New System.Drawing.Size(691, 240)
+        Me.GroupBox1.Size = New System.Drawing.Size(691, 251)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Descrição da Tarefa"
         '
+        'txtDtConclusao
+        '
+        Me.txtDtConclusao.Location = New System.Drawing.Point(492, 203)
+        Me.txtDtConclusao.Mask = "00/00/0000"
+        Me.txtDtConclusao.Name = "txtDtConclusao"
+        Me.txtDtConclusao.Size = New System.Drawing.Size(100, 22)
+        Me.txtDtConclusao.TabIndex = 12
+        Me.txtDtConclusao.ValidatingType = GetType(Date)
+        '
         'lblRecebeIDTarefa
         '
         Me.lblRecebeIDTarefa.AutoSize = True
-        Me.lblRecebeIDTarefa.Location = New System.Drawing.Point(640, 212)
+        Me.lblRecebeIDTarefa.Location = New System.Drawing.Point(647, 146)
         Me.lblRecebeIDTarefa.Name = "lblRecebeIDTarefa"
         Me.lblRecebeIDTarefa.Size = New System.Drawing.Size(15, 16)
         Me.lblRecebeIDTarefa.TabIndex = 11
         Me.lblRecebeIDTarefa.Text = "0"
         '
+        'btPesquisar
+        '
+        Me.btPesquisar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btPesquisar.FlatAppearance.BorderSize = 0
+        Me.btPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btPesquisar.Image = CType(resources.GetObject("btPesquisar.Image"), System.Drawing.Image)
+        Me.btPesquisar.Location = New System.Drawing.Point(569, 49)
+        Me.btPesquisar.Name = "btPesquisar"
+        Me.btPesquisar.Size = New System.Drawing.Size(106, 46)
+        Me.btPesquisar.TabIndex = 3
+        Me.btPesquisar.Text = "Pesquisar"
+        Me.btPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btPesquisar.UseVisualStyleBackColor = True
+        '
         'txtDtCadastro
         '
-        Me.txtDtCadastro.Location = New System.Drawing.Point(126, 191)
+        Me.txtDtCadastro.Location = New System.Drawing.Point(127, 200)
         Me.txtDtCadastro.Mask = "00/00/0000"
         Me.txtDtCadastro.Name = "txtDtCadastro"
         Me.txtDtCadastro.Size = New System.Drawing.Size(79, 22)
@@ -88,7 +111,7 @@ Partial Class frmTarefasCadastro
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(8, 194)
+        Me.Label5.Location = New System.Drawing.Point(9, 203)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(113, 16)
@@ -98,7 +121,7 @@ Partial Class frmTarefasCadastro
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(364, 197)
+        Me.Label4.Location = New System.Drawing.Point(365, 206)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(122, 16)
@@ -108,7 +131,7 @@ Partial Class frmTarefasCadastro
         'chbAtivo
         '
         Me.chbAtivo.AutoSize = True
-        Me.chbAtivo.Location = New System.Drawing.Point(367, 137)
+        Me.chbAtivo.Location = New System.Drawing.Point(371, 166)
         Me.chbAtivo.Name = "chbAtivo"
         Me.chbAtivo.Size = New System.Drawing.Size(55, 20)
         Me.chbAtivo.TabIndex = 6
@@ -117,7 +140,7 @@ Partial Class frmTarefasCadastro
         '
         'txtResponsavel
         '
-        Me.txtResponsavel.Location = New System.Drawing.Point(90, 133)
+        Me.txtResponsavel.Location = New System.Drawing.Point(94, 162)
         Me.txtResponsavel.Name = "txtResponsavel"
         Me.txtResponsavel.Size = New System.Drawing.Size(183, 22)
         Me.txtResponsavel.TabIndex = 5
@@ -125,7 +148,7 @@ Partial Class frmTarefasCadastro
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(5, 137)
+        Me.Label3.Location = New System.Drawing.Point(9, 166)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(85, 16)
@@ -134,18 +157,18 @@ Partial Class frmTarefasCadastro
         '
         'txtObs
         '
-        Me.txtObs.Location = New System.Drawing.Point(367, 27)
+        Me.txtObs.Location = New System.Drawing.Point(243, 48)
         Me.txtObs.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtObs.Multiline = True
         Me.txtObs.Name = "txtObs"
         Me.txtObs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtObs.Size = New System.Drawing.Size(309, 90)
+        Me.txtObs.Size = New System.Drawing.Size(309, 91)
         Me.txtObs.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(276, 30)
+        Me.Label2.Location = New System.Drawing.Point(240, 30)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(87, 16)
@@ -154,7 +177,7 @@ Partial Class frmTarefasCadastro
         '
         'txtTarefa
         '
-        Me.txtTarefa.Location = New System.Drawing.Point(57, 28)
+        Me.txtTarefa.Location = New System.Drawing.Point(5, 49)
         Me.txtTarefa.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtTarefa.Multiline = True
         Me.txtTarefa.Name = "txtTarefa"
@@ -172,45 +195,19 @@ Partial Class frmTarefasCadastro
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Tarefa:"
         '
-        'Button1
+        'btAlterarTarefa
         '
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(194, 291)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Button1"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(264, 291)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Button2"
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'btPesquisar
-        '
-        Me.btPesquisar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btPesquisar.FlatAppearance.BorderSize = 0
-        Me.btPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btPesquisar.Image = CType(resources.GetObject("btPesquisar.Image"), System.Drawing.Image)
-        Me.btPesquisar.Location = New System.Drawing.Point(389, 275)
-        Me.btPesquisar.Name = "btPesquisar"
-        Me.btPesquisar.Size = New System.Drawing.Size(106, 46)
-        Me.btPesquisar.TabIndex = 3
-        Me.btPesquisar.Text = "Pesquisar"
-        Me.btPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btPesquisar.UseVisualStyleBackColor = True
+        Me.btAlterarTarefa.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btAlterarTarefa.FlatAppearance.BorderSize = 0
+        Me.btAlterarTarefa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAlterarTarefa.Image = CType(resources.GetObject("btAlterarTarefa.Image"), System.Drawing.Image)
+        Me.btAlterarTarefa.Location = New System.Drawing.Point(375, 276)
+        Me.btAlterarTarefa.Name = "btAlterarTarefa"
+        Me.btAlterarTarefa.Size = New System.Drawing.Size(121, 64)
+        Me.btAlterarTarefa.TabIndex = 2
+        Me.btAlterarTarefa.Text = "Alterar Tarefa"
+        Me.btAlterarTarefa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btAlterarTarefa.UseVisualStyleBackColor = True
         '
         'btGravar
         '
@@ -218,11 +215,11 @@ Partial Class frmTarefasCadastro
         Me.btGravar.FlatAppearance.BorderSize = 0
         Me.btGravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btGravar.Image = CType(resources.GetObject("btGravar.Image"), System.Drawing.Image)
-        Me.btGravar.Location = New System.Drawing.Point(490, 269)
+        Me.btGravar.Location = New System.Drawing.Point(488, 281)
         Me.btGravar.Name = "btGravar"
         Me.btGravar.Size = New System.Drawing.Size(113, 55)
         Me.btGravar.TabIndex = 4
-        Me.btGravar.Text = "Salvar"
+        Me.btGravar.Text = "Salvar Tarefa"
         Me.btGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btGravar.UseVisualStyleBackColor = True
         '
@@ -232,7 +229,7 @@ Partial Class frmTarefasCadastro
         Me.btSair.FlatAppearance.BorderSize = 0
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(609, 273)
+        Me.btSair.Location = New System.Drawing.Point(607, 281)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(91, 51)
         Me.btSair.TabIndex = 5
@@ -240,26 +237,15 @@ Partial Class frmTarefasCadastro
         Me.btSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btSair.UseVisualStyleBackColor = True
         '
-        'txtDtConclusao
-        '
-        Me.txtDtConclusao.Location = New System.Drawing.Point(491, 194)
-        Me.txtDtConclusao.Mask = "00/00/0000"
-        Me.txtDtConclusao.Name = "txtDtConclusao"
-        Me.txtDtConclusao.Size = New System.Drawing.Size(100, 22)
-        Me.txtDtConclusao.TabIndex = 12
-        Me.txtDtConclusao.ValidatingType = GetType(Date)
-        '
         'frmTarefasCadastro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(711, 343)
+        Me.ClientSize = New System.Drawing.Size(711, 393)
         Me.Controls.Add(Me.btSair)
         Me.Controls.Add(Me.btGravar)
-        Me.Controls.Add(Me.btPesquisar)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btAlterarTarefa)
         Me.Controls.Add(Me.GroupBox1)
         Me.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -284,8 +270,7 @@ Partial Class frmTarefasCadastro
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents chbAtivo As System.Windows.Forms.CheckBox
     Friend WithEvents txtResponsavel As System.Windows.Forms.TextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents btAlterarTarefa As System.Windows.Forms.Button
     Friend WithEvents btPesquisar As System.Windows.Forms.Button
     Friend WithEvents btGravar As System.Windows.Forms.Button
     Friend WithEvents btSair As System.Windows.Forms.Button

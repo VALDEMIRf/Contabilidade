@@ -27,9 +27,9 @@ Partial Class frmTarefaConsulta
         Me.txtDescricao = New System.Windows.Forms.TextBox()
         Me.dgdGrid = New System.Windows.Forms.DataGridView()
         Me.btPesquisar = New System.Windows.Forms.Button()
-        Me.btNovo = New System.Windows.Forms.Button()
         Me.btSair = New System.Windows.Forms.Button()
         Me.btEnviarDados = New System.Windows.Forms.Button()
+        Me.btExcluirTarefa = New System.Windows.Forms.Button()
         CType(Me.dgdGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -73,20 +73,6 @@ Partial Class frmTarefaConsulta
         Me.btPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btPesquisar.UseVisualStyleBackColor = True
         '
-        'btNovo
-        '
-        Me.btNovo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btNovo.FlatAppearance.BorderSize = 0
-        Me.btNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btNovo.Image = CType(resources.GetObject("btNovo.Image"), System.Drawing.Image)
-        Me.btNovo.Location = New System.Drawing.Point(313, 290)
-        Me.btNovo.Name = "btNovo"
-        Me.btNovo.Size = New System.Drawing.Size(90, 57)
-        Me.btNovo.TabIndex = 6
-        Me.btNovo.Text = "Novo"
-        Me.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btNovo.UseVisualStyleBackColor = True
-        '
         'btSair
         '
         Me.btSair.Cursor = System.Windows.Forms.Cursors.Hand
@@ -107,7 +93,7 @@ Partial Class frmTarefaConsulta
         Me.btEnviarDados.FlatAppearance.BorderSize = 0
         Me.btEnviarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btEnviarDados.Image = CType(resources.GetObject("btEnviarDados.Image"), System.Drawing.Image)
-        Me.btEnviarDados.Location = New System.Drawing.Point(203, 297)
+        Me.btEnviarDados.Location = New System.Drawing.Point(299, 290)
         Me.btEnviarDados.Name = "btEnviarDados"
         Me.btEnviarDados.Size = New System.Drawing.Size(104, 50)
         Me.btEnviarDados.TabIndex = 8
@@ -115,15 +101,29 @@ Partial Class frmTarefaConsulta
         Me.btEnviarDados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btEnviarDados.UseVisualStyleBackColor = True
         '
+        'btExcluirTarefa
+        '
+        Me.btExcluirTarefa.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btExcluirTarefa.FlatAppearance.BorderSize = 0
+        Me.btExcluirTarefa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btExcluirTarefa.Image = CType(resources.GetObject("btExcluirTarefa.Image"), System.Drawing.Image)
+        Me.btExcluirTarefa.Location = New System.Drawing.Point(196, 294)
+        Me.btExcluirTarefa.Name = "btExcluirTarefa"
+        Me.btExcluirTarefa.Size = New System.Drawing.Size(104, 50)
+        Me.btExcluirTarefa.TabIndex = 9
+        Me.btExcluirTarefa.Text = "Excluir Tarefa"
+        Me.btExcluirTarefa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btExcluirTarefa.UseVisualStyleBackColor = True
+        '
         'frmTarefaConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(487, 361)
+        Me.Controls.Add(Me.btExcluirTarefa)
         Me.Controls.Add(Me.btEnviarDados)
         Me.Controls.Add(Me.btSair)
-        Me.Controls.Add(Me.btNovo)
         Me.Controls.Add(Me.btPesquisar)
         Me.Controls.Add(Me.dgdGrid)
         Me.Controls.Add(Me.txtDescricao)
@@ -142,7 +142,7 @@ Partial Class frmTarefaConsulta
     Friend WithEvents txtDescricao As System.Windows.Forms.TextBox
     Friend WithEvents dgdGrid As System.Windows.Forms.DataGridView
     Friend WithEvents btPesquisar As System.Windows.Forms.Button
-    Friend WithEvents btNovo As System.Windows.Forms.Button
     Friend WithEvents btSair As System.Windows.Forms.Button
     Friend WithEvents btEnviarDados As System.Windows.Forms.Button
+    Friend WithEvents btExcluirTarefa As System.Windows.Forms.Button
 End Class

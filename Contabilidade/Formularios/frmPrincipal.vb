@@ -81,15 +81,7 @@ Public Class frmPrincipal
         frmCadTarefas.ShowDialog()
     End Sub
 
-    
-    Private Sub rbAtivo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        'If cbPesquisa.SelectedIndex = 0 Then
-        '    CarregaGrid()
-        'Else
-        '    ListadeTarefas(cbPesquisa.Text)
-        'End If
-    End Sub
-
+    'MÉTODO QUE LISTA DADOS DAS TAREFAS 
     Private Sub ListadeTarefas(ByVal strPesquisa As String)
         Using con As OleDbConnection = GetConnection()
             Try
@@ -116,6 +108,7 @@ Public Class frmPrincipal
         CarregaGrid()
     End Sub
 
+    'MÉTODO QUE LISTA DADOS DAS CLIENTES PARA VER OS ANIVERSARIANTES
     Private Sub PCarregaDadosIniciais()
         Using con As OleDbConnection = GetConnection()
             Try
@@ -169,6 +162,7 @@ Public Class frmPrincipal
         End With
     End Sub
 
+    'MÉTODO QUE LISTA OS ANIVERSARIANTES POR MES
     Private Sub PCarregaDados(ByVal strMes As String)
         Using con As OleDbConnection = GetConnection()
             Try
@@ -208,4 +202,6 @@ Public Class frmPrincipal
             ListadeTarefas(cbPesquisa.Text)
         End If
     End Sub
+
+   
 End Class

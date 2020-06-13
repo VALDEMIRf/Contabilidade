@@ -77,7 +77,7 @@ Public Class clsTarefas
     End Property
 
 
-    'MÉTODO QUE GRAVA DADOS PESSOA FÍSICA
+    'MÉTODO QUE GRAVA DADOS DE UMA NOVA TAREFA
     Public Sub GravarDados()
         Using con As OleDbConnection = GetConnection()
             Try
@@ -106,13 +106,13 @@ Public Class clsTarefas
     End Sub
 
 
-    'METODO QUE ALTERA DADOS PESSOA FÍSICA
+    'MÉTODO QUE ALTERA DADOS DE UMA NOVA TAREFA
     Public Sub AlterarDados()
 
         Using con As OleDbConnection = GetConnection()
             Try
                 con.Open()
-                Dim sql As String = "UPDATE tbTarefas SET tarefa=?,obs=?,responsavel=?,Ativo=?,DtCadastro=?,DtConclusao=? WHERE tarefas_id=" & CInt(tarefas_id)
+                Dim sql As String = "UPDATE tbTarefas SET tarefa=?,obs=?,responsavel=?,Ativo=?,DtCadastro=?,dtConclusao=? WHERE tarefas_id=" & CInt(tarefas_id)
                 Dim cmd As OleDbCommand = New OleDbCommand(sql, con)
 
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@tarefa", _tarefa))
@@ -136,7 +136,7 @@ Public Class clsTarefas
 
     End Sub
 
-
+    'MÉTODO QUE LISTA DADOS DE UMA NOVA TAREFA
     Public Function ListTarefa(ByVal p1 As String) As DataSet
 
         'Cria um StringBuilder para concatenar a Query Sql
@@ -150,18 +150,7 @@ Public Class clsTarefas
         Return cldBancoDados.RetornaDataSet(strQuery.ToString)
 
     End Function
-    'Public Function ListaTarefas(ByVal intCodigo As Integer) As OleDbDataReader
-    '    'Cria um StringBuilder para concatenar a Query Sql
-    '    Dim strQuery As New StringBuilder
-    '    strQuery.Append(" SELECT tarefa,obs,responsavel,Ativo,DtCadastro,dtConclusao ")
-    '    strQuery.Append(" FROM tbTarefas ")
-    '    strQuery.Append(" WHERE tarefas_id = " & intCodigo & " ")
-
-    '    'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader
-    '    Dim cldBancoDados As New cldBancoDados()
-    '    Return cldBancoDados.RetornaDataReader(strQuery.ToString)
-    'End Function
-
+   
     Public Function Lista(ByVal strDescricao As String) As DataSet
         'Cria um StringBuilder para concatenar a Query Sql
         Dim strQuery As New StringBuilder
@@ -177,6 +166,7 @@ Public Class clsTarefas
         Return cldBancoDados.RetornaDataSet(strQuery.ToString)
     End Function
 
+    'MÉTODO QUE EXCLUI DADOS DE UMA NOVA TAREFA
     Public Sub Excluir(ByVal intCodigo As Integer)
         'Cria um StringBuilder para concatenar a Query Sql
         Dim strQuery As New StringBuilder

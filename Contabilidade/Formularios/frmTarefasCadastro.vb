@@ -165,6 +165,25 @@
         txtDtConclusao.Text = ""
     End Sub
 
+    Private Sub btAlterarTarefa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btAlterarTarefa.Click
+        Try
+            novaTarefa.tarefas_id = lblRecebeIDTarefa.Text
+            novaTarefa.tarefa = txtTarefa.Text
+            novaTarefa.obs = txtObs.Text
+            novaTarefa.responsavel = txtResponsavel.Text
+            novaTarefa.Ativo = chbAtivo.Checked
+            novaTarefa.DtCadastro = txtDtCadastro.Text
+            novaTarefa.dtConclusao = txtDtConclusao.Text
 
+            novaTarefa.AlterarDados()
 
+            LimparCampos()
+
+        Catch ex As Exception
+            MessageBox.Show("não foi possível fazer o alterar!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
+
+   
 End Class
