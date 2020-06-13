@@ -80,6 +80,7 @@
     <Compile Include="Classes\clsCliente.vb" />
     <Compile Include="Classes\clsCPFVinculado.vb" />
     <Compile Include="Classes\clsEmpresa.vb" />
+    <Compile Include="Classes\clsTarefas.vb" />
     <Compile Include="Classes\Conexao.vb" />
     <Compile Include="cldBancoDados.vb" />
     <Compile Include="clsFuncoesGerais.vb" />
@@ -111,6 +112,18 @@
       <DependentUpon>frmEmpresaConsulta.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmEmpresaConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmTarefaConsulta.Designer.vb">
+      <DependentUpon>frmTarefaConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmTarefaConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmTarefasCadastro.Designer.vb">
+      <DependentUpon>frmTarefasCadastro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmTarefasCadastro.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmVinculadoCadastro.Designer.vb">
@@ -189,6 +202,12 @@
     <EmbeddedResource Include="Formularios\frmEmpresaConsulta.resx">
       <DependentUpon>frmEmpresaConsulta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmTarefaConsulta.resx">
+      <DependentUpon>frmTarefaConsulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmTarefasCadastro.resx">
+      <DependentUpon>frmTarefasCadastro.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmVinculadoCadastro.resx">
       <DependentUpon>frmVinculadoCadastro.vb</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +261,7 @@
     <Content Include="Imagens\Action-file-new-icon.png" />
     <Content Include="Imagens\Actions-edit-clear-icon.png" />
     <Content Include="Imagens\agenda2.png" />
+    <Content Include="Imagens\Aha-Sof.ico" />
     <Content Include="Imagens\alterar.png" />
     <Content Include="Imagens\alterarDados.png" />
     <Content Include="Imagens\anterior.png" />
@@ -253,14 +273,17 @@
     <Content Include="Imagens\Button-Next-icon.png" />
     <Content Include="Imagens\clear-icon %281%29.png" />
     <Content Include="Imagens\Consultar.ico" />
+    <Content Include="Imagens\deletar.png" />
     <Content Include="Imagens\Edit-Document-icon.png" />
     <Content Include="Imagens\Edit-file.ico" />
     <Content Include="Imagens\empresa.ico" />
+    <Content Include="Imagens\Files-New.png" />
     <Content Include="Imagens\forms-icon.png" />
     <Content Include="Imagens\Log-Out-icon.png" />
     <Content Include="Imagens\logo webfacil.png" />
     <Content Include="Imagens\lupa.png" />
     <Content Include="Imagens\Maintenance.ico" />
+    <Content Include="Imagens\New-File 1.png" />
     <Content Include="Imagens\People.png" />
     <Content Include="Imagens\Register.ico" />
     <Content Include="Imagens\sair.png" />

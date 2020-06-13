@@ -42,10 +42,17 @@ Partial Class frmPrincipal
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbPesquisa = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.rbAtivo = New System.Windows.Forms.RadioButton()
+        Me.dgvTarefas = New System.Windows.Forms.DataGridView()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.dgvTarefas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -56,7 +63,7 @@ Partial Class frmPrincipal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SobreToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.AssessoriaToolStripMenuItem, Me.TarefasToolStripMenuItem, Me.RelatóriosToolStripMenuItem, Me.SairToolStripMenuItem, Me.TestesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(941, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1012, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -172,7 +179,7 @@ Partial Class frmPrincipal
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(941, 79)
+        Me.Panel1.Size = New System.Drawing.Size(1012, 79)
         Me.Panel1.TabIndex = 1
         '
         'PictureBox1
@@ -202,15 +209,70 @@ Partial Class frmPrincipal
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 79)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(941, 27)
+        Me.Panel2.Size = New System.Drawing.Size(1012, 27)
         Me.Panel2.TabIndex = 2
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.dgvTarefas)
+        Me.GroupBox1.Controls.Add(Me.rbAtivo)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.cbPesquisa)
+        Me.GroupBox1.Location = New System.Drawing.Point(460, 127)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(552, 311)
+        Me.GroupBox1.TabIndex = 3
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Lista de Tarefas"
+        '
+        'cbPesquisa
+        '
+        Me.cbPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbPesquisa.FormattingEnabled = True
+        Me.cbPesquisa.Items.AddRange(New Object() {"<Selecione a Atividade>", "Ativo"})
+        Me.cbPesquisa.Location = New System.Drawing.Point(7, 19)
+        Me.cbPesquisa.Name = "cbPesquisa"
+        Me.cbPesquisa.Size = New System.Drawing.Size(121, 21)
+        Me.cbPesquisa.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(134, 22)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(113, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Selecione a Atividade:"
+        '
+        'rbAtivo
+        '
+        Me.rbAtivo.AutoSize = True
+        Me.rbAtivo.Location = New System.Drawing.Point(282, 22)
+        Me.rbAtivo.Name = "rbAtivo"
+        Me.rbAtivo.Size = New System.Drawing.Size(49, 17)
+        Me.rbAtivo.TabIndex = 2
+        Me.rbAtivo.TabStop = True
+        Me.rbAtivo.Text = "Ativo"
+        Me.rbAtivo.UseVisualStyleBackColor = True
+        '
+        'dgvTarefas
+        '
+        Me.dgvTarefas.BackgroundColor = System.Drawing.Color.White
+        Me.dgvTarefas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvTarefas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTarefas.Location = New System.Drawing.Point(8, 46)
+        Me.dgvTarefas.Name = "dgvTarefas"
+        Me.dgvTarefas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvTarefas.Size = New System.Drawing.Size(538, 259)
+        Me.dgvTarefas.TabIndex = 3
         '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(941, 344)
+        Me.ClientSize = New System.Drawing.Size(1012, 566)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
@@ -227,6 +289,9 @@ Partial Class frmPrincipal
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.dgvTarefas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -249,5 +314,10 @@ Partial Class frmPrincipal
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents dgvTarefas As System.Windows.Forms.DataGridView
+    Friend WithEvents rbAtivo As System.Windows.Forms.RadioButton
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents cbPesquisa As System.Windows.Forms.ComboBox
 
 End Class

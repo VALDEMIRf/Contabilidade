@@ -229,9 +229,9 @@ Partial Class frmCadAcessoria
         Me.btSalvar.FlatAppearance.BorderSize = 0
         Me.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSalvar.Image = CType(resources.GetObject("btSalvar.Image"), System.Drawing.Image)
-        Me.btSalvar.Location = New System.Drawing.Point(9, 331)
+        Me.btSalvar.Location = New System.Drawing.Point(9, 329)
         Me.btSalvar.Name = "btSalvar"
-        Me.btSalvar.Size = New System.Drawing.Size(124, 53)
+        Me.btSalvar.Size = New System.Drawing.Size(124, 58)
         Me.btSalvar.TabIndex = 29
         Me.btSalvar.Text = "Salvar"
         Me.btSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
