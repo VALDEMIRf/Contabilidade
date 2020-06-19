@@ -402,6 +402,10 @@ Public Class frmClientes
         txtNomeVinculado.Text = ""
         txtCPFVinculo.Text = ""
         txtTipoVinculo.Text = ""
+        txtClienteVinculo.Text = ""
+        txtFoneCel1.Text = ""
+        txtFoneCel2.Text = ""
+        dgvGridVinculo.ClearSelection()
 
 
     End Sub
@@ -806,6 +810,7 @@ Public Class frmClientes
         End Try
     End Sub
 
+    'BOTÃO QUE PESQUISA PESSOA JURÍDICA
     Private Sub btPesquisaEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btPesquisaEmpresa.Click
         Dim frmEmpresaConsulta As New frmEmpresaConsulta
         frmEmpresaConsulta.Text = "Consulta de Cliente com Empresa"
@@ -878,6 +883,7 @@ Public Class frmClientes
         CodigoEmpresa = frmEmpresaConsulta.empr_ID
         lblidEmpresa.Text = frmEmpresaConsulta.empr_ID
         lblclienteID.Text = frmEmpresaConsulta.empr_lblclienteID
+        lblciID.Text = frmEmpresaConsulta.cli_id
         txtRazaoSocial.Text = frmEmpresaConsulta.empr_razaosocial
         txtNomeFantasia.Text = frmEmpresaConsulta.empr_nomefantasia
         txtCNPJ.Text = frmEmpresaConsulta.empr_cnpj
@@ -947,6 +953,7 @@ Public Class frmClientes
             empresa.empr_atividade = txtAtividade.Text
             empresa.empr_dataInicio = dtpDataInicio.Text
             empresa.empr_lblclienteID = lblclienteID.Text
+            empresa.empr_lblciID = lblciID.Text
             empresa.clsCategoria = clnCategoria
             empresa.empr_TelCel1 = txtTelCelEmpre.Text
             empresa.empr_TelCel2 = txtTelCelEmpre2.Text
@@ -1122,5 +1129,4 @@ Public Class frmClientes
         End If
     End Sub
 
-   
 End Class

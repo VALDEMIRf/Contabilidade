@@ -1115,8 +1115,6 @@
                     _empr_NumCodReceitaPJ = dgvGridEmpresa.CurrentRow.Cells(87).Value
                     _empr_ValReceitaPJ = dgvGridEmpresa.CurrentRow.Cells(88).Value.ToString
 
-
-
                     Me.Close()
                 End If
 

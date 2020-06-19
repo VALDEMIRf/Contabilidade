@@ -9,7 +9,7 @@
         Select Case _ConsultaTipo
             Case TipoConsulta.Cliente
                 Dim clnCliente As New clsCliente
-                dsConsulta = clnCliente.ListarCpf(txtCPFPesquisa.Text)
+                dsConsulta = clnCliente.ListarCliente(txtCPFPesquisa.Text)
 
         End Select
         dgvGrid.DataSource = dsConsulta.Tables(0)
@@ -709,8 +709,8 @@
                     _cli_UF = dgvGrid.CurrentRow.Cells(15).Value
                     _cli_CEP = dgvGrid.CurrentRow.Cells(16).Value
                     _cli_FoneRes = dgvGrid.CurrentRow.Cells(17).Value
-                    _cli_FoneCel = dgvGrid.CurrentRow.Cells(18).Value
-                    _cli_FoneCel2 = dgvGrid.CurrentRow.Cells(19).Value
+                    _cli_FoneCel = dgvGrid.CurrentRow.Cells(18).Value.ToString
+                    _cli_FoneCel2 = dgvGrid.CurrentRow.Cells(19).Value.ToString
                     _cli_Email = dgvGrid.CurrentRow.Cells(20).Value
                     _cli_observacoes = dgvGrid.CurrentRow.Cells(21).Value
                     _cli_Autonomo = dgvGrid.CurrentRow.Cells(22).Value
@@ -747,7 +747,7 @@
                     _cli_CodRFB = dgvGrid.CurrentRow.Cells(53).Value
                     _cli_CodRFBNum = dgvGrid.CurrentRow.Cells(54).Value
                     _cli_CodRFBValidade = dgvGrid.CurrentRow.Cells(55).Value
-                    _vinc_id = dgvGrid.CurrentRow.Cells(56).Value
+                    ' _vinc_id = dgvGrid.CurrentRow.Cells(56).Value
 
                     Me.Close()
                 End If

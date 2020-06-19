@@ -243,7 +243,7 @@ Partial Class frmCadAcessoria
         Me.btAlterar.FlatAppearance.BorderSize = 0
         Me.btAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAlterar.Image = CType(resources.GetObject("btAlterar.Image"), System.Drawing.Image)
-        Me.btAlterar.Location = New System.Drawing.Point(145, 331)
+        Me.btAlterar.Location = New System.Drawing.Point(113, 334)
         Me.btAlterar.Name = "btAlterar"
         Me.btAlterar.Size = New System.Drawing.Size(105, 57)
         Me.btAlterar.TabIndex = 30
@@ -257,7 +257,7 @@ Partial Class frmCadAcessoria
         Me.btRegistroAnterior.FlatAppearance.BorderSize = 0
         Me.btRegistroAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btRegistroAnterior.Image = CType(resources.GetObject("btRegistroAnterior.Image"), System.Drawing.Image)
-        Me.btRegistroAnterior.Location = New System.Drawing.Point(265, 331)
+        Me.btRegistroAnterior.Location = New System.Drawing.Point(224, 334)
         Me.btRegistroAnterior.Name = "btRegistroAnterior"
         Me.btRegistroAnterior.Size = New System.Drawing.Size(114, 60)
         Me.btRegistroAnterior.TabIndex = 31
@@ -271,7 +271,7 @@ Partial Class frmCadAcessoria
         Me.btProximoRegistro.FlatAppearance.BorderSize = 0
         Me.btProximoRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btProximoRegistro.Image = CType(resources.GetObject("btProximoRegistro.Image"), System.Drawing.Image)
-        Me.btProximoRegistro.Location = New System.Drawing.Point(393, 331)
+        Me.btProximoRegistro.Location = New System.Drawing.Point(355, 336)
         Me.btProximoRegistro.Name = "btProximoRegistro"
         Me.btProximoRegistro.Size = New System.Drawing.Size(135, 56)
         Me.btProximoRegistro.TabIndex = 32
@@ -285,7 +285,7 @@ Partial Class frmCadAcessoria
         Me.btSair.FlatAppearance.BorderSize = 0
         Me.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btSair.Image = CType(resources.GetObject("btSair.Image"), System.Drawing.Image)
-        Me.btSair.Location = New System.Drawing.Point(529, 331)
+        Me.btSair.Location = New System.Drawing.Point(496, 338)
         Me.btSair.Name = "btSair"
         Me.btSair.Size = New System.Drawing.Size(75, 49)
         Me.btSair.TabIndex = 33
@@ -570,7 +570,7 @@ Partial Class frmCadAcessoria
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(804, 441)
+        Me.ClientSize = New System.Drawing.Size(804, 411)
         Me.Controls.Add(Me.txtObs)
         Me.Controls.Add(Me.gbDeclaracoes)
         Me.Controls.Add(Me.Label8)

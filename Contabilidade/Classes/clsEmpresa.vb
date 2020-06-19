@@ -150,6 +150,16 @@ Public Class clsEmpresa
         End Set
     End Property
 
+    Private _empr_lblciID As Integer
+    Public Property empr_lblciID() As Integer
+        Get
+            Return _empr_lblciID
+        End Get
+        Set(ByVal value As Integer)
+            _empr_lblciID = value
+        End Set
+    End Property
+
     Private _empr_dataInicio As String
     Public Property empr_dataInicio() As String
         Get
@@ -378,7 +388,7 @@ Public Class clsEmpresa
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_Porte", _empr_Porte))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_atividade", _empr_atividade))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_dataInicio", _empr_dataInicio))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_id", _empr_lblclienteID))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_id", _empr_lblciID))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cat_Id", _clsCategoria.cat_ID))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_TelCel1", _empr_TelCel1))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_TelCel2", _empr_TelCel2))
@@ -415,7 +425,6 @@ Public Class clsEmpresa
         End Using
     End Sub
 
-
     Public Function Listar(ByVal strDescricao As String) As DataSet
         'Cria um StringBuilder para concatenar a Query Sql
         Dim strQuery As New StringBuilder
@@ -450,7 +459,7 @@ Public Class clsEmpresa
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_Porte", _empr_Porte))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_atividade", _empr_atividade))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_dataInicio", _empr_dataInicio))
-                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_id", _empr_lblclienteID))
+                cmd.Parameters.Add(New OleDb.OleDbParameter("@cli_id", _empr_lblciID))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@cat_Id", _clsCategoria.cat_ID))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_TelCel1", _empr_TelCel1))
                 cmd.Parameters.Add(New OleDb.OleDbParameter("@empr_TelCel2", _empr_TelCel2))

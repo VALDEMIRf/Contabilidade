@@ -740,7 +740,23 @@ Public Class clsCliente
         End Using
     End Sub
 
-    'METODO QUE LISTA PESSOA FÍSICA
+    'METODO QUE LISTA PESSOA FÍSICA COM PESSOAS VINCULADAS
+    Public Function ListarCliente(ByVal strDescricao As String) As DataSet
+        'Cria um StringBuilder para concatenar a Query Sql
+        Dim strQuery As New StringBuilder              'cli_id,cli_CPF,cli_Situacao,cli_RG,cli_Nome,cli_PIS,cli_TitEleitoral,cli_Dia,cli_Mes,cli_Ano,cli_Logradouro,cli_Numero,cli_complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_FoneCel2,cli_Email,cli_observacoes,cli_Autonomo,cli_PJ,cli_MEI,cli_Curriculo,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NivelFunc,cli_Falecido,cli_DataFalecido,cli_Inativo,cli_InativoObs,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_Parcelamento,cli_NumParcelamento,cli_VIP,cli_VIPDescricao,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_Redesim,cli_SenhaRedesim,cli_CodRFB,cli_CodRFBNum,cli_CodRFBValidade,cli_DtCadastro
+        strQuery.Append(" SELECT c.cli_id as Codigo,c.cli_CPF as CPF,c.cli_Situacao as Situacao,c.cli_RG as RG,c.cli_Nome as Nome,c.cli_PIS,c.cli_TitEleitoral,c.cli_Dia,c.cli_Mes,c.cli_Ano,c.cli_Logradouro,c.cli_Numero,c.cli_complemento,c.cli_Bairro,c.cli_Cidade,c.cli_UF,c.cli_CEP,c.cli_FoneRes,c.cli_FoneCel,c.cli_FoneCel2,c.cli_Email,c.cli_observacoes,c.cli_Autonomo,c.cli_PJ,c.cli_MEI,c.cli_Curriculo,c.cli_Aposentado,c.cli_NumBeneficio,c.cli_FuncPublico,c.cli_NivelFunc,c.cli_Falecido,c.cli_DataFalecido,c.cli_Inativo,c.cli_InativoObs,c.cli_EmprDom,c.cli_ESocial,c.cli_EsocialSenha,c.cli_Parcelamento,c.cli_NumParcelamento,c.cli_VIP,c.cli_VIPDescricao,c.cli_ITR,c.cli_NumITR,c.cli_Mensalista,c.cli_NomeMensalista,c.cli_Decore,c.cli_DecoreDescricao,c.cli_IRPF,c.cli_NumIRPF,c.cli_SenWebPrefeitura,c.cli_SenhaWebPrefeitura,c.cli_Redesim,c.cli_SenhaRedesim,c.cli_CodRFB,c.cli_CodRFBNum,c.cli_CodRFBValidade ")
+        strQuery.Append(" FROM tbClientes as c  ")
+        If Not strDescricao.Equals(String.Empty) Then
+            strQuery.Append(" WHERE c.cli_CPF like '%" & strDescricao & "%'")
+        End If
+
+        'Executa o método RetornaDataReader da classe de banco de dados e retorna o DataReader
+        Dim cldBancoDados As New cldBancoDados()
+        Return cldBancoDados.RetornaDataSet(strQuery.ToString)
+    End Function
+
+
+    'METODO QUE LISTA PESSOA FÍSICA COM PESSOAS VINCULADAS
     Public Function ListarCpf(ByVal strDescricao As String) As DataSet
         'Cria um StringBuilder para concatenar a Query Sql
         Dim strQuery As New StringBuilder              'cli_id,cli_CPF,cli_Situacao,cli_RG,cli_Nome,cli_PIS,cli_TitEleitoral,cli_Dia,cli_Mes,cli_Ano,cli_Logradouro,cli_Numero,cli_complemento,cli_Bairro,cli_Cidade,cli_UF,cli_CEP,cli_FoneRes,cli_FoneCel,cli_FoneCel2,cli_Email,cli_observacoes,cli_Autonomo,cli_PJ,cli_MEI,cli_Curriculo,cli_Aposentado,cli_NumBeneficio,cli_FuncPublico,cli_NivelFunc,cli_Falecido,cli_DataFalecido,cli_Inativo,cli_InativoObs,cli_EmprDom,cli_ESocial,cli_EsocialSenha,cli_Parcelamento,cli_NumParcelamento,cli_VIP,cli_VIPDescricao,cli_ITR,cli_NumITR,cli_Mensalista,cli_NomeMensalista,cli_Decore,cli_DecoreDescricao,cli_IRPF,cli_NumIRPF,cli_SenWebPrefeitura,cli_SenhaWebPrefeitura,cli_Redesim,cli_SenhaRedesim,cli_CodRFB,cli_CodRFBNum,cli_CodRFBValidade,cli_DtCadastro
