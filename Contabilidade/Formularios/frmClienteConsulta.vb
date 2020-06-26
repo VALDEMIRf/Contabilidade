@@ -1,9 +1,31 @@
 ﻿Public Class frmClienteConsulta
 
+    Dim ds As New DataSet
+    Dim objClientes As New clsCliente
+
+    Private Sub frmClienteConsulta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        CarregaGridNome()
+    End Sub
+
+
     Public Enum TipoConsulta
         Cliente
         '  Empresa
     End Enum
+
+    Private Sub CarregaGridNome()
+        Try
+
+            ds = objClientes.consultarClientesCPF()
+            dgvGrid.DataSource = ds.Tables(0)
+            '  formataGrid()
+
+        Catch ex As Exception
+            MsgBox("Erro ao consultar clientes no Banco de Dados !" & ex.Message.ToString, MsgBoxStyle.Critical, "Erro")
+        End Try
+    End Sub
+
+
     Private Sub CarregaGrid()
         Dim dsConsulta As New Data.DataSet
         Select Case _ConsultaTipo
@@ -668,6 +690,71 @@
     End Property
 
 
+    Public Sub formataGrid()
+        With dgvGrid
+            .Columns(0).HeaderText = "Código"
+            .Columns(1).HeaderText = "CPF"
+            .Columns(2).HeaderText = "Situação"
+            .Columns(3).HeaderText = "RG"
+            .Columns(4).HeaderText = "Nome"
+            .Columns(5).HeaderText = "PIS"
+            .Columns(6).HeaderText = "Tit. Eleitoral"
+            .Columns(7).HeaderText = "Dia Nasc"
+            .Columns(8).HeaderText = "Mês Nasc"
+            .Columns(9).HeaderText = "Ano Nasc"
+            .Columns(10).HeaderText = "Endereco"
+            .Columns(11).HeaderText = "Nº"
+            .Columns(12).HeaderText = "Complemento"
+            .Columns(13).HeaderText = "Bairro"
+            .Columns(14).HeaderText = "Cidade"
+            .Columns(15).HeaderText = "UF"
+            .Columns(16).HeaderText = "CEP"
+            .Columns(17).HeaderText = "Fone Res"
+            .Columns(18).HeaderText = "Celular"
+            .Columns(19).HeaderText = "Celular 2"
+            .Columns(20).HeaderText = "Email"
+            .Columns(21).HeaderText = "Obs"
+            .Columns(22).HeaderText = "Autonomo"
+            .Columns(23).HeaderText = "PJ"
+            .Columns(24).HeaderText = "MEI"
+            .Columns(25).HeaderText = "Curriculo"
+            .Columns(26).HeaderText = "Aposentado"
+            .Columns(27).HeaderText = "Benefício"
+            .Columns(28).HeaderText = "Func. Público"
+            .Columns(29).HeaderText = "Nome Func"
+            .Columns(30).HeaderText = "Falecido"
+            .Columns(31).HeaderText = "Data Falecimento"
+            .Columns(32).HeaderText = "Inativo"
+            .Columns(33).HeaderText = "Inativo Obs"
+            .Columns(34).HeaderText = "Empr Domestico"
+            .Columns(35).HeaderText = "N° ESocial"
+            .Columns(36).HeaderText = "Senha ESocial"
+            .Columns(37).HeaderText = "Parcelamento"
+            .Columns(38).HeaderText = "Numero"
+            .Columns(39).HeaderText = "VIP"
+            .Columns(40).HeaderText = "Descrição"
+            .Columns(41).HeaderText = "ITR"
+            .Columns(42).HeaderText = "Numero"
+            .Columns(43).HeaderText = "Mensalista"
+            .Columns(44).HeaderText = "Nome"
+            .Columns(45).HeaderText = "Decore"
+            .Columns(46).HeaderText = "Descrição"
+            .Columns(47).HeaderText = "IRPF"
+            .Columns(48).HeaderText = "Numero"
+            .Columns(49).HeaderText = "Senha Web"
+            .Columns(50).HeaderText = "Nº Senha Web"
+            .Columns(51).HeaderText = "Redesim"
+            .Columns(52).HeaderText = "Senha"
+            .Columns(53).HeaderText = "Cod RFB"
+            .Columns(54).HeaderText = "RFB Num°"
+            .Columns(55).HeaderText = "Validade"
+            .Columns(56).HeaderText = "Cadastro"
+
+
+
+        End With
+    End Sub
+
 
 
     '  BOTÃO QUE CARREGA OS DADOS DA PESQUISA PESSOA FÍSICA
@@ -757,5 +844,27 @@
 
     Private Sub btFechar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btFechar.Click
         Me.Close()
+    End Sub
+
+
+    Private Sub txtNomePesquisar_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNomePesquisar.TextChanged
+        Try
+
+            objClientes.cli_Nome = txtNomePesquisar.Text
+            ds = objClientes.consultarClientesNome()
+            dgvGrid.DataSource = ds.Tables(0)
+            ' formataGrid()
+
+        Catch ex As Exception
+            MessageBox.Show("não foi possível selecionar o Cliente!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
+
+
+   
+    Private Sub btRecarregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btRecarregar.Click
+        CarregaGridNome()
+
     End Sub
 End Class

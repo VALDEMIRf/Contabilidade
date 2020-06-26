@@ -495,4 +495,8 @@ Public Class clsEmpresa
             End Try
         End Using
     End Sub
+
+    Public Sub consultarClientesComEmpresa()
+
+    End Sub
 End Class

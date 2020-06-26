@@ -1,4 +1,7 @@
 ﻿Public Class frmEmpresaConsulta
+    Dim ds As New DataSet
+    Dim objClientes As New clsCliente
+
     Public Enum TipoConsulta
         Cliente
         Empresa
@@ -1123,5 +1126,40 @@
 
     Private Sub btFecharEmpresa_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btFecharEmpresa.Click
         Me.Close()
+    End Sub
+
+    Private Sub btRecarregarDados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btRecarregarDados.Click
+        CarregaGridNome()
+    End Sub
+
+    Private Sub CarregaGridNome()
+        Try
+
+            ds = objClientes.consultarClientesComEmpresa()
+            dgvGridEmpresa.DataSource = ds.Tables(0)
+            '  formataGrid()
+
+
+        Catch ex As Exception
+            MsgBox("Erro ao consultar clientes no Banco de Dados !" & ex.Message.ToString, MsgBoxStyle.Critical, "Erro")
+        End Try
+    End Sub
+
+    Private Sub frmEmpresaConsulta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        CarregaGridNome()
+    End Sub
+
+    Private Sub txtPesquisarNomeEmpresa_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtPesquisarNomeEmpresa.TextChanged
+        Try
+
+            objClientes.cli_Nome = txtPesquisarNomeEmpresa.Text
+            ds = objClientes.consultarClientesComEmpresa()
+            dgvGridEmpresa.DataSource = ds.Tables(0)
+            ' formataGrid()
+
+        Catch ex As Exception
+            MessageBox.Show("não foi possível selecionar o Cliente!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgBox(ex.Message.ToString)
+        End Try
     End Sub
 End Class

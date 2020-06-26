@@ -24,23 +24,24 @@ Partial Class frmClienteConsulta
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmClienteConsulta))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtNomePesquisar = New System.Windows.Forms.TextBox()
         Me.btFechar = New System.Windows.Forms.Button()
         Me.btEnviarDados = New System.Windows.Forms.Button()
         Me.btPesquisaCliente = New System.Windows.Forms.Button()
         Me.txtCPFPesquisa = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvGrid = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CPF = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Situacao = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RG = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nome = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btRecarregar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btRecarregar)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.txtNomePesquisar)
         Me.GroupBox1.Controls.Add(Me.btFechar)
         Me.GroupBox1.Controls.Add(Me.btEnviarDados)
         Me.GroupBox1.Controls.Add(Me.btPesquisaCliente)
@@ -48,10 +49,26 @@ Partial Class frmClienteConsulta
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(630, 90)
+        Me.GroupBox1.Size = New System.Drawing.Size(870, 90)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Filtro de Pesquisa"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(21, 21)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(137, 20)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Pesquisar por Nome:"
+        '
+        'txtNomePesquisar
+        '
+        Me.txtNomePesquisar.Location = New System.Drawing.Point(15, 49)
+        Me.txtNomePesquisar.Name = "txtNomePesquisar"
+        Me.txtNomePesquisar.Size = New System.Drawing.Size(208, 26)
+        Me.txtNomePesquisar.TabIndex = 5
         '
         'btFechar
         '
@@ -59,9 +76,9 @@ Partial Class frmClienteConsulta
         Me.btFechar.FlatAppearance.BorderSize = 0
         Me.btFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btFechar.Image = CType(resources.GetObject("btFechar.Image"), System.Drawing.Image)
-        Me.btFechar.Location = New System.Drawing.Point(460, 28)
+        Me.btFechar.Location = New System.Drawing.Point(768, 25)
         Me.btFechar.Name = "btFechar"
-        Me.btFechar.Size = New System.Drawing.Size(106, 46)
+        Me.btFechar.Size = New System.Drawing.Size(93, 46)
         Me.btFechar.TabIndex = 4
         Me.btFechar.Text = "Fechar"
         Me.btFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -73,9 +90,9 @@ Partial Class frmClienteConsulta
         Me.btEnviarDados.FlatAppearance.BorderSize = 0
         Me.btEnviarDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btEnviarDados.Image = CType(resources.GetObject("btEnviarDados.Image"), System.Drawing.Image)
-        Me.btEnviarDados.Location = New System.Drawing.Point(304, 22)
+        Me.btEnviarDados.Location = New System.Drawing.Point(654, 22)
         Me.btEnviarDados.Name = "btEnviarDados"
-        Me.btEnviarDados.Size = New System.Drawing.Size(129, 52)
+        Me.btEnviarDados.Size = New System.Drawing.Size(108, 49)
         Me.btEnviarDados.TabIndex = 3
         Me.btEnviarDados.Text = "Enviar Dados"
         Me.btEnviarDados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -87,7 +104,7 @@ Partial Class frmClienteConsulta
         Me.btPesquisaCliente.FlatAppearance.BorderSize = 0
         Me.btPesquisaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btPesquisaCliente.Image = CType(resources.GetObject("btPesquisaCliente.Image"), System.Drawing.Image)
-        Me.btPesquisaCliente.Location = New System.Drawing.Point(196, 25)
+        Me.btPesquisaCliente.Location = New System.Drawing.Point(513, 25)
         Me.btPesquisaCliente.Name = "btPesquisaCliente"
         Me.btPesquisaCliente.Size = New System.Drawing.Size(111, 46)
         Me.btPesquisaCliente.TabIndex = 2
@@ -97,7 +114,7 @@ Partial Class frmClienteConsulta
         '
         'txtCPFPesquisa
         '
-        Me.txtCPFPesquisa.Location = New System.Drawing.Point(75, 35)
+        Me.txtCPFPesquisa.Location = New System.Drawing.Point(378, 49)
         Me.txtCPFPesquisa.Mask = "000.000.000-00"
         Me.txtCPFPesquisa.Name = "txtCPFPesquisa"
         Me.txtCPFPesquisa.Size = New System.Drawing.Size(100, 26)
@@ -106,56 +123,35 @@ Partial Class frmClienteConsulta
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(30, 38)
+        Me.Label1.Location = New System.Drawing.Point(374, 21)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 20)
+        Me.Label1.Size = New System.Drawing.Size(127, 20)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "CPF:"
+        Me.Label1.Text = "Pesquisar por CPF:"
         '
         'dgvGrid
         '
         Me.dgvGrid.BackgroundColor = System.Drawing.Color.White
         Me.dgvGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.CPF, Me.Situacao, Me.RG, Me.Nome})
         Me.dgvGrid.GridColor = System.Drawing.Color.DarkGray
         Me.dgvGrid.Location = New System.Drawing.Point(12, 108)
         Me.dgvGrid.Name = "dgvGrid"
         Me.dgvGrid.Size = New System.Drawing.Size(870, 300)
         Me.dgvGrid.TabIndex = 1
         '
-        'codigo
+        'btRecarregar
         '
-        Me.codigo.DataPropertyName = "codigo"
-        Me.codigo.HeaderText = "codigo"
-        Me.codigo.Name = "codigo"
-        Me.codigo.Width = 60
-        '
-        'CPF
-        '
-        Me.CPF.DataPropertyName = "CPF"
-        Me.CPF.HeaderText = "CPF"
-        Me.CPF.Name = "CPF"
-        Me.CPF.Width = 150
-        '
-        'Situacao
-        '
-        Me.Situacao.DataPropertyName = "Situacao"
-        Me.Situacao.HeaderText = "Situacao"
-        Me.Situacao.Name = "Situacao"
-        Me.Situacao.Width = 150
-        '
-        'RG
-        '
-        Me.RG.DataPropertyName = "RG"
-        Me.RG.HeaderText = "RG"
-        Me.RG.Name = "RG"
-        '
-        'Nome
-        '
-        Me.Nome.DataPropertyName = "Nome"
-        Me.Nome.HeaderText = "Nome"
-        Me.Nome.Name = "Nome"
-        Me.Nome.Width = 400
+        Me.btRecarregar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btRecarregar.FlatAppearance.BorderSize = 0
+        Me.btRecarregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btRecarregar.Image = CType(resources.GetObject("btRecarregar.Image"), System.Drawing.Image)
+        Me.btRecarregar.Location = New System.Drawing.Point(229, 25)
+        Me.btRecarregar.Name = "btRecarregar"
+        Me.btRecarregar.Size = New System.Drawing.Size(139, 59)
+        Me.btRecarregar.TabIndex = 7
+        Me.btRecarregar.Text = "Recarregar"
+        Me.btRecarregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btRecarregar.UseVisualStyleBackColor = True
         '
         'frmClienteConsulta
         '
@@ -185,9 +181,7 @@ Partial Class frmClienteConsulta
     Friend WithEvents txtCPFPesquisa As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents dgvGrid As System.Windows.Forms.DataGridView
-    Friend WithEvents codigo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CPF As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Situacao As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents RG As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Nome As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents txtNomePesquisar As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents btRecarregar As System.Windows.Forms.Button
 End Class

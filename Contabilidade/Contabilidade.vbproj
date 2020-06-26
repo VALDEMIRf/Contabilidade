@@ -271,6 +271,7 @@
     <Content Include="Imagens\binoculars.png" />
     <Content Include="Imagens\Button-Add-icon.png" />
     <Content Include="Imagens\Button-Next-icon.png" />
+    <Content Include="Imagens\Button-Refresh-icon.png" />
     <Content Include="Imagens\clear-icon %281%29.png" />
     <Content Include="Imagens\Consultar.ico" />
     <Content Include="Imagens\deletar.png" />
