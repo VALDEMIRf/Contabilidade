@@ -1129,4 +1129,12 @@ Public Class frmClientes
         End If
     End Sub
 
+    
+    Private Sub btApagarVinc_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btApagarVinc.Click
+        If (MessageBox.Show("Deseja excluir o registro?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No) Then Exit Sub
+        Dim cldVinculado As New clsCPFVinculado
+        cldVinculado.Excluir(dgvGridVinculo.CurrentRow.Cells(0).Value)
+        MessageBox.Show("Registro excluído com sucesso", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
+        CarregaGridVinculo()
+    End Sub
 End Class

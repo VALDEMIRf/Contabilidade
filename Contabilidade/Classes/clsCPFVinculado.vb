@@ -160,4 +160,16 @@ Public Class clsCPFVinculado
         Return cldBancoDados.RetornaDataReader(strQuery.ToString)
     End Function
 
+    Public Sub Excluir(ByVal intCodigo As Integer)
+        'Cria um StringBuilder para concatenar a Query Sql
+        Dim strQuery As New StringBuilder
+        strQuery.Append(" DELETE FROM tbCPFVinculado ")
+        strQuery.Append(" WHERE vinc_id = " & intCodigo & "")
+
+        'Executa o método ExecutaComando da classe de banco de dados
+        Dim cldBancoDados As New cldBancoDados()
+        cldBancoDados.ExecutaComando(strQuery.ToString)
+    End Sub
+
+
 End Class

@@ -532,9 +532,9 @@ Partial Class frmCadAcessoria
         Me.chbIRRF.AutoSize = True
         Me.chbIRRF.Location = New System.Drawing.Point(4, 31)
         Me.chbIRRF.Name = "chbIRRF"
-        Me.chbIRRF.Size = New System.Drawing.Size(54, 19)
+        Me.chbIRRF.Size = New System.Drawing.Size(38, 19)
         Me.chbIRRF.TabIndex = 19
-        Me.chbIRRF.Text = "IRRF"
+        Me.chbIRRF.Text = "IR"
         Me.chbIRRF.UseVisualStyleBackColor = True
         '
         'chbRAIS
@@ -569,7 +569,7 @@ Partial Class frmCadAcessoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.SteelBlue
+        Me.BackColor = System.Drawing.Color.LightSkyBlue
         Me.ClientSize = New System.Drawing.Size(804, 411)
         Me.Controls.Add(Me.txtObs)
         Me.Controls.Add(Me.gbDeclaracoes)
